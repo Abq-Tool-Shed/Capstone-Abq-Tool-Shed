@@ -1,0 +1,12 @@
+html {
+    background-color: grey;
+}
+
+.flow {
+    text-align: center;
+    border: 15px solid darkred;
+    width: 800px;
+    padding: 50px;
+    margin: 15px;
+    margin-top: auto;
+}
