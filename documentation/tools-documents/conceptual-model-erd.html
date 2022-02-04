@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conceptual Model and ERD</title>
+</head>
+<body>
+<h3>Strong Entities </h3>
+<ul>
+    <h4>user</h4>
+    <li>userId   PK</li>
+    <li>userEmail</li>
+    <li>userPhoneNumber</li>
+    <li>userFirstName</li>
+    <li>userLastName</li>
+    <li>userNameTag</li>
+    <li>userProfileImage</li>
+    <li>userProfileHash</li>
+    <li>userActivationToken</li>
+
+    <h4>tool</h4>
+    <li>toolId  PK</li>
+    <li>toolUserId  FK</li>
+    <li>toolImage</li>
+    <li>toolName</li>
+    <li>toolType</li>
+    <li>toolStatus</li>
+    <li>toolPostDate</li>
+    <li>toolLocation</li>
+
+    <h4>borrow</h4>
+    <li>borrowID  PK</li>
+    <li>borrowUserId  FK</li>
+    <li>borrowToolId  FK</li>
+    <li>borrowDateTime</li>
+    <li>borrowReturnedDateTime</li>
+
+
+
+</ul>
+<!--We need to update this section, I just copied it from the example, I thought we could discuss as a crew (mz)-->
+    <dl>
+    <h4>Relationships</h4>
+    <dt>Users to Tools: 1 to many</dt>
+        <dd>Each tool is for one user only (no splitting in our example)</dd>
+        <dd>One user can add multiple tool listings</dd>
+
+        <dt>Borrow to Tools: 1 to many</dt>
+        <dd>Each tool can be borrowed by one user at a time</dd>
+        <dd>One user can borrow multiple tool at a time</dd>
+
+    <dt>Rating to User: many-to-many</dt>
+        <dd>Each User can assign many ratings to many users</dd>
+        <dd>We have to create a weak entity to encapsulate this relationship</dd>
+    </dl>
+<h3>Weak Entity</h3>
+<h4>rating</h4>
+<ul>
+<li>ratingBorrowerUserId  FK</li>
+<li>ratingLenderUserId  FK</li>
+<li>ratingBorrowerOrLender</li>
+<li>rating</li>
+</ul>
+
+
+</body>
+</html>
