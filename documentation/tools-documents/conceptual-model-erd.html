@@ -7,60 +7,73 @@
 <body>
 <h3>Strong Entities </h3>
 <ul>
-    <h4>user</h4>
-    <li>userId   PK</li>
-    <li>userEmail</li>
-    <li>userPhoneNumber</li>
-    <li>userFirstName</li>
-    <li>userLastName</li>
-    <li>userNameTag</li>
-    <li>userProfileImage</li>
-    <li>userProfileHash</li>
-    <li>userActivationToken</li>
+    <h4>profile</h4>
+    <li>profileId   PK</li>
+    <li>profileEmail</li>
+    <li>profilePhoneNumber</li>
+    <li>profileFirstName</li>
+    <li>profileLastName</li>
+    <li>profileNameTag</li>
+    <li>profileProfileImage</li>
+    <li>profileProfileHash</li>
+    <li>profileActivationToken</li>
+
+
 
     <h4>tool</h4>
     <li>toolId  PK</li>
-    <li>toolUserId  FK</li>
+    <li>toolProfileId  FK</li>
     <li>toolImage</li>
     <li>toolName</li>
-    <li>toolType</li>
-    <li>toolStatus</li>
+    <strike><li>toolType</li></strike>
+    <strike><li>toolStatus</li></strike>
     <li>toolPostDate</li>
-    <li>toolLocation</li>
+    <li>toolLat</li>
+    <li>toolLong</li>
+    <li>toolDescription</li>
+    <li>toolLendDescription</li>
+
+    <h4>category</h4>
+    <li>categoryID PK</li>
+    <li>categoryToolId FK</li>
+    <li>category</li>
 
     <h4>borrow</h4>
     <li>borrowID  PK</li>
-    <li>borrowUserId  FK</li>
+    <li>borrowProfileId  FK</li>
     <li>borrowToolId  FK</li>
     <li>borrowDateTime</li>
     <li>borrowReturnedDateTime</li>
+    <li>borrowCompleted</li>
+
+    <h3>Weak Entity</h3>
+    <h4>rating</h4>
+    <ul>
+        <li>ratingBorrowerUserId  FK</li>
+        <li>ratingLenderUserId  FK</li>
+        <li>raterUserId (the id of the user who is providing the rating</li>
+        <li>rating</li>
+    </ul>
 
 
 
 </ul>
-<!--We need to update this section, I just copied it from the example, I thought we could discuss as a crew (mz)-->
+
     <dl>
     <h4>Relationships</h4>
-    <dt>Users to Tools: 1 to many</dt>
-        <dd>Each tool is for one user only (no splitting in our example)</dd>
-        <dd>One user can add multiple tool listings</dd>
+    <dt>Profiles to Tools: 1 to many</dt>
+        <dd>Each tool is for one profile only (no splitting in our example)</dd>
+        <dd>One profile can add multiple tool listings</dd>
 
-        <dt>Borrow to Tools: 1 to many</dt>
-        <dd>Each tool can be borrowed by one user at a time</dd>
-        <dd>One user can borrow multiple tool at a time</dd>
+        <dt>Borrow to Tools: many to many</dt>
+        <dd>Each tool can be borrowed by one profile at a time</dd>
+        <dd>many profiles can borrow multiple tool at a time</dd>
 
-    <dt>Rating to User: many-to-many</dt>
-        <dd>Each User can assign many ratings to many users</dd>
-        <dd>We have to create a weak entity to encapsulate this relationship</dd>
+    <dt>Rating to Profile: many-to-many-to-one</dt>
+        <dd>Many profiles can rate many profiles</dd>
+        <dd>The can only be one rating per borrow interaction</dd>
     </dl>
-<h3>Weak Entity</h3>
-<h4>rating</h4>
-<ul>
-<li>ratingBorrowerUserId  FK</li>
-<li>ratingLenderUserId  FK</li>
-<li>ratingBorrowerOrLender</li>
-<li>rating</li>
-</ul>
+
 
 
 </body>
