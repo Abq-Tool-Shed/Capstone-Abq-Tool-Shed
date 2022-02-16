@@ -4,6 +4,8 @@ drop table if exists category;
 drop table if exists tool;
 drop table if exists profile;
 
+
+
 create table profile(
     profileId binary(16) not null,
     profileActivationToken char(32),
