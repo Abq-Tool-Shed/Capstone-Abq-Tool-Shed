@@ -1,3 +1,3 @@
 FROM mysql
 #Make sure to update this to match your project.
-COPY project.sql /docker-entrypoint-initdb.d/
+COPY shed.sql /docker-entrypoint-initdb.d/
