@@ -7,7 +7,7 @@ import {insertTool} from "../../utils/tool/insertTool";
 import {selectAllTools} from "../../utils/tool/selectAllTools";
 import {selectToolByToolId} from "../../utils/tool/selectToolByToolId";
 import {selectToolsByToolProfileId} from "../../utils/tool/selectToolsByToolProfileId";
-
+import {App} from '../../App'
 
 
 export async function getAllToolsController(request: Request, response: Response): Promise<Response<Category>> {
@@ -53,17 +53,17 @@ export async function getToolByToolIdController(request : Request, response: Res
     }
 }
 
-export async function postTool(request: Request, response: Response, tempFunction: NextFunction): Promise<Response<Profile>>{
+export async function postTool(request: Request, response: Response,): Promise<Response<Status>> {
     try {
         const {toolDescription} = request.body;
         const profile : Profile = request.session.profile as Profile
-        const toolProfileId : string = <string>profile.profile.Id
+        const toolProfileId : string = <string>profile.profileId
 
         const tool: Tool = {
             toolId: null,
             toolProfileId,
             toolDescription,
-            toolPostDate: isDate
+            toolDate: null
         }
         const result = await insertTool(tool)
         const status: Status = {
