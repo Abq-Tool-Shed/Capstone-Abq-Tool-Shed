@@ -1,5 +1,10 @@
 import { Router } from "express";
-import {} from './tool.controller';
+import {
+    getAllToolsController,
+    getToolByToolProfileIdController,
+    getToolByToolIdController,
+    postTool
+} from './tool.controller';
 import {asyncValidatorController}  from ''
 import {toolValidator} from "./tool.validator";
 import { isLoggedIn } from '';

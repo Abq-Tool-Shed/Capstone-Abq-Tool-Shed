@@ -1,9 +1,12 @@
 import {Request, Response, NextFunction} from "express";
-
-import {tool} from ''
-import {profile} from ''
-import {category} from ''
-import
+import {Status} from "../../utils/interfaces/Status";
+import {Tool} from '../../utils/interfaces/Tool'
+import {Profile} from '../../utils/interfaces/Profile'
+import {Category} from '../../utils/interfaces/Category'
+import {insertTool} from "../../utils/tool/insertTool";
+import {selectAllTools} from "../../utils/tool/selectAllTools";
+import {selectToolByToolId} from "../../utils/tool/selectToolByToolId";
+import {selectToolsByToolProfileId} from "../../utils/tool/selectToolsByToolProfileId";
 
 
 
@@ -11,7 +14,7 @@ export async function getAllToolsController(request: Request, response: Response
 
     try {
         const data = await selectAllTools()
-        const status: Status - {status: 200, message: null, data};
+        const status: Status = {status: 200, message: null, data};
         return response.json(status);
     } catch(error) {
         return response.json({
@@ -22,10 +25,10 @@ export async function getAllToolsController(request: Request, response: Response
     }
 }
 
-export async function getToolByToolProfileIdController(request: Request, response: Response, tempFunction: NextFunction): Promise<Response<profile>>{
+export async function getToolByToolProfileIdController(request: Request, response: Response, tempFunction: NextFunction): Promise<Response<Profile>>{
     try {
-        const {toolProfileId} request.params
-        const data = await selectToolsbyToolProfileId(toolProfileId)
+        const {toolProfileId} = request.params
+        const data = await selectToolsByToolProfileId(toolProfileId)
         return response.json({status:200, message: null, data})
     } catch(error) {
         return response.json({
@@ -36,17 +39,31 @@ export async function getToolByToolProfileIdController(request: Request, respons
     }
 }
 
-export async function postTool(request: Request, response: Response, tempFunction: NextFunction): Promise<Response<profile>>{
+export async function getToolByToolIdController(request : Request, response: Response, nextFunction: NextFunction) : Promise<Response<Status>>{
     try {
-        const {toolContent} = request.body;
-        const profile : Profile = request.session.profile as Profile
-        cosnt toolProfileId : string = <string>profile.profile.Id
+        const     {toolId} = request.params
+        const data  = await selectToolByToolId(toolId)
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            message: "",
+            data: null
+        })
+    }
+}
 
-        cosnt tool: Tool = {
-            toolId: null
+export async function postTool(request: Request, response: Response, tempFunction: NextFunction): Promise<Response<Profile>>{
+    try {
+        const {toolDescription} = request.body;
+        const profile : Profile = request.session.profile as Profile
+        const toolProfileId : string = <string>profile.profile.Id
+
+        const tool: Tool = {
+            toolId: null,
             toolProfileId,
-            toolContent,
-            toolPostDate: null
+            toolDescription,
+            toolPostDate: isDate
         }
         const result = await insertTool(tool)
         const status: Status = {
