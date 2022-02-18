@@ -5,9 +5,9 @@ import {
     getToolByToolIdController,
     postTool
 } from './tool.controller';
-import {asyncValidatorController}  from ''
+import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {toolValidator} from "./tool.validator";
-import { isLoggedIn } from '';
+import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 import {check} from "express-validator";
 import {checkSchema} from "express-validator";
 
