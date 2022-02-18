@@ -11,19 +11,18 @@ import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 import {check} from "express-validator";
 import {checkSchema} from "express-validator";
 
-const router = Router();
+export const Toolrouter = Router();
 
-router.route('/:toolId').get( asyncValidatorController([
+Toolrouter.route('/:toolId').get( asyncValidatorController([
     check('toolId', 'please provide a valid toolId').isUUID()
 ]), getToolByToolIdController)
 
-router.route('/toolProfileId/:toolProfileId').get(asyncValidatorController([
+Toolrouter.route('/toolProfileId/:toolProfileId').get(asyncValidatorController([
     check('toolProfileId', 'please provide a valid toolId').isUUID()
 ]), getToolByToolProfileIdController)
 
 
-router.route('/')
+Toolrouter.route('/')
     .get( getAllToolsController )
     .post(isLoggedIn, asyncValidatorController(checkSchema(toolValidator)), postTool);
     // .
-export default router;

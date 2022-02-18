@@ -1,32 +1,32 @@
 import { Router } from 'express';
 import {
-    getAllCategorysController,
+    getAllCategoriesController,
     getCategoryByCategoryId,
     getCategoryByCategoryToolId,
     getInsertCategory
-} from './catagorycontroller';
+} from './categorycontroller';
 import { validatorcategory } from "../../utils/controllers/validatorcategory";
 import { check } from "express-validator";
 import { checkSchema } from "express-validator";
 
 
 
-const router = Router();
+export const CategoryRouter = Router();
 
-router.route("/allCategorys").get( validatorcategory([
+CategoryRouter.route("/allCategorys").get( validatorcategory([
     check("allCategorys", "Please Search For Categorys").isUUID()
-]), getAllCategorysController)
+]), getAllCategoriesController)
 
-router.route("/:categoryId").get(  validatorcategory([
+CategoryRouter.route("/:categoryId").get(  validatorcategory([
     check("categoryId", "Please try another Category Name").isUUID()
     ]), getCategoryByCategoryId)
 
-router.route("/categoryToolId/:categoryToolId").get( validatorcategory([
+CategoryRouter.route("/categoryToolId/:categoryToolId").get( validatorcategory([
     check("categoryToolId", "Please Provide A Valid categoryToolId").isUUID()
 ]), getCategoryByCategoryToolId)
 
-router.route("/category").get( validatorcategory([
+CategoryRouter.route("/category").get( validatorcategory([
     check("category", "Please Provide A Valid Category").isUUID()
 ]), getInsertCategory)
 
-export default router;
+

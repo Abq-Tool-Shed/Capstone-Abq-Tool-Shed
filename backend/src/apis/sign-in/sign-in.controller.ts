@@ -17,7 +17,7 @@ export async function signInController(request :Request, response :Response): Pr
             const {profilePassword} = request.body
 
             // @ts-ignore isEmailValid determines mysqlResult will not be null
-            const {profileId, profileHandle, profileName, profilePhoneNumber, profileEmail, profileProfileImage, profileProfileHash, profileActivationToken} = mysqlResult
+            const {profileId, profileHandle, profileName, profilePhoneNumber, profileEmail, profileImage, profileHash, profileActivationToken} = mysqlResult
 
             const profile: Profile = {
                 profileId,
@@ -25,18 +25,19 @@ export async function signInController(request :Request, response :Response): Pr
                 profileName,
                 profilePhoneNumber,
                 profileEmail,
-                profileProfileImage,
-                profileProfileHash,
+                profileImage,
+                profileHash,
                 profileActivationToken
             }
 
+            // @ts-ignore
             const signature: string = uuid();
             const authorization: string = generateJwt({
                 profileId,
                 profileHandle,
                 profilePhoneNumber,
                 profileEmail,
-                profileProfileImage
+                profileImage
             }, signature);
 
             const signInFailed = (message: string) => response.json({
@@ -65,7 +66,7 @@ export async function signInController(request :Request, response :Response): Pr
                 return response.json({status: 200, data: null, message: 'Sign in successful'})
             };
 
-            const isPasswordValid: boolean = profile && await validatePassword(profile.profileProfileHash, profilePassword)
+            const isPasswordValid: boolean = profile && await validatePassword(profile.profileHash, profilePassword)
 
             return isPasswordValid ? signInSuccessful() : signInFailed('Invalid email or password')
         }

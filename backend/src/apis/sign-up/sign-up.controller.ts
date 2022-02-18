@@ -14,10 +14,10 @@ export async function signUpProfileController(request: Request, response: Respon
         const mailgun: Mailgun = new Mailgun(formData)
         const mailgunClient:Client = mailgun.client({username: 'api', key: <string>process.env.MAILGUN_API_KEY})
 
-        const {profileHandle, profileEmail, profilePhoneNumber, profilePassword} = request.body
+        const {profileHandle, profileEmail, profileName, profilePhoneNumber, profilePassword} = request.body
         const profileHash = await setHash(profilePassword)
         const profileActivationToken = setActivationToken()
-        const profileProfileImage = 'http://www.fillmurray.com/100/150'
+        const profileImage = 'http://www.fillmurray.com/100/150'
         const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${profileActivationToken}`
         console.log(profileActivationToken)
 
@@ -40,8 +40,8 @@ export async function signUpProfileController(request: Request, response: Respon
             profileName,
             profilePhoneNumber,
             profileEmail,
-            profileProfileImage,
-            profileProfileHash
+            profileImage: null,
+            profileHash
         };
 
         await insertProfile(profile)
