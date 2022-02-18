@@ -1,7 +1,7 @@
 import {Request, Response, NextFunction} from "express";
 import {Category} from "../../utils/interfaces/Category";
 import {Status} from "../../utils/interfaces/Status"
-import {Profile} from;
+import {Profile} from "../../utils/interfaces/Profile";
 import {insertCategory} from "../../utils/category/insertCategory";
 import {selectAllCategory} from "../../utils/category/selectAllCategory";
 import {selectCategorybyCategoryId} from "../../utils/category/selectCategoryByCategoryId";

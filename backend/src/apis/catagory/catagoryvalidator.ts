@@ -1,6 +1,6 @@
 import {Schema} from "express-validator";
 
-export const catagoryvalidator : Schema = {
+export const catagoryValidator : Schema = {
     categoryId: {
         isUUID: {
             errorMessage: 'Please Type In Valid Category'
@@ -13,7 +13,7 @@ export const catagoryvalidator : Schema = {
     },
     category: {
         isUUID{
-            errorMessage: 'Category Does Not Exsist'
+            errorMessage: 'Category Does Not Exist'
         }
     }
 

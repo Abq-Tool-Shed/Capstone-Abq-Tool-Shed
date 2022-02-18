@@ -10,7 +10,7 @@ export async function selectCategoryByCategoryToolId(categoryToolId: string) : P
         const mySqlQuery = 'SELECT BIN_TO_UUID(Category) AS Category, BIN_TO_UUID(categoryToolId) AS categoryToolId, = UUID_TO_BIN(:categoryToolId)'
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {categoryToolId})
         return result[0] as Category[]
-    } catch (error) {
+    } catch(error) {
         throw error
     }
 }
