@@ -1,7 +1,7 @@
 import {Result, Schema, Validation, ValidationChain, validationResult} from "express-validator";
 import {Request, Response, NextFunction} from "express";
 
-export const validatorcategory = (validadions : validation[]) => {
+export const asyncValidatorController = (validadions : validation[]) => {
     return async (request: Request, response: Response, next: NextFunction) => {
         await Promise.all(validations.map((validation:ValidationChain): Promise<unknown> => validation.run(request)))
 

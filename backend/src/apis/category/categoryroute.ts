@@ -5,27 +5,28 @@ import {
     getCategoryByCategoryToolId,
     getInsertCategory
 } from './categorycontroller';
-import { validatorcategory } from "../../utils/controllers/validatorcategory";
+import { asyncValidatorController } from "../../utils/controllers/asyncValidatorController";
 import { check } from "express-validator";
 import { checkSchema } from "express-validator";
+import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 
 
 
 export const CategoryRouter = Router();
 
-CategoryRouter.route("/allCategorys").get( validatorcategory([
-    check("allCategorys", "Please Search For Categorys").isUUID()
+CategoryRouter.route("/allCategory").get( asyncValidatorController([
+    check("allCategory", "Please Search For Category").isUUID()
 ]), getAllCategoriesController)
 
-CategoryRouter.route("/:categoryId").get(  validatorcategory([
+CategoryRouter.route("/:categoryId").get(  asyncValidatorController([
     check("categoryId", "Please try another Category Name").isUUID()
     ]), getCategoryByCategoryId)
 
-CategoryRouter.route("/categoryToolId/:categoryToolId").get( validatorcategory([
+CategoryRouter.route("/categoryToolId/:categoryToolId").get( asyncValidatorController([
     check("categoryToolId", "Please Provide A Valid categoryToolId").isUUID()
 ]), getCategoryByCategoryToolId)
 
-CategoryRouter.route("/category").get( validatorcategory([
+CategoryRouter.route("/category").get( asyncValidatorController([
     check("category", "Please Provide A Valid Category").isUUID()
 ]), getInsertCategory)
 
