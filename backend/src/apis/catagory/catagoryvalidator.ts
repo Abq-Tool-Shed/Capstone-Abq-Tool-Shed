@@ -1,20 +1,21 @@
 import {Schema} from "express-validator";
 
-export const catagoryValidator : Schema = {
+
+export const categoryValidator : Schema = {
     categoryId: {
         isUUID: {
             errorMessage: 'Please Type In Valid Category'
         }
     },
-    categoryToolId: {
-        isUUID{
-            errorMessage: 'This Is Not A Valid Tool Category'
-        }
-    },
-    category: {
-        isUUID{
-            errorMessage: 'Category Does Not Exist'
+
+    categoryName: {
+        isLength: {
+            errorMessage: 'A Category Can Not Be Longer Than 255 characters ',
+            options: {
+                max: 255
+            },
+            trim: true,
+            escape: true
         }
     }
-
 };

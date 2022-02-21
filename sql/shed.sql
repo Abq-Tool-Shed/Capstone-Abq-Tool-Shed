@@ -21,6 +21,14 @@ create table profile(
     primary key(profileId)
 );
 
+create table category
+(
+    categoryId     binary(16)   not null,
+    category       varchar(255) not null,
+    index (categoryId),
+    primary key (categoryId)
+);
+
 create table tool(
     toolId binary(16) not null,
     toolProfileId binary(16) not null,
@@ -36,15 +44,7 @@ create table tool(
     primary key(toolId)
 );
 
-create table category
-(
-    categoryId     binary(16)   not null,
-    categoryToolId binary(16)   not null,
-    category       varchar(255) not null,
-    index (categoryToolId),
-    primary key (categoryId),
-    foreign key (categoryToolId) references tool(toolId)
-);
+
 
 create table borrow
 (

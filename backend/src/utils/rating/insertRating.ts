@@ -1,5 +1,4 @@
 import {Profile} from "../interfaces/Profile"
-import {Tool} from "../interfaces/Tool"
 import {connect} from "../database.utils"
 
 

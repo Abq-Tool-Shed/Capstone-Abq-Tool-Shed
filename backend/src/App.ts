@@ -2,9 +2,9 @@ import express, { Application } from 'express'
 import morgan from 'morgan'
 // Routes
 import { indexRoute } from './apis/index.route'
-<<<<<<< HEAD
+
 import session, {MemoryStore} from "express-session";
-=======
+
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
 import {SignOutRoute} from "./apis/sign-out/sign-out.route";
 import SignupRoute from "./apis/sign-up/signup.route";
@@ -13,7 +13,7 @@ const session = require('express-session')
 const MemoryStore = require('memorystore')(session)
 import {ProfileRoute} from './apis/profile/profile.route'
 import {ImageUpLoaderRouter} from './apis/image-upload/image-upload.route'
->>>>>>> restAPI_profile
+
 
 // The following class creates the app and instantiates the server
 export class App {
