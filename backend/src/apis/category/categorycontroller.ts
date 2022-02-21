@@ -21,22 +21,7 @@ export async function getAllCategoriesController(request: Request, response: Res
     }
 }
 
-export async function getCategoryByCategoryToolId (request : Request, response : Response, nextFunction : NextFunction): Promise<Response<Status>>{
 
-
-
-    try {
-        const {categoryToolId} = request.params
-        const data = await selectCategoryByCategoryToolId(categoryToolId)
-        return response.json({status:200, message: null, data});
-    } catch(error) {
-        return response.json({
-            status: 500,
-            message: "",
-            data: null
-        })
-    }
-}
 
 export async function getCategoryByCategoryId (request: Request, response : Response, nextFunction : NextFunction): Promise<Response<Status>> {
     try {

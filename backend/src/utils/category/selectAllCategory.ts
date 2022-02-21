@@ -1,6 +1,6 @@
 import {Category} from "../interfaces/Category";
 import {connect} from "../database.utils"
-import {Profile} from;
+import {Profile} from "../interfaces/Profile";
 import {Status} from "../interfaces/Status"
 import { RowDataPacket,} from "mysql2"
 
