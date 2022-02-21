@@ -8,7 +8,7 @@ import {updateProfile} from "../../utils/profile/updateProfile";
 export async function putProfileController(request: Request, response: Response) : Promise<Response>{
     try {
         const {profileId} = request.params
-        const {profileEmail, profileHandle, profileName, profilePhoneNumber, profileProfileImage} = request.body
+        const {profileEmail, profileHandle, profileName, profilePhoneNumber, profileImage} = request.body
         // const profilePhoneNumber = request.body.profilePhoneNumber ?? null
         const profile = <Profile>request.session.profile
         const profileIdFromSession = <string>profile.profileId
@@ -24,8 +24,9 @@ export async function putProfileController(request: Request, response: Response)
             return response.json({status: 400, data: null, message: "Update failed"})
         }
 
+
         return profileId === profileIdFromSession
-        ? preformUpdate({profileId, profileEmail, profileHandle, profileName, profileProfileImage, profilePhoneNumber})
+        ? preformUpdate({profileId, profileEmail, profileHandle, profileImage, profileName,  profilePhoneNumber})
             : updateFailed("You do not have permission to perform this action ")
     }catch (error: any) {
         return response.json( {status:400, data: null, message: error.message})

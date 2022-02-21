@@ -13,4 +13,4 @@ export async function updateTool(tool: Tool): Promise<string> {
         throw error
     }
 
-}}
+}

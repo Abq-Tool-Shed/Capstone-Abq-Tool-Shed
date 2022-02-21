@@ -1,19 +1,19 @@
 export interface PartialProfile {
     profileId : string|null
+    profileEmail: string,
     profileHandle: string,
+    profileImage: string | null,
     profileName: string,
     profilePhoneNumber: string,
-    profileEmail: string,
-    profileProfileImage: string,
 }
 
 export interface Profile {
     profileId : string|null
     profileActivationToken: string|null,
+    profileEmail: string,
     profileHandle: string,
+    profileHash: string,
+    profileImage: string | null,
     profileName: string,
     profilePhoneNumber: string,
-    profileEmail: string,
-    profileProfileImage: string,
-    profileProfileHash: string,
 }

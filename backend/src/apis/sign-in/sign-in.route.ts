@@ -3,6 +3,7 @@ import {asyncValidatorController} from "../../utils/controllers/asyncValidator.c
 import {signInValidator} from "./sign-in.validator";
 
 import {checkSchema} from "express-validator";
+import {signInController} from "./sign-in.controller";
 
 export const SignInRouter: Router = Router();
 
