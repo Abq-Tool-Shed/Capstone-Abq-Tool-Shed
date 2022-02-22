@@ -12,7 +12,6 @@ export const signupValidator: Schema = {
     profileName: {
         escape: true,
         trim: true,
-        isEmpty: true, //we wanted to require a name, so I added this validation (mz)
         isLength: {
             errorMessage: 'profileName must be between 1 and thirty two characters ',
             options: {min:1, max:32}
@@ -52,13 +51,6 @@ export const signupValidator: Schema = {
         },
         trim: true,
         escape: true
-    },
-
-    profileProfileImage: {
-        optional: true,
-        isURL: {
-            errorMessage: "profile avatar is malformed please upload a new image"
-        }
     },
     }
 
