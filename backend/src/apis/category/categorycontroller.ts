@@ -4,8 +4,7 @@ import {Status} from "../../utils/interfaces/Status"
 import {insertCategory} from "../../utils/category/insertCategory";
 import {selectAllCategory} from "../../utils/category/selectAllCategory";
 import {selectCategorybyCategoryId} from "../../utils/category/selectCategoryByCategoryId";
-import {selectCategoryByCategoryToolId} from "../../utils/category/categoryByCategoryToolId";
-import {Result} from "express-validator";
+
 
 export async function getAllCategoriesController(request: Request, response: Response): Promise<Response<Status>> {
     try {

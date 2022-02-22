@@ -8,7 +8,7 @@ import {updateProfile} from "../../utils/profile/updateProfile";
 export async function putProfileController(request: Request, response: Response) : Promise<Response>{
     try {
         const {profileId} = request.params
-        const {profileEmail, profileHandle, profileName, profilePhoneNumber, profileImage} = request.body
+        const {profileEmail, profileHandle,profileImage, profileName, profilePhoneNumber} = request.body
         // const profilePhoneNumber = request.body.profilePhoneNumber ?? null
         const profile = <Profile>request.session.profile
         const profileIdFromSession = <string>profile.profileId
