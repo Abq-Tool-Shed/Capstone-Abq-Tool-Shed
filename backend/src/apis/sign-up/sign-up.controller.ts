@@ -11,10 +11,12 @@ import Client from 'mailgun.js/dist/lib/client';
 
 export async function signUpProfileController(request: Request, response: Response): Promise<Response | undefined> {
     try {
+        console.log("test test")
         const mailgun: Mailgun = new Mailgun(formData)
         const mailgunClient:Client = mailgun.client({username: 'api', key: <string>process.env.MAILGUN_API_KEY})
 
         const {profileHandle, profileEmail, profileName, profilePhoneNumber, profilePassword} = request.body
+        console.log("i got here")
         const profileHash = await setHash(profilePassword)
         const profileActivationToken = setActivationToken()
         const profileImage = 'http://www.fillmurray.com/100/150'

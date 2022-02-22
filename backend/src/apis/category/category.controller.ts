@@ -5,7 +5,6 @@ import {insertCategory} from "../../utils/category/insertCategory";
 import {selectAllCategory} from "../../utils/category/selectAllCategory";
 import {selectCategorybyCategoryId} from "../../utils/category/selectCategoryByCategoryId";
 
-
 export async function getAllCategoriesController(request: Request, response: Response): Promise<Response<Status>> {
     try {
         const data = await selectAllCategory()

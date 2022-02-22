@@ -7,7 +7,7 @@ export const asyncValidatorController = (validations: ValidationChain[]) => {
         await Promise.all(validations.map((validation:ValidationChain): Promise<unknown> => validation.run(request)))
 
         const errors: Result = validationResult(request)
-
+        console.log(errors)
         if (errors.isEmpty()) {
             return next()
         }
