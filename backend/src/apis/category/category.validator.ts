@@ -1,11 +1,6 @@
 import {Schema} from "express-validator";
 
 export const categoryValidator : Schema = {
-    categoryId: {
-        isUUID: {
-            errorMessage: 'Please use a valid category Id'
-        }
-    },
     category: {
         isLength:{
             errorMessage: 'Category Does Not Exist',

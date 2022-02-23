@@ -13,7 +13,7 @@ export async function getAllCategoriesController(request: Request, response: Res
     } catch(error) {
         return response.json({
             status: 500,
-            message: "",
+            message: "Oh no didnt work - marty",
             data: []
         })
     }

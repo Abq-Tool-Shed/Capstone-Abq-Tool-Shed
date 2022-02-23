@@ -6,6 +6,11 @@ export const toolValidator : Schema = {
             errorMessage: 'Please provide a valid toolProfileId'
         }
     },
+    toolCategoryId : {
+        isUUID: {
+            errorMessage: 'Please provide a valid toolCategoryId'
+        }
+    },
     toolName: {
         isLength: {
             errorMessage: 'A tool name cannot be longer than 32 characters',
@@ -14,13 +19,13 @@ export const toolValidator : Schema = {
     },
     toolPostDate: {
         toDate: true
-    },
-    toolLat: {
-        isLatLong: true
-    },
-    toolLong: {
-        isLatLong: true
-    },
+     },
+    // toolLat: {
+    //     isLatLong: true
+    // },
+    // toolLong: {
+    //     isLatLong: true
+    // },
 //    toolLat and toolLong should be combined to toolLatLong
     toolDescription: {
         isLength: {
