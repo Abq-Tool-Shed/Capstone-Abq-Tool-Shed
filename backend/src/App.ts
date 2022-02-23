@@ -13,7 +13,7 @@ const MemoryStore = require('memorystore')(session)
 
 import {ImageUploaderRouter} from './apis/image-upload/image-uploader.router'
 import {Toolrouter} from "./apis/tool/tool.route";
-import {CategoryRouter} from "./apis/category/categoryroute";
+import {CategoryRouter} from "./apis/category/category.route";
 
 
 // The following class creates the app and instantiates the server

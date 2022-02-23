@@ -3,11 +3,11 @@ import {
     getAllCategoriesController,
     getCategoryByCategoryId,
     postCategory
-} from './categorycontroller';
+} from './category.controller';
 import { asyncValidatorController } from "../../utils/controllers/asyncValidator.controller";
 import { check } from "express-validator";
 import { checkSchema } from "express-validator";
-import {categoryValidator} from "./categoryvalidator";
+import {categoryValidator} from "./category.validator";
 import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 
 
