@@ -3,7 +3,7 @@ import {Category} from "../../utils/interfaces/Category";
 import {Status} from "../../utils/interfaces/Status"
 import {insertCategory} from "../../utils/category/insertCategory";
 import {selectAllCategory} from "../../utils/category/selectAllCategory";
-import {selectCategorybyCategoryId} from "../../utils/category/selectCategoryByCategoryId";
+import {selectCategoryByCategoryId} from "../../utils/category/selectCategoryByCategoryId";
 
 export async function getAllCategoriesController(request: Request, response: Response): Promise<Response<Status>> {
     try {
@@ -24,7 +24,7 @@ export async function getAllCategoriesController(request: Request, response: Res
 export async function getCategoryByCategoryId (request: Request, response : Response, nextFunction : NextFunction): Promise<Response<Status>> {
     try {
         const {categoryId} = request.params
-        const data = await selectCategorybyCategoryId(categoryId)
+        const data = await selectCategoryByCategoryId(categoryId)
         return response.json({status: 200, message: null, data});
     } catch(error) {
         return response.json({
@@ -37,6 +37,7 @@ export async function getCategoryByCategoryId (request: Request, response : Resp
 
 export async function postCategory (request: Request, response : Response) : Promise<Response<Status>> {
     try {
+        console.log("got here")
 
 
         const {categoryName} = request.body

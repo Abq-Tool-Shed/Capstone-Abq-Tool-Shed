@@ -5,7 +5,7 @@ import {RowDataPacket} from "mysql2";
 
 
 
-export async function selectCategorybyCategoryId(categoryId: string|null) : Promise<Category|null> {
+export async function selectCategoryByCategoryId(categoryId: string|null) : Promise<Category|null> {
     try {
         const mySqlConnection = await connect();
         const mySqlQuery = "SELECT BIN_TO_UUID(categoryId) AS categoryId, BIN_TO_UUID (categoryToolId) AS categoryToolID, category = UUID_TO_BIN(:categoryId)"

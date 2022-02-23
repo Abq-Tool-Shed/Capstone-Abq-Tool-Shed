@@ -3,7 +3,6 @@ import morgan from 'morgan'
 // Routes
 import { indexRoute } from './apis/index.route'
 
-
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
 import {SignOutRoute} from "./apis/sign-out/sign-out.route";
 import SignupRoute from "./apis/sign-up/signup.route";

@@ -63,7 +63,7 @@ export async function postTool(request: Request, response: Response,): Promise<R
             toolId: null,
             toolProfileId,
             toolDescription,
-            toolDate: null
+            toolPostDate: null
         }
         const result = await insertTool(tool)
         const status: Status = {
