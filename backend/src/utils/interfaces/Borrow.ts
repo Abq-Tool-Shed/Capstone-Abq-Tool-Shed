@@ -1,6 +1,9 @@
 export interface Borrow {
-    borrowProfileId: string | null,
-    borrowToolId: string | null,
+    borrowId: string | null;
+    borrowProfileId: string;
+    borrowToolId: string;
+    borrowCompleted: string;
     borrowDateTime: Date | null;
+    borrowReturnedDateTime: Date | null;
 }
 
