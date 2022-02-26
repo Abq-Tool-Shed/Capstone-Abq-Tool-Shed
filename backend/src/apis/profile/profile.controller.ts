@@ -12,13 +12,16 @@ export async function putProfileController(request: Request, response: Response)
         // const profilePhoneNumber = request.body.profilePhoneNumber ?? null
         const profile = <Profile>request.session.profile
         const profileIdFromSession = <string>profile.profileId
+        console.log("before perform update marker")
 
         const preformUpdate = async (partialProfile: PartialProfile) : Promise<Response> => {
             const previousProfile: Profile = await selectWholeProfileByProfileId(<string>partialProfile.profileId) as Profile
             const newProfile: Profile = {...previousProfile, ...partialProfile}
             await updateProfile(newProfile)
             return response.json({status: 200, data: null, message: "Profile updated successfully"})
+            console.log("it went through perform update")
         }
+
 
         const updateFailed = (message: string) : Response => {
             return response.json({status: 400, data: null, message: "Update failed"})

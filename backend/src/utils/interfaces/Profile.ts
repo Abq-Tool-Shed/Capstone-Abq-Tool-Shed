@@ -4,7 +4,7 @@ export interface PartialProfile {
     profileHandle: string,
     profileImage: string | null,
     profileName: string,
-    profilePhoneNumber: string,
+    profilePhoneNumber: string | null
 }
 
 export interface Profile {
@@ -15,5 +15,5 @@ export interface Profile {
     profileHash: string,
     profileImage: string | null,
     profileName: string,
-    profilePhoneNumber: string,
+    profilePhoneNumber: string | null
 }
