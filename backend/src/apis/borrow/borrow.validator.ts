@@ -6,12 +6,12 @@ export const borrowValidator : Schema = {
             errorMessage: 'Please provide a valid borrowProfileId'
         }
     },
-    borrowDateTime: {
-        toDate: true
-    },
-    borrowReturnedDateTime: {
-        toDate: true
-    },
+    // borrowDateTime: {
+    //     toDate: true
+    // },
+    // borrowReturnedDateTime: {
+    //     toDate: true
+    // },
     borrowCompleted: {
         isLength: {
             errorMessage: 'A borrow completion statement cannot be longer than 20 characters.',

@@ -84,40 +84,40 @@ export async function putBorrowController(request: Request, response: Response):
             const previousBorrow: Borrow = await selectBorrowByBorrowId(<string>borrow.borrowId) as Borrow
             const newBorrow: Borrow = {...previousBorrow, ...borrow}
             await updateBorrow(newBorrow)
-            return response.json({status:200, data: null, message: "Borrow successful"})
+            return response.json({status: 200, data: null, message: "Borrow successful"})
         }
 
-        const updateFailed = (message: string) : Response => {
-            return response.json({status:400, data:null, message})
-        }
+        // const updateFailed = (message: string): Response => {
+        //     return response.json({status: 400, data: null, message: "Total failure"})
+        // }
 
-        return borrowId ===
-
-        const borrow: Borrow = {
-            borrowId: null,
+        return performUpdate({
+            borrowId,
             borrowProfileId,
             borrowToolId,
             borrowCompleted,
             borrowDateTime,
-            borrowReturnedDateTime,
-        }
-        //This is where you left off, maybe try to model this a bit more after the putProfileController from example capstone!!!
-        const select = await selectBorrowByBorrowId(borrow)
-        // @ts-ignore
-        if (select[0]){
-            const result = await updateBorrow(borrow)
-        }else {
-            const result = await insertBorrow(borrow)
-        }
+            borrowReturnedDateTime
+        })
 
-        const status: Status = {
-            status: 200,
-            message: 'Borrow successfully updated',
-            data: null
-        };
-        return response.json(status);
+    }
 
-    } catch(error: any) {
+        // const select = await selectBorrowByBorrowId(borrow)
+        // // @ts-ignore
+        // if (select[0]){
+        //     const result = await updateBorrow(borrow)
+        // }else {
+        //     const result = await insertBorrow(borrow)
+        // }
+        //
+        // const status: Status = {
+        //     status: 200,
+        //     message: 'Borrow successfully updated',
+        //     data: null
+        // };
+        // return response.json(status);
+
+     catch(error: any) {
         return(response.json({status: 500, data: null, message: error.message}))
     }
 }

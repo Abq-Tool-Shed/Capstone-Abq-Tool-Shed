@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
     getBorrowByBorrowProfileIdController,
     getBorrowByBorrowIdController,
-    toggleBorrowController
+    putBorrowController, postBorrow
 } from './borrow.controller';
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {borrowValidator} from "./borrow.validator";
@@ -11,19 +11,19 @@ import {check} from "express-validator";
 import {checkSchema} from "express-validator";
 import {insertBorrow} from "../../utils/borrow/insertBorrow";
 
-const BorrowRouter = Router();
+export const BorrowRoute: Router = Router();
 
-BorrowRouter.route('/:borrowId').get( asyncValidatorController([
+BorrowRoute.route('/:borrowId').get( asyncValidatorController([
     check('borrowId', 'please provide a valid borrowId').isUUID()
 ]), getBorrowByBorrowIdController)
 
-BorrowRouter.route('/:borrowProfileId').get(asyncValidatorController([
+BorrowRoute.route('/:borrowProfileId').get(asyncValidatorController([
     check('borrowProfileId', 'please provide a valid borrowId').isUUID()
 ]), getBorrowByBorrowProfileIdController)
 
 
-BorrowRouter.route('/')
-    .get( toggleBorrowController )
-    .post(isLoggedIn, asyncValidatorController(checkSchema(borrowValidator)), insertBorrow);
+BorrowRoute.route('/')
+    .get( putBorrowController )
+    .post(isLoggedIn, asyncValidatorController(checkSchema(borrowValidator)), postBorrow);
 // .
 // export default router;
