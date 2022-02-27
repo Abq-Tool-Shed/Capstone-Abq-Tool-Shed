@@ -11,12 +11,12 @@ import {selectBorrowByProfileId} from "../../utils/borrow/selectBorrowByProfileI
 
 export async function postBorrow(request: Request, response: Response) : Promise<Response<Status>> {
     try {
-        const {borrowId,borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = request.body
+        const { borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = request.body
         const profile : Profile = request.session.profile as Profile
         const borrowProfileId : string = <string>profile.profileId
 
         const borrow: Borrow = {
-            borrowId,
+            borrowId:null,
             borrowProfileId,
             borrowToolId,
             borrowCompleted,
