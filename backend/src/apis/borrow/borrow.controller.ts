@@ -72,13 +72,26 @@ export async function getBorrowByBorrowIdController(request : Request, response:
 }
 
 
-export async function updateBorrowController(request: Request, response: Response): Promise<Response<string>> {
+export async function putBorrowController(request: Request, response: Response): Promise<Response<string>> {
 
     try {
-
-        const {borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = request.body;
+        const {borrowId} = request.params
+        const {borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = request.body
         const profile = <Profile>request.session.profile
         const borrowProfileId = <string>profile.profileId
+
+        const performUpdate = async (borrow: Borrow): Promise<Response> => {
+            const previousBorrow: Borrow = await selectBorrowByBorrowId(<string>borrow.borrowId) as Borrow
+            const newBorrow: Borrow = {...previousBorrow, ...borrow}
+            await updateBorrow(newBorrow)
+            return response.json({status:200, data: null, message: "Borrow successful"})
+        }
+
+        const updateFailed = (message: string) : Response => {
+            return response.json({status:400, data:null, message})
+        }
+
+        return borrowId ===
 
         const borrow: Borrow = {
             borrowId: null,
@@ -88,7 +101,7 @@ export async function updateBorrowController(request: Request, response: Respons
             borrowDateTime,
             borrowReturnedDateTime,
         }
-
+        //This is where you left off, maybe try to model this a bit more after the putProfileController from example capstone!!!
         const select = await selectBorrowByBorrowId(borrow)
         // @ts-ignore
         if (select[0]){
