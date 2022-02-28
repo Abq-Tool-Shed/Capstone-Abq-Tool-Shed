@@ -2,6 +2,7 @@ import {Request, Response, NextFunction} from "express";
 import {Status} from "../../utils/interfaces/Status";
 import {Borrow} from '../../utils/interfaces/Borrow'
 import {Profile} from '../../utils/interfaces/Profile'
+import {Tool} from "../../utils/interfaces/Tool";
 import {Category} from '../../utils/interfaces/Category'
 import {updateBorrow} from "../../utils/borrow/updateBorrow";
 import {insertBorrow} from "../../utils/borrow/insertBorrow";
@@ -11,9 +12,10 @@ import {selectBorrowByProfileId} from "../../utils/borrow/selectBorrowByProfileI
 
 export async function postBorrow(request: Request, response: Response) : Promise<Response<Status>> {
     try {
-        const { borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = request.body
+        const {borrowToolId, borrowCompleted} = request.body
         const profile : Profile = request.session.profile as Profile
         const borrowProfileId : string = <string>profile.profileId
+
 
         const borrow: Borrow = {
             borrowId:null,
@@ -32,6 +34,7 @@ export async function postBorrow(request: Request, response: Response) : Promise
         return response.json(status)
 
     }catch (error) {
+        console.error(error)
         return response.json({
             status:500,
             message: "Error creating submitting borrow",
