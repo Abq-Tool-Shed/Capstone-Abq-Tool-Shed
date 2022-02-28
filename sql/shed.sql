@@ -1,3 +1,4 @@
+
 drop table if exists rating;
 drop table if exists borrow;
 drop table if exists tool;

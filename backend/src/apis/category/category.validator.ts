@@ -6,7 +6,7 @@ export const categoryValidator : Schema = {
             errorMessage: 'Please use a valid category Id'
         }
     },
-    category: {
+    categoryName: {
         isLength:{
             errorMessage: 'Category Does Not Exist',
             options: { max:140 }

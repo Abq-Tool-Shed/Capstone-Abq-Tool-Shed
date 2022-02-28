@@ -57,8 +57,8 @@ export class App {
         this.app.use('/apis/sign-out', SignOutRoute)
         this.app.use('/apis/sign-up', SignupRoute)
         this.app.use('/apis/profile', ProfileRoute)
-        this.app.use('apis/image-upload', ImageUploaderRouter)
-        this.app.use('apis/category', CategoryRouter)
+        this.app.use('/apis/image-upload', ImageUploaderRouter)
+        this.app.use('/apis/category', CategoryRouter)
 
     }
 
