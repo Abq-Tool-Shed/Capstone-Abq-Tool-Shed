@@ -31,7 +31,7 @@ export async function signUpProfileController(request: Request, response: Respon
         const mailgunMessage = {
             from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN}>`,
             to: profileEmail,
-            subject: 'One step closer to Sticky Head -- Account Activation',
+            subject: 'ABQ Tool Shed - Welcome - Account Activation',
             html: message
         }
 

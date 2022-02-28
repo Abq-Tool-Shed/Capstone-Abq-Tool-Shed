@@ -2,7 +2,7 @@ import express, { Application } from 'express'
 import morgan from 'morgan'
 // Routes
 import { indexRoute } from './apis/index.route'
-
+import {BorrowRoute} from "./apis/borrow/borrow.route";
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
 import {SignOutRoute} from "./apis/sign-out/sign-out.route";
 import SignupRoute from "./apis/sign-up/signup.route";
@@ -66,6 +66,7 @@ export class App {
         this.app.use('/apis/profile', ProfileRoute)
         this.app.use('/apis/image-upload', ImageUploaderRouter)
         this.app.use('/apis/category', CategoryRouter)
+        this.app.use('/apis/borrow', BorrowRoute)
 
     }
 
