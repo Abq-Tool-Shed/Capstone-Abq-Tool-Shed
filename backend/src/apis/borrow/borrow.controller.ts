@@ -1,5 +1,6 @@
 import {Request, Response, NextFunction} from "express";
 import {Status} from "../../utils/interfaces/Status";
+
 import {Borrow} from '../../utils/interfaces/Borrow'
 import {Profile} from '../../utils/interfaces/Profile'
 import {Tool} from "../../utils/interfaces/Tool";
@@ -46,7 +47,9 @@ export async function postBorrow(request: Request, response: Response) : Promise
 
 
 
-export async function getBorrowByBorrowProfileIdController(request: Request, response: Response,): Promise<Response<Profile>>{
+
+
+export async function getBorrowByBorrowProfileIdController(request: Request, response: Response): Promise<Response<Profile>>{
     try {
         const {borrowProfileId} = request.params
         const data = await selectBorrowByProfileId(borrowProfileId)
@@ -78,6 +81,7 @@ export async function getBorrowByBorrowIdController(request : Request, response:
 export async function putBorrowController(request: Request, response: Response): Promise<Response<string>> {
 
     try {
+
         const {borrowId} = request.params
         const {borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = request.body
         const profile = <Profile>request.session.profile
@@ -103,6 +107,7 @@ export async function putBorrowController(request: Request, response: Response):
             borrowReturnedDateTime
         })
 
+
     }
 
         // const select = await selectBorrowByBorrowId(borrow)
@@ -122,5 +127,6 @@ export async function putBorrowController(request: Request, response: Response):
 
      catch(error: any) {
         return(response.json({status: 500, data: null, message: error.message}))
+
     }
 }
