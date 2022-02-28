@@ -2,7 +2,7 @@ import {Borrow} from "../interfaces/Borrow";
 import {connect} from '../database.utils';
 import {RowDataPacket} from "mysql2";
 
-export async function selectBorrowByBorrowId(borrowId: string) : Promise<Borrow|null> {
+export async function selectBorrowByBorrowId(borrowId: any) : Promise<Borrow|null> {
     try {
         const mySqlConnection = await connect();
         const mySqlQuery = " SELECT BIN_TO_UUID(borrowId) AS borrowId, BIN_TO_UUID (borrowProfileId) AS borrowProfileId, borrowCompleted, borrowDateTime from tool where toolId = UUID_TO_BIN(:toolId)"

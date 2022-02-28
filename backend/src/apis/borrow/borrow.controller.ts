@@ -1,19 +1,16 @@
 import {Request, Response, NextFunction} from "express";
 import {Status} from "../../utils/interfaces/Status";
-import {Tool} from '../../utils/interfaces/Tool'
 import {Profile} from '../../utils/interfaces/Profile'
-import {Category} from '../../utils/interfaces/Category'
 import {deleteBorrow} from "../../utils/borrow/deleteBorrow";
 import {insertBorrow} from "../../utils/borrow/insertBorrow";
 import {selectBorrowByBorrowId} from "../../utils/borrow/selectBorrowByBorrowId";
 import {selectBorrowByProfileId} from "../../utils/borrow/selectBorrowByProfileId";
-import {App} from '../../App'
 import {Borrow} from "../../utils/interfaces/Borrow";
 
 
 
 
-export async function getBorrowByBorrowProfileIdController(request: Request, response: Response,): Promise<Response<Profile>>{
+export async function getBorrowByBorrowProfileIdController(request: Request, response: Response): Promise<Response<Profile>>{
     try {
         const {borrowProfileId} = request.params
         const data = await selectBorrowByProfileId(borrowProfileId)
@@ -74,20 +71,23 @@ export async function toggleBorrowController(request: Request, response: Respons
 
     try {
 
-        const {borrowToolId} = request.body;
+        const {borrowToolId, borrowCompleted} = request.body;
         const profile = <Profile>request.session.profile
         const borrowProfileId = <string>profile.profileId
 
         const borrow: Borrow = {
+            borrowId: null,
             borrowProfileId,
             borrowToolId,
+            borrowCompleted,
             borrowDateTime: null,
+            borrowReturnedDateTime: null
         }
         const select = await selectBorrowByBorrowId(borrow)
-        // @ts-ignore
-        if (select[0]){
+
+        if (select) {
             const result = await deleteBorrow(borrow)
-        }else {
+        } else {
             const result = await insertBorrow(borrow)
         }
 
@@ -98,7 +98,11 @@ export async function toggleBorrowController(request: Request, response: Respons
         };
         return response.json(status);
 
-    } catch(error: any) {
-        return(response.json({status: 500, data: null, message: error.message}))
+    } catch (error) {
+        return response.json({
+            status: 500,
+            data: null,
+            message: "error creating borrow (borrow.controller.ts 105)"
+        });
     }
 }
