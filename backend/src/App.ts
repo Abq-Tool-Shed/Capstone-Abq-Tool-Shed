@@ -10,6 +10,10 @@ import {ProfileRoute} from "./apis/profile/profile.route";
 const session = require('express-session')
 const MemoryStore = require('memorystore')(session)
 
+import helmet from 'helmet'
+
+
+
 import {ImageUploaderRouter} from './apis/image-upload/image-uploader.router'
 import {Toolrouter} from "./apis/tool/tool.route";
 import {CategoryRouter} from "./apis/category/category.route";
@@ -42,9 +46,12 @@ export class App {
             resave: true,
             maxAge: '3h'
         }
+        // const helmet = require('helmet')
         this.app.use(morgan('dev'))
         this.app.use(express.json())
         this.app.use(session(sessionConfig))
+        this.app.use(helmet());
+
     }
 
     // private method for setting up routes in their basic sense (ie. any route that performs an action on profiles starts with /profiles)
