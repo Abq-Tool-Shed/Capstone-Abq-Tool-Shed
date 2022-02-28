@@ -11,14 +11,14 @@ export const profileValidator : Schema = {
         trim: true,
         isLength: {
             errorMessage: 'profileHandle must be between seven and thirty two characters',
-            options: {min:7, max:32}
+            options: {min:1, max:32}
         }
     },
 
     profileName: {
         escape: true,
         trim: true,
-        isEmpty: true, //we wanted to require a name, so I added this validation (mz)
+        //isEmpty: false, //we wanted to require a name, so I added this validation (mz)
         isLength: {
             errorMessage: 'profileName must be between 1 and thirty two characters ',
             options: {min:1, max:32}

@@ -6,17 +6,18 @@ export const borrowValidator : Schema = {
             errorMessage: 'Please provide a valid borrowProfileId'
         }
     },
-    borrowDateTime: {
-        toDate: true
-    },
-    borrowReturnedDateTime: {
-        toDate: true
-    },
+
     borrowCompleted: {
-        isLength: {
-            errorMessage: 'A borrow completion statement cannot be longer than 20 characters.',
-            options: {max: 20}
-        },
+            // Custom validators
+            custom: {
+                options: (value : string) => {
+                    const options: Array<string> = ["requested", "approved", "completed"]
+                    if (options.includes(value) !== true) {
+                        throw new Error("Please provide a valid option for borrow is completed.")
+                    }
+                    return true
+                }
+            },
         trim: true,
         escape: true
     }
