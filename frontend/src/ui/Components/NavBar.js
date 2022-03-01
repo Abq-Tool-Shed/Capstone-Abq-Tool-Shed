@@ -3,7 +3,7 @@ import {Navbar, Container, Nav, NavDropdown, Button, } from "react-bootstrap";
 import {Form} from "formik";
 
 
-export function PreNavBar () {
+export function NavBar () {
     return(
         <>
             <Navbar bg="light" expand="lg">
