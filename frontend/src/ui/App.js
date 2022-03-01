@@ -5,6 +5,7 @@ import {PostHome } from "./Pages/PostHome";
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
 import {PreNavBar} from "./Components/PreNavBar";
+import {Post} from "./Pages/Post";
 
 export const App = () => (
     <>
@@ -13,7 +14,8 @@ export const App = () => (
             <PreNavBar></PreNavBar>
             <Switch>
                 <Route exact path='/' component={PreHome} />
-                <Route exact path='/' component={PostHome}/>
+                <Route exact path='/PostHome' component={PostHome}/>
+                <Route exact path='/Post' component={Post} />
                 <Route component={FourOhFour} />
             </Switch>
         </BrowserRouter>
