@@ -15,7 +15,7 @@ export const App = () => (
             <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route exact path='/profile' component={Profile}/>
-                <Route exact path='/Post' component={Post} />
+                <Route exact path='/post' component={Post} />
                 <Route component={FourOhFour} />
             </Switch>
         </BrowserRouter>
