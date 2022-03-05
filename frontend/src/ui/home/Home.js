@@ -9,7 +9,7 @@ import "../Components/Styles/Home.style.css"
 import homeStyles from "./home.module.css"
 import mike1 from "../Components/Images/mzbrozek1.jpg"
 import jon1 from "../Components/Images/jverduzco1.jpg"
-
+import austin1 from "../Components/Images/austin-pro.jpg"
 
 
 export function Home() {
@@ -117,8 +117,8 @@ export function Home() {
                     <Row>
                         <h2>About our team</h2>
 
-                        <Col md={"4"}>
-                            <Image className={"d-block mx-auto"} fluid rounded src={kitten1} alt={"kitten"}/>
+                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
+                            <Image className={"d-block mx-auto"} fluid rounded src={austin1} alt={"Austin Dewey"}/>
                             <div className={"bg-secondary rounded mt-5"}>
                                 <p>What a cute kitten</p>
                             </div>
