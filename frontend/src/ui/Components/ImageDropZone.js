@@ -22,8 +22,8 @@ export function ImageDropZone({formikProps}) {
 
 
     return (
-        <div className="form-group" {...getRootProps()}>
-            <div style={{borderRadius: 250}} className="input-group input-group-lg  border border-5 w-25 " >
+        <div style={{border: "solid black 15",borderStyle: "dotted", height: 150, width: 150, padding: 30 }} className="form-group" {...getRootProps()}>
+            <div  className="input-group input-group-lg " >
                 <input className="form-control-file"
                     accept="image/*"
                    // onChange={formikProps.handleChange}
@@ -32,8 +32,8 @@ export function ImageDropZone({formikProps}) {
                 {
 
                     isDragActive ?
-                        <p>Place Image here</p> :
-                        <p> Drag an Image Here  <br></br> Click To Add An Image </p>
+                        <p>+</p> :
+                        <p>Upload An Image Here <br></br> +</p>
                 }
             </div>
         </div>

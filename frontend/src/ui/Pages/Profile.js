@@ -12,47 +12,53 @@ export function Profile() {
         <>
 
         <Container>
-            <div>
-                <h1 className="text-center">Austins Tool Shed 🛠</h1>
-            </div>
-            <div className="container text-center text-light border border-2 border-secondary bg-secondary">
-                <div className="row">
-                    <p className="col fs-2"> Tools Borrowed:5</p>
-                    <p className="col fs-2">Tools Lent:5</p>
-                    <p className="col fs-2">User Rating:3/5</p>
-                </div>
-            </div>
-            <div className="w-25 mt-2">
-                <h2 className="text-center">BIO | TELL US ABOUT YOU!</h2>
-                <Form className="border border-secondary border-3">
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Label>Enter Your Bio Info Here</Form.Label>
-                        <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
-                    <button>Save</button>
-                </Form>
-            </div>
-
-            <br/>
-
-            <div className="mt-5 text-center">
+            <div className="text-center"><h1>Austins Tool Shed 🛠</h1></div>
+            <div className="row">
+            <div className=" col">
                 <ImageDropZone/>
             </div>
+            <div className="col">
+                <h2 className="text-center">Austins BIO</h2>
+                <Form style={{border:"transparent 50", height: 150, width: 500}}>
+                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                        <Form.Control as="textarea" rows={3} />
+                    </Form.Group>
+                </Form>
+            </div>
+                <div style={{border: "transparent 75", height: 150, width: 250}} className="col">
+                    <h2>User Status</h2>
+                    <p>
+                        Tools Borrowed:5 |
+                        Tools Lent:5 |
+                        User Rating:3/5
+                    </p>
+                </div>
+            </div>
+
         </Container>
-        <Container>
-            <Row>
-                <Col>1 of 2</Col>
-                <Col>2 of 2</Col>
-            </Row>
-            <Row>
-                <Col>1 of 3</Col>
-                <Col>2 of 3</Col>
-                <Col>3 of 3</Col>
-            </Row>
-        </Container>
 
+            <Container>
+            <div className='row mt-5'>
+                <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center">
+                    <p>Lets Get A Tool Posted</p>
+                </div>
+                <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center">
+                    <p>This is a place holder for post component</p>
+                </div>
+            </div>
 
-
+                <div className="row">
+                    <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center mt-5">
+                        <p>This is a place holder for post component</p>
+                    </div>
+                    <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center mt-5">
+                        <p>This is a place holder for post component</p>
+                    </div>
+                    <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center mt-5">
+                        <p>This is a place holder for post component</p>
+                    </div>
+                </div>
+            </Container>
 
 
         </>
