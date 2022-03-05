@@ -1,0 +1,40 @@
+/*.body {*/
+/*    background-color: #55efc4;*/
+/*    background-image: linear-gradient(315deg, #000000 0%,  #0097A6 80%);*/
+/*}*/
+
+.header {
+    padding: 50px;
+    color: white;
+    background-Image: url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_494605768_2000133320009280151_316966.jpg);
+    filter: opacity(100%);
+
+}
+
+.mission {
+    position: relative;
+    width: 100%;
+    background-color: #55efc4;
+    background-image: linear-gradient(315deg, #000000 0%,  #0097A6 80%);
+}
+
+.mission Image {
+    filter: blur(25%);
+
+}
+
+.mask {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease;
+    opacity:0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+

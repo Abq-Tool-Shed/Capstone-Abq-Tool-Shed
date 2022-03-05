@@ -1,11 +1,11 @@
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from 'react-router'
-import { Home } from './Pages/Home'
-import {Profile} from "./Pages/Profile"
-import { FourOhFour } from './Components/FourOhFour'
+import { Home } from './home/Home'
+import {Profile} from "./Profile"
+import { FourOhFour } from './FourOhFour'
 import React from 'react'
 import {NavBar} from "./Components/NavBar";
-import {Post} from "./Pages/Post";
+import {Post} from "./Post";
 
 export const App = () => (
     <>
