@@ -1,7 +1,7 @@
 import React from "react"
 import {Col, Container, Row} from "react-bootstrap";
-import "../styles/Post.css"
-import {postFAQ} from "../Components/PostFAQ";
+import "./styles/Post.css"
+import {postFAQ} from "./Components/PostFAQ";
 
 export function Post() {
 

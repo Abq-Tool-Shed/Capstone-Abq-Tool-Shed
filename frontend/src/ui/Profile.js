@@ -1,17 +1,14 @@
 import {Container,  Form, Row, Col} from "react-bootstrap";
 import React from 'react'
-import  {ImageDropZone} from "../Components/ImageDropZone";
-
-
-
-
+import  {ImageDropZone} from "./Components/ImageDropZone";
+import {ProfileTool} from "./Components/ProfileTool";
 
 
 export function Profile() {
     return (
         <>
 
-        <Container>
+        <Container >
             <div className="text-center"><h1>Austins Tool Shed 🛠</h1></div>
             <div className="row">
             <div className=" col">
@@ -39,23 +36,24 @@ export function Profile() {
 
             <Container>
             <div className='row mt-5'>
-                <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center">
-                    <p>Lets Get A Tool Posted</p>
+                <div style={{margin: "auto",width: 250}} className="col-2 bg-secondary text-light border border-secondary text-center">
+                    <p>Welcome to your content section! <br/> On the right you will find a place to start your posting journey. </p>
                 </div>
-                <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center">
-                    <p>This is a place holder for post component</p>
+                <div style={{margin: "auto",width: 250, height: 150, padding:25}} className="col-2 bg-secondary  border border-secondary text-center">
+                    <ProfileTool/>
                 </div>
             </div>
-
-                <div className="row">
-                    <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center mt-5">
-                        <p>This is a place holder for post component</p>
+                    <br>
+                    </br>
+                <div className="row mt-5">
+                    <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
+                        <p>This is a place holder</p>
                     </div>
-                    <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center mt-5">
-                        <p>This is a place holder for post component</p>
+                    <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
+                        <p>This is a place holder</p>
                     </div>
-                    <div style={{margin: "auto", padding: 150, height: 150, width: 150}} className="col border border-secondary text-center mt-5">
-                        <p>This is a place holder for post component</p>
+                    <div  style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
+                        <p>This is a place holder</p>
                     </div>
                 </div>
             </Container>
