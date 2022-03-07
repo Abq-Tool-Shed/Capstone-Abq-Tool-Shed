@@ -1,9 +1,10 @@
 import React from "react"
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import "../styles/Post.css"
 import {postFAQ} from "../Components/PostFAQ";
-import toolsIMG from "../styles/tech-tools1.jpg"
+import toolsIMG from "../Components/Images/tech-tools1.jpg"
 import {Image} from "@material-ui/icons";
+import {ImageDropZone} from "../Components/ImageDropZone";
 
 
 export function Post() {
@@ -14,83 +15,57 @@ export function Post() {
 
     return (
 
-    <>
-        <div>
+        <>
+            {/*Tool Post Header*/}
             <container>
-                <div className={"col-sm-9 mx-auto"} >
-                <Image className={"img-fluid "} src={toolsIMG} alt={"tools image background"}>
-                    <Row>
-                        <Col className={"text-center"} md={9}>
-                            <div className={" border border border-3 border-info text-dark test"}>
-                            <h3>Tool Posting</h3>
-                            <p>The instructions below will assist you with your tool listing!</p>
-                            </div>
-                        </Col>
-                        <Col className={"al"} md={3}>
-                            <button className={"rounded test"}>List a tool</button>
-                        </Col>
-                    </Row>
+                    <header className={"img-fluid"} style={{padding: 50, backgroundImage: 'url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_494605768_2000133320009280151_316966.jpg)'}}>
+                        <div className={" border border border-3 border-danger text-center "}>
+                            <h3 className={"white"}>Tool Posting</h3>
+                            <p className={"white"}>Post your tools here!</p>
+                        </div>
+                    </header>
+            </container>
 
-                </Image>
-                {/*<div>*/}
-                {/*    {*/}
-                {/*        isLoggedIn && <pretendComponent/>*/}
-                {/*    }*/}
-                {/*</div>*/}
+            {/*Post Form 1*/}
+            <container className={"bg-secondary"}>
+                <div  className={"col-sm-6 centered mx-auto "}>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="formTitle">
+                            <Form.Label>Post Title:</Form.Label>
+                            <Form.Control type="email" placeholder="Title" />
+                            {/*<Form.Text className="text-muted">*/}
+                            {/*    We'll never share your email with anyone else.*/}
+                            {/*</Form.Text>*/}
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formType">
+                            <Form.Label>Tool Type:</Form.Label>
+                            <Form.Control type="email" placeholder="Type" />
+                        </Form.Group>
+
+                        <Form.Group className="mb-3" controlId="formDescription">
+                            <Form.Label>Description:</Form.Label>
+                            <Form.Control type="email" placeholder="Lending Terms" />
+                        </Form.Group>
+
+                        <div className="m-3 text-center">
+                            <ImageDropZone/>
+                        </div>
+
+                        <Form.Group className="mb-3" controlId="formAddress">
+                            <Form.Label>Cross Streets / Address :</Form.Label>
+                            <Form.Control type="email" placeholder="MAP GOES HERE" />
+                        </Form.Group>
+
+                        {/*/!*<Form.Group className="mb-3" controlId="formBasicCheckbox">*!/*/}
+                        {/*/!*    <Form.Check type="checkbox" label="Check me out" />*!/*/}
+                        {/*</Form.Group>*/}
+                        <Button variant="primary" type="submit">
+                            Post Tool
+                        </Button>
+                    </Form>
                 </div>
             </container>
-        </div>
-        <div>
-            <Row>
-                <Col className={"m-5 text-center bg-light"}>
-                    <div className={" rounded m-5"}>
-                        <h3 className={"rounded mb-5"}>First,</h3>
-                        <p>Click <strong>List a tool</strong> to go to our tool posting page.</p>
-                    </div>
-                </Col>
-                <Col className={"m-5 text-center bg-light"}>
-                    <div className={"rounded m-5"}>
-                        <h3 className={" rounded mb-5"}>Then,</h3>
-                        <p>Fill out the form with all necessary information.</p>
-                    </div>
-                </Col>
-                <Col className={"m-5 text-center bg-light"}>
-                    <div className={"rounded m-5"}>
-                        <h3 className={"rounded mb-5"}>Finally,</h3>
-                        <p>Post your tool!</p>
-                    </div>
-                </Col>
-            </Row>
-        </div>
-        <div>
-            <Row>
-                <Col className={"m-3 text-center bg-warning"}>
-                    <div className={" rounded m-5"}>
-                        <h3 className={"rounded mb-5"}>Be clear about your terms.</h3>
-                        <p>Deadlines and boundaries are vital for a smooth tool lending process.</p>
-                    </div>
-                </Col>
-                <Col className={"m-3 text-center bg-primary"}>
-                    <div className={"rounded m-5"}>
-                        <h3 className={" rounded mb-5"}>Take high quality photos.</h3>
-                        <p>A clear picture of your tool is a must.</p>
-                    </div>
-                </Col>
-                <Col className={"m-3 text-center bg-success"}>
-                    <div className={"rounded m-5"}>
-                        <h3 className={"rounded mb-5"}>Meet in a safe environment.</h3>
-                        <p>Meet people in safe public spaces and take proper precautions.</p>
-                    </div>
-                </Col>
-            </Row>
-        </div>
-        <div>
-            <strong><h3 className={"text-center m-3 p-3"}>FAQ</h3></strong>
-            {postFAQ()}
-            {postFAQ()}
-            {postFAQ()}
-        </div>
-
-    </>
+        </>
     )
 }
