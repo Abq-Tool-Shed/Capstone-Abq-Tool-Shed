@@ -1,3 +1,14 @@
-.test {
+.opaque {
     background-color: #ABCDEF25
+}
+
+.white {
+    color: whitesmoke;
+}
+
+.centered {
+    /*height: 100vh;*/
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
 }
