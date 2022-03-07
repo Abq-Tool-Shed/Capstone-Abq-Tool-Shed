@@ -2,6 +2,9 @@ import React from "react"
 import {Col, Container, Row} from "react-bootstrap";
 import "../styles/Post.css"
 import {postFAQ} from "../Components/PostFAQ";
+import toolsIMG from "../styles/tech-tools1.jpg"
+import {Image} from "@material-ui/icons";
+
 
 export function Post() {
 
@@ -15,7 +18,7 @@ export function Post() {
         <div>
             <container>
                 <div className={"col-sm-9 mx-auto"} >
-                <image>
+                <Image className={"img-fluid "} src={toolsIMG} alt={"tools image background"}>
                     <Row>
                         <Col className={"text-center"} md={9}>
                             <div className={" border border border-3 border-info text-dark test"}>
@@ -28,7 +31,7 @@ export function Post() {
                         </Col>
                     </Row>
 
-                </image>
+                </Image>
                 {/*<div>*/}
                 {/*    {*/}
                 {/*        isLoggedIn && <pretendComponent/>*/}
@@ -41,42 +44,42 @@ export function Post() {
             <Row>
                 <Col className={"m-5 text-center bg-light"}>
                     <div className={" rounded m-5"}>
-                        <h3 className={"rounded mb-5"}>1</h3>
-                        <p>Instruction 1</p>
+                        <h3 className={"rounded mb-5"}>First,</h3>
+                        <p>Click <strong>List a tool</strong> to go to our tool posting page.</p>
                     </div>
                 </Col>
                 <Col className={"m-5 text-center bg-light"}>
                     <div className={"rounded m-5"}>
-                        <h3 className={" rounded mb-5"}>2</h3>
-                        <p>Instruction 2</p>
+                        <h3 className={" rounded mb-5"}>Then,</h3>
+                        <p>Fill out the form with all necessary information.</p>
                     </div>
                 </Col>
                 <Col className={"m-5 text-center bg-light"}>
                     <div className={"rounded m-5"}>
-                        <h3 className={"rounded mb-5"}>3</h3>
-                        <p>Instruction 3</p>
+                        <h3 className={"rounded mb-5"}>Finally,</h3>
+                        <p>Post your tool!</p>
                     </div>
                 </Col>
             </Row>
         </div>
         <div>
             <Row>
-                <Col className={"m-5 text-center bg-warning"}>
+                <Col className={"m-3 text-center bg-warning"}>
                     <div className={" rounded m-5"}>
                         <h3 className={"rounded mb-5"}>Be clear about your terms.</h3>
-                        <p>Instruction 1</p>
+                        <p>Deadlines and boundaries are vital for a smooth tool lending process.</p>
                     </div>
                 </Col>
-                <Col className={"m-5 text-center bg-primary"}>
+                <Col className={"m-3 text-center bg-primary"}>
                     <div className={"rounded m-5"}>
-                        <h3 className={" rounded mb-5"}>Take high quality photos</h3>
-                        <p>Instruction 2</p>
+                        <h3 className={" rounded mb-5"}>Take high quality photos.</h3>
+                        <p>A clear picture of your tool is a must.</p>
                     </div>
                 </Col>
-                <Col className={"m-5 text-center bg-success"}>
+                <Col className={"m-3 text-center bg-success"}>
                     <div className={"rounded m-5"}>
-                        <h3 className={"rounded mb-5"}>Meet Safety</h3>
-                        <p>Instruction 3</p>
+                        <h3 className={"rounded mb-5"}>Meet in a safe environment.</h3>
+                        <p>Meet people in safe public spaces and take proper precautions.</p>
                     </div>
                 </Col>
             </Row>
