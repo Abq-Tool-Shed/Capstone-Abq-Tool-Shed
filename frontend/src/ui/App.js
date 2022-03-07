@@ -1,12 +1,13 @@
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from 'react-router'
-import { Home } from './Home'
+import { Home } from './home/Home'
 import {Profile} from "./Profile"
-import { FourOhFour } from './Components/FourOhFour'
+import { FourOhFour } from './FourOhFour'
 import React from 'react'
 import {NavBar} from "./Components/NavBar";
-import {Post} from "./Post";
-import {Settings} from "./Settings";
+import {PrePost} from "./PrePost";
+import {Post} from './Post';
+
 
 export const App = () => (
     <>
@@ -16,6 +17,7 @@ export const App = () => (
             <Switch>
                 <Route exact path='/' component={Home}/>
                 <Route exact path='/profile' component={Profile}/>
+                <Route exact path='/prepost' component={PrePost} />
                 <Route exact path='/post' component={Post} />
                 <Route exact path='/settings' component={Settings}/>
                 <Route component={FourOhFour} />

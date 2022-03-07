@@ -4,9 +4,17 @@ import  {ImageDropZone} from "./Components/ImageDropZone";
 import {ProfileTool} from "./Components/ProfileTool";
 
 
+
+
+
+
+
+
+
 export function Profile() {
     return (
         <>
+
 
         <Container >
             <div className="text-center"><h1>Austins Tool Shed 🛠</h1></div>
@@ -60,6 +68,7 @@ export function Profile() {
 
 
         </>
+
 
 
     )
