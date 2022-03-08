@@ -1,7 +1,7 @@
 import React from "react"
 import {Col, Container, Row, Button} from "react-bootstrap";
 import "../styles/Post.css"
-import {postFAQ} from "../Components/PostFAQ";
+import {postFAQ} from "./Components/PostFAQ";
 import toolsIMG from "../Components/Images/tech-tools1.jpg"
 import {Image} from "@material-ui/icons";
 
