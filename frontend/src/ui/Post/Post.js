@@ -1,15 +1,11 @@
 import React from "react"
-import "./styles/Post.css"
+import "../styles/Post.css"
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import "../styles/Post.css"
 import {postFAQ} from "../Components/PostFAQ";
 import toolsIMG from "../Components/Images/tech-tools1.jpg"
 import {Image} from "@material-ui/icons";
 import {ImageDropZone} from "../Components/ImageDropZone";
-
-
-
-
 
 
 
@@ -21,10 +17,6 @@ export function Post() {
     const isLoggedIn = true
 
     return (
-
-
-
-
         <>
             {/*Tool Post Header*/}
             <container>
