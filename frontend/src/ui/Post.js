@@ -8,7 +8,6 @@ import {Image} from "@material-ui/icons";
 import {ImageDropZone} from "../Components/ImageDropZone";
 
 
-export function PrePost() {
 
 
 
