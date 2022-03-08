@@ -12,7 +12,7 @@ import jon1 from "../Components/Images/jverduzco1.jpg"
 import austin1 from "../Components/Images/austin-pro.jpg"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
-import {Tool} from "../Components/Tool";
+import {Tool} from "../Components/Post/Tool";
 
 
 export function Home() {

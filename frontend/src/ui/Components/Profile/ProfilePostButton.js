@@ -1,9 +1,9 @@
 import React from 'react'
-import {Post} from '../Post'
+import {Post} from '../../Post/Post'
 import {Button} from "react-bootstrap";
 import {Link} from "react-router-dom";
 
-export const ProfileTool = () =>  {
+export const ProfilePostButton = () =>  {
     return (
         <>
         <div>

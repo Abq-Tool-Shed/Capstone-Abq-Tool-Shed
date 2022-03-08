@@ -1,7 +1,7 @@
 import {Container,  Form, Row, Col} from "react-bootstrap";
 import React from 'react'
-import  {ImageDropZone} from "./Components/ImageDropZone";
-import {ProfileTool} from "./Components/ProfileTool";
+import  {ImageDropZone} from "../Components/ImageDropZone";
+import {ProfilePostButton} from "../Components/Profile/ProfilePostButton";
 
 
 
@@ -47,7 +47,7 @@ export function Profile() {
                     <p>Welcome to your content section! <br/> On the right you will find a place to start your posting journey. </p>
                 </div>
                 <div style={{margin: "auto",width: 250, height: 150, padding:25}} className="col-2 bg-secondary  border border-secondary text-center">
-                    <ProfileTool/>
+                    <ProfilePostButton/>
                 </div>
             </div>
                     <br>
