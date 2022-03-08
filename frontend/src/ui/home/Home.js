@@ -1,18 +1,34 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {NavBar} from '../Components/NavBar'
 import {Container, Row, Col, Image} from "react-bootstrap";
 import {HowItWorks} from "../Components/HowItWorks";
 import toolSplash from "../Components/Images/lachlan-donald-unsplash.jpg"
 import kitten1 from "../Components/Images/img.png"
 import workingTogether from "../Components/Images/annie-gray-unsplash.jpg"
-import "../Components/Styles/Home.style.css"
+// import "../Components/Styles/Home.style.css"
 import homeStyles from "./home.module.css"
 import mike1 from "../Components/Images/mzbrozek1.jpg"
 import jon1 from "../Components/Images/jverduzco1.jpg"
 import austin1 from "../Components/Images/austin-pro.jpg"
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllToolsAndBorrows} from "../../store/tools";
+import {Tool} from "../Components/Tool";
 
 
 export function Home() {
+
+    const tools = useSelector(state => state.tools ? state.tools : []);
+
+    const dispatch = useDispatch();
+
+    function sideEffects() {
+        dispatch(fetchAllToolsAndBorrows())
+    }
+
+    useEffect(sideEffects, [dispatch]);
+    console.log(tools)
+
+
     return (
         <>
             <div className={homeStyles.header}>
@@ -55,21 +71,15 @@ export function Home() {
 
                 <Container>
                     <h1>Recent tools available for lend</h1>
-                    <Col className={"border border-2 rounded border-secondary bg-light py-2"} md={"3"}>
-                        <Row>
-                            <Col className={'text-start pe-5'} md={8}>
-                                <h5>Available</h5>
-                            </Col>
-                            <Col className={'text-center'} md={4}>
-                                <h5>Tool location</h5>
-                            </Col>
-                        </Row>
-                        <Image className={"p-3"} fluid  rounded src={kitten1} alt={"kitten"}/>
-                        <div className={'text-center'}>
-                            <p>toolName</p>
-                            <p>time since listing (eg. 5 days ago)</p>
-                        </div>
-                    </Col>
+
+                    <Row>
+                        {tools.map((tool, index) => <Tool key={index} tool={tool}/>)}
+                    </Row>
+
+
+
+
+
 
 
                 </Container> {/* Featured tool listings */}
@@ -128,7 +138,7 @@ export function Home() {
                             </div>
                         </Col>
                         <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
-                            <Image className={"d-block mx-auto"} fluid rounded src={jon1} alt={"John Verduzco"}/>
+                            <Image className={"d-block mx-auto"} fluid rounded src={jon1} alt={"Jon Verduzco"}/>
                             <div className={"bg-secondary rounded mt-5"}>
                                 <p>Aspiring software developer looking to build useful and inspiring things. Based in Albuquerque and interested in music, design and new technologies among other things.</p>
                             </div>

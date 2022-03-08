@@ -1,6 +1,7 @@
 import {Container,  Form, Row, Col} from "react-bootstrap";
 import React from 'react'
-import  {ImageDropZone} from "../Components/ImageDropZone";
+// import  {Imageup} from "../Components/ImageDropZone";
+import {ImageDropZone} from "./Components/ImageDropZone";
 
 
 

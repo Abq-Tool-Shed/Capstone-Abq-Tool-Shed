@@ -5,8 +5,8 @@ import {Profile} from "./Profile"
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
 import {NavBar} from "./Components/NavBar";
-import {PrePost} from "./Pages/PrePost";
-import {Post} from './Pages/Post';
+import {PrePost} from "./PrePost";
+import {Post} from './Post';
 import {Provider} from "react-redux";
 
 
