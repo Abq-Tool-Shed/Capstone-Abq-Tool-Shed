@@ -5,12 +5,13 @@ import "../styles/Post.css"
 import {postFAQ} from "../Components/PostFAQ";
 import toolsIMG from "../Components/Images/tech-tools1.jpg"
 import {Image} from "@material-ui/icons";
-
+import {ImageDropZone} from "../Components/ImageDropZone";
 
 
 export function PrePost() {
 
-import {ImageDropZone} from "../Components/ImageDropZone";
+
+
 
 
 export function Post() {

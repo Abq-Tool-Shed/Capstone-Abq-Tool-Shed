@@ -23,6 +23,7 @@ export const uploadToCloudinary = (request : Request) : Promise<string> => {
                 }
             }
         );
+        // @ts-ignore
         streamifier.createReadStream(request.file.buffer).pipe(cld_upload_stream);
     });
 }
