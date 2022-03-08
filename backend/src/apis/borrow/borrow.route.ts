@@ -2,7 +2,7 @@ import { Router } from "express";
 import {
     getBorrowByBorrowProfileIdController,
     getBorrowByBorrowIdController,
-    putBorrowController, postBorrow
+    putBorrowController, postBorrow, getBorrowByBorrowToolIdController
 } from './borrow.controller';
 import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
 import {borrowValidator} from "./borrow.validator";
@@ -25,5 +25,11 @@ BorrowRoute.route('/:borrowProfileId').get(asyncValidatorController([
 BorrowRoute.route('/')
     .get( putBorrowController )
     .post(isLoggedIn, asyncValidatorController(checkSchema(borrowValidator)), postBorrow);
+
+BorrowRoute.route('/:borrowToolId').get(asyncValidatorController([
+    check('borrowToolId', 'please provide a valid borrowToolId').isUUID()
+]), getBorrowByBorrowToolIdController)
+
+
 // .
 // export default router;

@@ -9,6 +9,7 @@ import {updateBorrow} from "../../utils/borrow/updateBorrow";
 import {insertBorrow} from "../../utils/borrow/insertBorrow";
 import {selectBorrowByBorrowId} from "../../utils/borrow/selectBorrowByBorrowId";
 import {selectBorrowByProfileId} from "../../utils/borrow/selectBorrowByProfileId";
+import {selectBorrowByToolId} from "../../utils/borrow/selectBorrowByToolId";
 
 
 export async function postBorrow(request: Request, response: Response) : Promise<Response<Status>> {
@@ -76,6 +77,21 @@ export async function getBorrowByBorrowIdController(request : Request, response:
         })
     }
 }
+
+export async function getBorrowByBorrowToolIdController(request : Request, response: Response,) : Promise<Response<Status>>{
+    try {
+        const {borrowToolId} = request.params
+        const data  = await selectBorrowByToolId(borrowToolId)
+        return response.json({status:200, message: null, data});
+    } catch(error) {
+        return response.json({
+            status: 500,
+            message: "",
+            data: null
+        })
+    }
+}
+
 
 
 export async function putBorrowController(request: Request, response: Response): Promise<Response<string>> {

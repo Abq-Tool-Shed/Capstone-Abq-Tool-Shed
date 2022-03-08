@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import {imageUploader} from "../../utils/cloudinary.utils"
+import {imageUploader} from "../../utils/controllers/multer.controller";
 import {imageUploaderController} from "./image-uploader.controller";
 
 
