@@ -2,6 +2,7 @@ import {Container,  Form, Row, Col} from "react-bootstrap";
 import React from 'react'
 import  {ImageDropZone} from "../Components/ImageDropZone";
 import {ProfilePostButton} from "../Components/Profile/ProfilePostButton";
+import {ProfilePost} from "../Components/Profile/ProfilePost"
 
 
 
@@ -54,13 +55,13 @@ export function Profile() {
                     </br>
                 <div className="row mt-5">
                     <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <p>This is a place holder</p>
+                        <ProfilePost/>
                     </div>
                     <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <p>This is a place holder</p>
+                        <ProfilePost/>
                     </div>
                     <div  style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <p>This is a place holder</p>
+                        <ProfilePost/>
                     </div>
                 </div>
             </Container>
