@@ -1,4 +1,4 @@
-import {FormDebugger} from "../../FormDebugger";
+import {FormDebugger} from "../FormDebugger";
 import React from "react";
 
 export const SignUpFormContent = (props) => {
@@ -23,7 +23,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="envelope"/>
+
                             </div>
                         </div>
                         <input
@@ -52,7 +52,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="key"/>
+
                             </div>
                         </div>
                         <input
@@ -74,7 +74,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="key"/>
+
                             </div>
                         </div>
                         <input
@@ -99,7 +99,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="dove"/>
+
                             </div>
                         </div>
                         <input
@@ -128,7 +128,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="phone"/>
+
                             </div>
                         </div>
                         <input
@@ -155,7 +155,7 @@ export const SignUpFormContent = (props) => {
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <div className="input-group-text">
-                                <FontAwesomeIcon icon="phone"/>
+
                             </div>
                         </div>
                 <input
