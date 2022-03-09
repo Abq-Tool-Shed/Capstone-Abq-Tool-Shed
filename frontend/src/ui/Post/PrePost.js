@@ -1,8 +1,9 @@
 import React from "react"
 import {Col, Container, Row, Button} from "react-bootstrap";
 import "../styles/Post.css"
-import {postFAQ} from "../Components/Post/PostFAQ";
+
 import toolsIMG from "../Components/Images/tech-tools1.jpg"
+import {PostFAQ} from "../Components/Post/PostFAQ";
 
 
 
@@ -86,9 +87,9 @@ export function PrePost() {
         </div>
         <div>
             <strong><h3 className={"text-center m-3 p-3"}>FAQ</h3></strong>
-            {postFAQ()}
-            {postFAQ()}
-            {postFAQ()}
+            {PostFAQ()}
+            {PostFAQ()}
+            {PostFAQ()}
         </div>
 
     </>

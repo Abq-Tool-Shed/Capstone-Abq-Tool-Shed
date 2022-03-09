@@ -2,6 +2,8 @@ import React from 'react'
 import {Navbar, Container, Nav, NavDropdown, Button, } from "react-bootstrap";
 import {Form} from "formik";
 import {SignUpModal} from "./Sign-up/signUpModal";
+import {LogInModal} from "./Log-In/LogInModal"
+
 
 export function NavBar () {
 
@@ -18,16 +20,15 @@ export function NavBar () {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Login |</Nav.Link>
+                            <LogInModal/>
+
                             <SignUpModal/>
+
                         </Nav>
 
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-
-
     </>
     )
 }
