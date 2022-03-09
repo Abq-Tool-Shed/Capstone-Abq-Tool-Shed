@@ -18,6 +18,9 @@ export function NavBar () {
                         >
                             <Nav.Link href="#action1">Login |</Nav.Link>
                             <Nav.Link href="#action2">Sign Up</Nav.Link>
+                            <Nav.Link className={"navbar-item"} activeClassName={"is-active"}
+                                      to='/browse'
+                                      exact
 
                         </Nav>
                     </Navbar.Collapse>
