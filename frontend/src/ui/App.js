@@ -9,6 +9,7 @@ import {PrePost} from "./Post/PrePost";
 import {Post} from './Post/Post';
 import {Settings} from "./Profile/Settings";
 import {Provider} from "react-redux";
+import {Browse} from "./Components/Browse/Browse";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -37,6 +38,7 @@ export const App = (store) => (
                     <Route exact path='/prepost' component={PrePost} />
                     <Route exact path='/post' component={Post} />
                     <Route exact path='/settings' component={Settings}/>
+                    <Route exact path='/browse' component={Browse} />
                     <Route component={FourOhFour} />
                 </Switch>
             </BrowserRouter>

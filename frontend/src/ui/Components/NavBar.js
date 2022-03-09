@@ -20,9 +20,17 @@ export function NavBar () {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
+
                             <LogInModal/>
 
                             <SignUpModal/>
+
+
+                            <Nav.Link className={"navbar-item"} activeClassName={"is-active"}
+                                      to='/browse'
+                                      exact>
+
+                            </Nav.Link>
 
                         </Nav>
 

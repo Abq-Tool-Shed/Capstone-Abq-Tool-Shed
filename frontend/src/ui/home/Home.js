@@ -75,11 +75,9 @@ export function Home() {
                         {tools.map((tool, index) => <Tool key={index} tool={tool}/>)}
                     </Row>
 
-
-
-
-
-
+                    {/*<Row>*/}
+                    {/*    <Button variant="primary">Browse More Tools</Button>{' '}*/}
+                    {/*</Row>*/}
 
                 </Container> {/* Featured tool listings */}
 
@@ -129,22 +127,23 @@ export function Home() {
                 <Container>
                     <Row>
                         <h2>About our team</h2>
-
-                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
-                            <Image className={"d-block mx-auto"} fluid rounded src={austin1} alt={"Austin Dewey"}/>
-                            <div className={"bg-secondary rounded mt-5"}>
-                                <p>What a cute kitten</p>
+                    </Row>
+                    <Row className={'g-5'}>
+                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"3"}>
+                            <Image className={" mx-auto"} fluid rounded src={austin1} alt={"Austin Dewey"}/>
+                            <div className={"bg-secondary rounded mt-3"}>
+                                <p>Software Developer, Video game Developer, Photographer, Sound Engineer, based out of Albuquerque New Mexico looking for a way to shape the future with technology to inspire and spark imagination.</p>
                             </div>
                         </Col>
-                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
+                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"3"}>
                             <Image className={"d-block mx-auto"} fluid rounded src={jon1} alt={"Jon Verduzco"}/>
-                            <div className={"bg-secondary rounded mt-5"}>
+                            <div className={"bg-secondary rounded mt-3"}>
                                 <p>Aspiring software developer looking to build useful and inspiring things. Based in Albuquerque and interested in music, design and new technologies among other things.</p>
                             </div>
                         </Col>
-                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
+                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"3"}>
                             <Image className={"d-block mx-auto"} fluid rounded src={mike1} alt={"Mike Zbrozek"}/>
-                            <div className={ "rounded"}>
+                            <div className={ "rounded mt-3"}>
                                 <p>Full stack developer inspired by community solutions and empowerment. Believes human energy is clean energy.</p>
                             </div>
                         </Col>
