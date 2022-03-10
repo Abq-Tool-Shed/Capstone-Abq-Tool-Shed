@@ -18,7 +18,7 @@ export const Tool=({tool}) => {
 
     // const {borrowStatus} = available
 
-    const {toolName, toolDescription} = tool
+    const {toolName, toolDescription, toolImage, toolLendRules} = tool
 
     const borrows = useSelector(state => state.borrows ? state.borrows : [])
     console.log(borrows)
@@ -35,16 +35,17 @@ export const Tool=({tool}) => {
                         <h5>Tool location</h5>
                     </Col>
                 </Row>
+                <image>{toolImage}</image>
                 {/*<Image className={"p-3"} fluid  rounded src={kitten1} alt={"kitten"}/>*/}
                 <div className={'text-center'}>
+
                     <p>{toolName}</p>
 
                     <p>{toolDescription}</p>
+                    <p>{toolLendRules}</p>
                     {/*<p>{toolDescription}</p>*/}
                 </div>
             </Col>
-
-
 
     </>
 )
