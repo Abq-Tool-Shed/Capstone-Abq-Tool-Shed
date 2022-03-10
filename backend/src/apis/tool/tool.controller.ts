@@ -7,6 +7,7 @@ import {insertTool} from "../../utils/tool/insertTool";
 import {selectAllTools} from "../../utils/tool/selectAllTools";
 import {selectToolByToolId} from "../../utils/tool/selectToolByToolId";
 import {selectToolsByToolProfileId} from "../../utils/tool/selectToolsByToolProfileId";
+import {selectToolsByToolCategoryId} from "../../utils/tool/selectToolByToolCategoryId";
 import {App} from '../../App'
 
 
@@ -30,6 +31,20 @@ export async function getToolByToolProfileIdController(request: Request, respons
     try {
         const {toolProfileId} = request.params
         const data = await selectToolsByToolProfileId(toolProfileId)
+        return response.json({status:200, message: null, data})
+    } catch(error) {
+        return response.json({
+            status: 500,
+            message: '',
+            data: []
+        })
+    }
+}
+
+export async function getToolByToolCategoryIdController(request: Request, response: Response, tempFunction: NextFunction): Promise<Response<Category>>{
+    try {
+        const {toolCategoryId} = request.params
+        const data = await selectToolsByToolCategoryId(toolCategoryId)
         return response.json({status:200, message: null, data})
     } catch(error) {
         return response.json({
