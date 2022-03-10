@@ -12,6 +12,7 @@ import austin1 from "../Components/Images/austin-pro.jpg"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
 import {Tool} from "../Components/Post/Tool";
+import {Header} from "../Components/Shared/Header"
 
 
 export function Home() {
@@ -46,7 +47,8 @@ export function Home() {
             <div>
                 <Container className={'p-4 m-3'}>
                     <Row className={"my-2"}>
-                    <h2 className={"text-black me-auto"} >How it works</h2>
+                        <Header header='This is going to be the best header ever!!!! '/>
+                    {/*<h2 className={"text-black me-auto"} >How it works</h2>*/}
                     </Row>
                     <Row className={"bg-dark text-white my-2"}>
                         <Col  md={"5"} m={"2"}>
@@ -123,25 +125,25 @@ export function Home() {
             </div> {/* End FAQ Content */}
 
 
-            <div className={"bg-black"} >
+            <div  >
                 <Container>
                     <Row>
                         <h2>About our team</h2>
                     </Row>
-                    <Row className={'g-5'}>
-                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"3"}>
+                    <Row className={'g-5 bg-black'}>
+                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
                             <Image className={" mx-auto"} fluid rounded src={austin1} alt={"Austin Dewey"}/>
-                            <div className={"bg-secondary rounded mt-3"}>
+                            <div className={"rounded mt-3"}>
                                 <p>Software Developer, Video game Developer, Photographer, Sound Engineer, based out of Albuquerque New Mexico looking for a way to shape the future with technology to inspire and spark imagination.</p>
                             </div>
                         </Col>
-                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"3"}>
+                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
                             <Image className={"d-block mx-auto"} fluid rounded src={jon1} alt={"Jon Verduzco"}/>
-                            <div className={"bg-secondary rounded mt-3"}>
+                            <div className={"rounded mt-3"}>
                                 <p>Aspiring software developer looking to build useful and inspiring things. Based in Albuquerque and interested in music, design and new technologies among other things.</p>
                             </div>
                         </Col>
-                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"3"}>
+                        <Col className={"border border-2 rounded border-light bg-white py-2"} md={"4"}>
                             <Image className={"d-block mx-auto"} fluid rounded src={mike1} alt={"Mike Zbrozek"}/>
                             <div className={ "rounded mt-3"}>
                                 <p>Full stack developer inspired by community solutions and empowerment. Believes human energy is clean energy.</p>
