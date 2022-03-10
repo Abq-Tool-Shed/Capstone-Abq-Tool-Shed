@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 import { Home } from './home/Home';
 import {Userprofile} from "./Profile/Profile";
-import {Settings} from "./Profile/Settings";
+import {UserSettings} from "./Profile/UserSettings";
 import { FourOhFour } from './FourOhFour';
 import React from 'react';
 import {NavBar} from "./Components/NavBar";
@@ -37,7 +37,7 @@ export const App = (store) => (
                     <Route exact path='/profile' component={Userprofile}/>
                     <Route exact path='/prepost' component={PrePost} />
                     <Route exact path='/post' component={Post} />
-                    <Route exact path='/settings' component={Settings}/>
+                    <Route exact path='/user-settings' component={UserSettings}/>
                     <Route exact path='/browse' component={Browse} />
                     <Route component={FourOhFour} />
                 </Switch>

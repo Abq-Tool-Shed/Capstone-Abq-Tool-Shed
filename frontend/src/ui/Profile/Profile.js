@@ -9,7 +9,7 @@ import profiles, {fetchAllProfiles} from "../../store/profiles";
 import map from "../../store/profiles";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
 import {Link} from "react-router-dom";
-import {Settings} from "./Settings";
+import {UserSettings} from "./UserSettings";
 
 
 export function Userprofile() {
