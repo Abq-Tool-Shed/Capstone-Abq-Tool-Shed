@@ -1,3 +1,4 @@
+
 import {FormDebugger} from "../FormDebugger";
 import React from "react";
 
@@ -22,9 +23,9 @@ export const SignUpFormContent = (props) => {
                     <label htmlFor="profileEmail">Email Address</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
-                            <div className="input-group-text">
 
-                            </div>
+                            <div className="input-group-text"></div>
+
                         </div>
                         <input
                             className="form-control"
@@ -51,9 +52,11 @@ export const SignUpFormContent = (props) => {
                     <label htmlFor="profilePassword">Password</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
+
                             <div className="input-group-text">
 
                             </div>
+
                         </div>
                         <input
                             name="profilePassword"
@@ -73,9 +76,11 @@ export const SignUpFormContent = (props) => {
                     <label htmlFor="profilePasswordConfirm">Confirm Your Password</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
+
                             <div className="input-group-text">
 
                             </div>
+
                         </div>
                         <input
 
@@ -98,9 +103,11 @@ export const SignUpFormContent = (props) => {
                     <label htmlFor="profileHandle">Handle</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
+
                             <div className="input-group-text">
 
                             </div>
+
                         </div>
                         <input
                             className="form-control"
@@ -127,9 +134,11 @@ export const SignUpFormContent = (props) => {
                     <label htmlFor="profilePhoneNumber">Phone Number</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
+
                             <div className="input-group-text">
 
                             </div>
+
                         </div>
                         <input
                             className="form-control"
@@ -154,9 +163,11 @@ export const SignUpFormContent = (props) => {
                     <label htmlFor="profileName">Profile Name</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
+
                             <div className="input-group-text">
 
                             </div>
+
                         </div>
                 <input
                     className="form-control"

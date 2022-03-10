@@ -6,6 +6,8 @@ import {SignInModal} from "./Log-In/SignInModal";
 
 
 export function NavBar () {
+
+
     return(
         <>
             <Navbar bg="light" expand="lg">
@@ -23,13 +25,18 @@ export function NavBar () {
 
                             <SignUpModal/>
 
+
+                            <Nav.Link className={"navbar-item"} activeClassName={"is-active"}
+                                      to='/browse'
+                                      exact>
+
+                            </Nav.Link>
+
                         </Nav>
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-
-
     </>
     )
 }
