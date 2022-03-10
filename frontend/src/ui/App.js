@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 import { Route, Switch } from 'react-router'
 import { Home } from './home/Home'
-import {Profile} from "./Profile/Profile"
+import {Userprofile} from "./Profile/Profile";
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
 import {NavBar} from "./Components/NavBar";
@@ -20,7 +20,7 @@ export const App = (store) => (
                 <NavBar/>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route exact path='/profile' component={Profile}/>
+                    <Route exact path='/profile' component={Userprofile}/>
                     <Route exact path='/prepost' component={PrePost} />
                     <Route exact path='/post' component={Post} />
                     <Route exact path='/settings' component={Settings}/>

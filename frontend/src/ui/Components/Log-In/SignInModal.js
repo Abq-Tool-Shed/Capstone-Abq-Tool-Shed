@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
-import {LogInForm} from "./LogInForm"
+import {SignInForm} from "./SignInForm"
 
 
 
 
-export const LogInModal = () => {
+export const SignInModal = () => {
 
     const [show, setShow] = useState(false);
 
@@ -26,7 +26,7 @@ export const LogInModal = () => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <LogInForm/>
+                    <SignInForm/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant={"primary"} onClick={handleClose}> Log In

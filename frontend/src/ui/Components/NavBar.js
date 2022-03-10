@@ -2,7 +2,7 @@ import React from 'react'
 import {Navbar, Container, Nav, NavDropdown, Button, } from "react-bootstrap";
 import {Form} from "formik";
 import {SignUpModal} from "./Sign-up/signUpModal";
-import {LogInModal} from "./Log-In/LogInModal"
+import {SignInModal} from "./Log-In/SignInModal";
 
 
 export function NavBar () {
@@ -19,7 +19,7 @@ export function NavBar () {
                             navbarScroll
                         >
 
-                            <LogInModal/>
+                            <SignInModal/>
 
                             <SignUpModal/>
 

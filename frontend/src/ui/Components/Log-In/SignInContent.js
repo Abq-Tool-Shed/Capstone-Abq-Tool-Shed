@@ -1,8 +1,10 @@
 import React from 'react'
+import {Form} from "formik";
+import {FormDebugger} from "../FormDebugger";
 
 
 
-export const LogInContent = (props) => {
+export const SignInContent = (props) => {
     const {
         status,
         values,
@@ -18,7 +20,9 @@ export const LogInContent = (props) => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+
+
+            <Form onSubmit={handleSubmit}>
                 {/*controlId must match what is passed to the initialValues prop*/}
                 <div className="form-group">
                     <label htmlFor="profileEmail">Email Address</label>
@@ -71,9 +75,23 @@ export const LogInContent = (props) => {
                         <div className="alert alert-danger">{errors.profilePassword}</div>
                     )}
                 </div>
-            </form>
+
+                <div className="form-group">
+                    <button className="btn btn-primary mb-2" type="submit">Submit</button>
+                    <button
+                        className="btn btn-danger mb-2"
+                        onClick={handleReset}
+                        disabled={!dirty || isSubmitting}
+                    >Reset
+                    </button>
+                </div>
 
 
+                <FormDebugger {...props} />
+            </Form>
+            {
+                status && (<div className={status.type}>{status.message}</div>)
+            }
         </>
     )
 }

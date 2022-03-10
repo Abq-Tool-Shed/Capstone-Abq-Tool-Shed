@@ -2,20 +2,16 @@ import React from "react"
 import "../styles/Post.css"
 import {Col, Container, Row, Button, Form} from "react-bootstrap";
 import "../styles/Post.css"
-<<<<<<< HEAD
 import {PostFAQ} from "../Components/Post/PostFAQ";
-=======
 // import {postFAQ} from "../Components/PostFAQ";
->>>>>>> fb30b767fae39f38d57e65e4c3dfa4e5bee60d09
 import toolsIMG from "../Components/Images/tech-tools1.jpg"
 import {Image} from "@material-ui/icons";
 import {ImageDropZone} from "../Components/ImageDropZone";
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> fb30b767fae39f38d57e65e4c3dfa4e5bee60d09
+
+
 export function Post() {
 
 

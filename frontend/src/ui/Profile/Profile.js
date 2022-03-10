@@ -1,8 +1,13 @@
 import {Container,  Form, Row, Col} from "react-bootstrap";
-import React from 'react'
+import React, {useEffect} from 'react'
 import  {ImageDropZone} from "../Components/ImageDropZone";
 import {ProfilePostButton} from "../Components/Profile/ProfilePostButton";
-import {ProfilePost} from "../Components/Profile/ProfilePost"
+import {Profile} from "../Components/Profile/ProfileHeader";
+import {Tool} from "../Components/Post/Tool";
+import {useDispatch, useSelector} from "react-redux";
+import profiles, {fetchAllProfiles} from "../../store/profiles";
+import map from "../../store/profiles"
+import {fetchAllToolsAndBorrows} from "../../store/tools";
 
 
 
@@ -10,14 +15,26 @@ import {ProfilePost} from "../Components/Profile/ProfilePost"
 
 
 
+export function Userprofile() {
 
-export function Profile() {
+   const profiles = useSelector(state => state.profiles? state.profiles : []);
+
+    const dispatch = useDispatch();
+
+    function sideEffects() {
+        dispatch(fetchAllProfiles())
+    }
+
+    useEffect(sideEffects, [dispatch]);
+    console.log(profiles)
+
+
     return (
         <>
 
 
         <Container >
-            <div className="text-center"><h1>Austins Tool Shed 🛠</h1></div>
+            <div className="text-center"> <h1> {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)} </h1> </div>
             <div className="row">
             <div className=" col">
                 <ImageDropZone/>
@@ -55,13 +72,13 @@ export function Profile() {
                     </br>
                 <div className="row mt-5">
                     <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <ProfilePost/>
+                        <h1>POST HERE</h1>
                     </div>
                     <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <ProfilePost/>
+                        <h1>POST HERE</h1>
                     </div>
                     <div  style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <ProfilePost/>
+                        <h1>POST HERE</h1>
                     </div>
                 </div>
             </Container>

@@ -1,10 +1,6 @@
 import React, {useEffect} from "react"
 import {NavBar} from '../Components/NavBar'
 import {Container, Row, Col, Image} from "react-bootstrap";
-<<<<<<< HEAD
-=======
-
->>>>>>> fb30b767fae39f38d57e65e4c3dfa4e5bee60d09
 import toolSplash from "../Components/Images/lachlan-donald-unsplash.jpg"
 import kitten1 from "../Components/Images/img.png"
 import workingTogether from "../Components/Images/annie-gray-unsplash.jpg"
