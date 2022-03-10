@@ -1,15 +1,15 @@
-import { BrowserRouter } from 'react-router-dom'
-import { Route, Switch } from 'react-router'
-import { Home } from './home/Home'
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import { Home } from './home/Home';
 import {Userprofile} from "./Profile/Profile";
-import { FourOhFour } from './FourOhFour'
-import React from 'react'
+import {Settings} from "./Profile/Settings";
+import { FourOhFour } from './FourOhFour';
+import React from 'react';
 import {NavBar} from "./Components/NavBar";
 import {PrePost} from "./Post/PrePost";
 import {Post} from './Post/Post';
-import {Settings} from "./Profile/Settings";
 import {Provider} from "react-redux";
-import {Browse} from "./Components/Browse/Browse";
+import {Browse} from "./Components/Browse/Browse"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
