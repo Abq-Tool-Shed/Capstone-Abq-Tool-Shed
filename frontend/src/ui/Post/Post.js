@@ -1,12 +1,7 @@
 import React from "react"
 import "../styles/Post.css"
-import {Col, Container, Row, Button, Form} from "react-bootstrap";
+import {Button, Form} from "react-bootstrap";
 import "../styles/Post.css"
-
-import {PostFAQ} from "../Components/Post/PostFAQ";
-;
-import toolsIMG from "../Components/Images/tech-tools1.jpg"
-import {Image} from "@material-ui/icons";
 import {ImageDropZone} from "../Components/ImageDropZone";
 
 
