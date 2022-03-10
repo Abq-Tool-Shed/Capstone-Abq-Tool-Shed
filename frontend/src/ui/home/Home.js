@@ -12,7 +12,8 @@ import austin1 from "../Components/Images/austin-pro.jpg"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
 import {Tool} from "../Components/Post/Tool";
-import {Header} from "../Components/Shared/Header"
+import {TitleBG} from "../Components/Shared/Jumbo";
+
 
 
 export function Home() {
@@ -31,24 +32,29 @@ export function Home() {
 
     return (
         <>
-            <div className={homeStyles.header}>
-            <Container>
-                <header >
-            <h1 className={"text-center pb-4"} >ABQ Tool Shed</h1>
-                    <h2 className={"text-start pb-2 "} >A neighborhood resource for borrowing tools</h2>
-                    <h2 className={"text-center p-4 "} >To complete your project</h2>
-                    <h2 className={"text-end p-3 "} >Save money and build community</h2>
-                </header>
-            </Container>
-            </div>
+            <TitleBG
+                test1 = "Big Test Header"
+                test2 = "second header test"
+                test3 = "third header test"
+                test4 = "final header test"
+            />
+            {/*<Container>*/}
+            {/*    <header >*/}
+            {/*<h1 className={"text-center pb-4"} >ABQ Tool Shed</h1>*/}
+            {/*        <h2 className={"text-start pb-2 "} >A neighborhood resource for borrowing tools</h2>*/}
+            {/*        <h2 className={"text-center p-4 "} >To complete your project</h2>*/}
+            {/*        <h2 className={"text-end p-3 "} >Save money and build community</h2>*/}
+            {/*    </header>*/}
+            {/*</Container>*/}
+
 
 
 
             <div>
                 <Container className={'p-4 m-3'}>
                     <Row className={"my-2"}>
-                        <Header header='This is going to be the best header ever!!!! '/>
-                    {/*<h2 className={"text-black me-auto"} >How it works</h2>*/}
+                        {/*<Header header='This is going to be the best header ever!!!! '/>*/}
+                    <h2 className={"text-black me-auto"} >How it works</h2>
                     </Row>
                     <Row className={"bg-dark text-white my-2"}>
                         <Col  md={"5"} m={"2"}>
