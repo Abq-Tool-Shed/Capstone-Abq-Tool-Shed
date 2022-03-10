@@ -1,18 +1,15 @@
-import {Container,  Form, Row, Col} from "react-bootstrap";
-import React, {useEffect} from 'react'
+import {Container, Form, Row, Col, Nav, Button} from "react-bootstrap";
+import React, {useEffect} from 'react';
 import  {ImageDropZone} from "../Components/ImageDropZone";
 import {ProfilePostButton} from "../Components/Profile/ProfilePostButton";
 import {Profile} from "../Components/Profile/ProfileHeader";
 import {Tool} from "../Components/Post/Tool";
 import {useDispatch, useSelector} from "react-redux";
 import profiles, {fetchAllProfiles} from "../../store/profiles";
-import map from "../../store/profiles"
+import map from "../../store/profiles";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
-
-
-
-
-
+import {Link} from "react-router-dom";
+import {UserSettings} from "./UserSettings";
 
 
 export function Userprofile() {
@@ -34,7 +31,16 @@ export function Userprofile() {
 
 
         <Container >
+
             <div className="text-center"> <h1> {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)} </h1> </div>
+            <div className="me-5">
+                <Link to="/settings">
+                    <Button   size="lg">
+                        Settings Page
+                    </Button>
+                </Link>
+            </div>
+            <br/>
             <div className="row">
             <div className=" col">
                 <ImageDropZone/>

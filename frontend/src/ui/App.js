@@ -1,15 +1,15 @@
-import { BrowserRouter } from 'react-router-dom'
-import { Route, Switch } from 'react-router'
-import { Home } from './home/Home'
+import { BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import { Home } from './home/Home';
 import {Userprofile} from "./Profile/Profile";
-import { FourOhFour } from './FourOhFour'
-import React from 'react'
+import {UserSettings} from "./Profile/UserSettings";
+import { FourOhFour } from './FourOhFour';
+import React from 'react';
 import {NavBar} from "./Components/NavBar";
 import {PrePost} from "./Post/PrePost";
 import {Post} from './Post/Post';
-import {Settings} from "./Profile/Settings";
 import {Provider} from "react-redux";
-import {Browse} from "./Components/Browse/Browse";
+import {Browse} from "./Components/Browse/Browse"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -37,7 +37,7 @@ export const App = (store) => (
                     <Route exact path='/profile' component={Userprofile}/>
                     <Route exact path='/prepost' component={PrePost} />
                     <Route exact path='/post' component={Post} />
-                    <Route exact path='/settings' component={Settings}/>
+                    <Route exact path='/user-settings' component={UserSettings}/>
                     <Route exact path='/browse' component={Browse} />
                     <Route component={FourOhFour} />
                 </Switch>

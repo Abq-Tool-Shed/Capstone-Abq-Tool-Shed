@@ -1,0 +1,21 @@
+.Jumbo {
+    padding: 50px;
+    color: white;
+    /*background-Image:linear-gradient(rgba(0, 0, 255, 0.78), rgba(0, 151, 166, 0.75)), url('../Components/Images/lachlan-donald-unsplash.jpg');*/
+    background: linear-gradient(#126DA6, #88B990);
+    filter: opacity(100%);
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+}
+
+.ReversedJumbo {
+    padding: 50px;
+    color: white;
+    /*background-Image:linear-gradient(rgba(0, 0, 255, 0.78), rgba(0, 151, 166, 0.75)), url('../Components/Images/lachlan-donald-unsplash.jpg');*/
+    background: linear-gradient(0deg, #126DA6, #88B990);
+    filter: opacity(100%);
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+}

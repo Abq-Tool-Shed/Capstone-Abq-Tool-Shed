@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../styles/ProfilePost.css"
+import "../../styles/Profile.css"
 import * as Yup from "yup";
 import {Formik} from "formik";
 import {httpConfig} from "../../../utils/http-config";
