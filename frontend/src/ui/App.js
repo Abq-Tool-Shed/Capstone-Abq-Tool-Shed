@@ -21,6 +21,7 @@ import {
     faSignOutAlt,
     faStroopwafel, faUser,
 } from '@fortawesome/free-solid-svg-icons'
+import {PrivateRoute} from "./Components/Shared/PrivateRoute";
 
 library.add(faStroopwafel, faEnvelope, faKey, faDove, faPhone, faPencilAlt, faSignOutAlt, faUser);
 
@@ -37,7 +38,9 @@ export const App = (store) => (
                     <Route exact path='/profile' component={Userprofile}/>
                     <Route exact path='/prepost' component={PrePost} />
                     <Route exact path='/post' component={Post} />
-                    <Route exact path='/user-settings' component={UserSettings}/>
+                    <PrivateRoute path="/user-settings">
+                    <UserSettings/>
+                    </PrivateRoute>
                     <Route exact path='/browse' component={Browse} />
                     <Route component={FourOhFour} />
                 </Switch>
