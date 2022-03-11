@@ -1,25 +1,38 @@
 import {httpConfig} from "../utils/http-config";
 import {createSlice} from "@reduxjs/toolkit";
+import {fetchBorrowByBorrowToolId} from "./borrows";
+import {fetchAllTools} from "./tools";
+import {fetchAuth} from "./auth";
 
 
 
 
-const slice = createSlice({
-    name: "profiles",
-    initialState: [],
+const profileSlice = createSlice({
+    name: "profile",
+    initialState: null,
     reducers: {
-        setAllProfiles: (profiles, action) => {
+        getProfileByProfileId: (profile, action) => {
             return action.payload
         }
     }
 })
 
-export const {setAllProfiles} = slice.actions
 
-export const fetchAllProfiles = () => async dispatch => {
-    const {data} = await httpConfig("/apis/profile/");
-    dispatch(setAllProfiles(data))
+export const {getProfileByProfileId} = profileSlice.actions
+
+export default profileSlice.reducer
+
+
+
+export const fetchProfileByProfileId = () => async (dispatch, getState) => {
+    await dispatch(fetchAuth())
+    const {auth} = getState()
+    console.log(auth)
+    if (auth !== null) {
+        const {data} = await httpConfig.get(`/apis/profile/${auth.profileId}`)
+        console.log(data)
+        dispatch(getProfileByProfileId(data))
+    }
 }
 
 
-export default slice.reducer

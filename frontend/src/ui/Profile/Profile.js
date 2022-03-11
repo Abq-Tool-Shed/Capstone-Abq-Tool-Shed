@@ -5,25 +5,24 @@ import {ProfilePostButton} from "../Components/Profile/ProfilePostButton";
 import {Profile} from "../Components/Profile/ProfileHeader";
 import {Tool} from "../Components/Post/Tool";
 import {useDispatch, useSelector} from "react-redux";
-import profiles, {fetchAllProfiles} from "../../store/profiles";
-import map from "../../store/profiles";
+import map, {fetchProfileByProfileId} from "../../store/profiles";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
 import {Link} from "react-router-dom";
-import {UserSettings} from "./UserSettings";
+import {ProfileSettingsFormContent} from "../Components/Profile/ProfileSettingsFormContent";
 
 
 export function Userprofile() {
 
-   const profiles = useSelector(state => state.profiles? state.profiles : []);
+   const profile = useSelector(state => state.profile ? state.profile : null);
 
     const dispatch = useDispatch();
 
     function sideEffects() {
-        dispatch(fetchAllProfiles())
+        dispatch(fetchProfileByProfileId())
     }
 
     useEffect(sideEffects, [dispatch]);
-    console.log(profiles)
+    console.log(profile)
 
 
     return (
@@ -32,9 +31,9 @@ export function Userprofile() {
 
         <Container >
 
-            <div className="text-center"> <h1> {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)} </h1> </div>
+            {/*<div className="text-center"> <h1> {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)} </h1> </div>*/}
             <div className="me-5">
-                <Link to="/settings">
+                <Link to="/user-settings">
                     <Button   size="lg">
                         Settings Page
                     </Button>
@@ -43,15 +42,11 @@ export function Userprofile() {
             <br/>
             <div className="row">
             <div className=" col">
-                <ImageDropZone/>
+            {/*    Image Place   */}
             </div>
             <div className="col">
                 <h2 className="text-center">Austins BIO</h2>
-                <Form style={{border:"transparent 50", height: 150, width: 500}}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                        <Form.Control as="textarea" rows={3} />
-                    </Form.Group>
-                </Form>
+                {/*<div> {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)} </div>*/}
             </div>
                 <div style={{border: "transparent 75", height: 150, width: 250}} className="col">
                     <h2>User Status</h2>
