@@ -18,6 +18,7 @@ export const ToolForm = () => {
     const dispatch = useDispatch()
 
     const auth = useSelector(state => state.auth ? state.auth : null);
+    console.log(auth)
 
     const validator = Yup.object().shape({
         toolName: Yup.string()
@@ -33,7 +34,9 @@ export const ToolForm = () => {
     });
 
     const submitTool = (values, {resetForm, setStatus}) => {
+        console.log("tool auth", auth)
         const toolProfileId = auth?.profileId ?? null
+        console.log(toolProfileId)
         const tool = {toolProfileId, ...values}
         httpConfig.post("/apis/tool/", tool)
             .then(reply => {
@@ -55,7 +58,7 @@ export const ToolForm = () => {
             onSubmit={submitTool}
             validationSchema={validator}
         >
-            {ToolFormContent}
+        {ToolFormContent}
         </Formik>
 
     )

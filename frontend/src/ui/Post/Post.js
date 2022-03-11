@@ -6,6 +6,7 @@ import "../styles/Post.css"
 
 import {ImageDropZone} from "../Components/ImageDropZone";
 import {GradientJumbo} from "../Components/Shared/GradientJumbo";
+import {ToolForm} from "../Components/Post/ToolForm";
 
 
 
@@ -41,6 +42,7 @@ export function Post() {
 
             {/*Post Form 1*/}
             <container>
+                <ToolForm/>
                 <div  className={"col-sm-6 centered mx-auto bg-light m-5 p-5"}>
                     <Form>
                         <Form.Group className="mb-3" controlId="formName">
@@ -59,21 +61,19 @@ export function Post() {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formLendRules">
-                            <Form.Label>Description:</Form.Label>
+                            <Form.Label>Lend Rules:</Form.Label>
                             <Form.Control as="textarea" placeholder="Enter your Lend and return terms here." />
                         </Form.Group>
-
-
 
                         <div className="m-3 p-3 text-center mx-auto">
                             Upload a Tool image.
                             <ImageDropZone />
                         </div>
 
-                        <Form.Group className="mb-3" controlId="formPosition">
-                            <Form.Label>Cross Streets / Address :</Form.Label>
-                            <Form.Control type="text" placeholder="LAT LONG converter necessary" />
-                        </Form.Group>
+                        {/*<Form.Group className="mb-3" controlId="formPosition">*/}
+                        {/*    <Form.Label>Cross Streets / Address :</Form.Label>*/}
+                        {/*    <Form.Control type="text" placeholder="LAT LONG converter necessary" />*/}
+                        {/*</Form.Group>*/}
 
                         {/*/!*<Form.Group className="mb-3" controlId="formBasicCheckbox">*!/*/}
                         {/*/!*    <Form.Check type="checkbox" label="Check me out" />*!/*/}
