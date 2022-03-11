@@ -1,6 +1,5 @@
 import React from "react"
-import {Col, Row} from "react-bootstrap";
-import {Image} from "@material-ui/icons";
+import {Col, Row, Image} from "react-bootstrap";
 import {useSelector} from "react-redux";
 
 export const Tool=({tool}) => {
@@ -35,7 +34,7 @@ export const Tool=({tool}) => {
                         <h5>Tool location</h5>
                     </Col>
                 </Row>
-                <image>{toolImage}</image>
+                <Image src={toolImage}/>
                 {/*<Image className={"p-3"} fluid  rounded src={kitten1} alt={"kitten"}/>*/}
                 <div className={'text-center'}>
 
