@@ -23,9 +23,7 @@ export const SignUpFormContent = (props) => {
                     <label htmlFor="profileEmail">Email Address</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
-
                             <div className="input-group-text"></div>
-
                         </div>
                         <input
                             className="form-control"
