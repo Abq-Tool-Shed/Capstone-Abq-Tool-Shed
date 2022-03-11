@@ -3,6 +3,7 @@ import {Col, Row, Container} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {Tool} from "../Post/Tool";
 import {fetchAllToolsAndBorrows} from "../../../store/tools";
+import {TitleBG} from "../Shared/Jumbo";
 
 
 export function Browse() {
@@ -29,6 +30,13 @@ return true
 
     return (
         <>
+
+            <TitleBG
+                test1 = "Big Test Header"
+                test2 = "second header test"
+                test3 = "third header test"
+                test4 = "final header test"
+            />
             <Container>
                 <h1>Recent tools available for lend</h1>
 
