@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {Tool} from "../Post/Tool";
 import {fetchAllToolsAndBorrows} from "../../../store/tools";
 import {TitleBG} from "../Shared/Jumbo";
+import {SearchBar} from "./SearchBar";
 
 
 export function Browse() {
@@ -37,6 +38,7 @@ return true
                 test3 = "third header test"
                 test4 = "final header test"
             />
+            <SearchBar placeHolder={"Search for a tool..."}  />
             <Container>
                 <h1>Recent tools available for lend</h1>
 
