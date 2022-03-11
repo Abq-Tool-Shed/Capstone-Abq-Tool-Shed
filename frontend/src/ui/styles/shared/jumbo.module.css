@@ -1,7 +1,8 @@
-.Jumbo {
+
+
+.colorJumbo {
     padding: 50px;
     color: white;
-    /*background-Image:linear-gradient(rgba(0, 0, 255, 0.78), rgba(0, 151, 166, 0.75)), url('../Components/Images/lachlan-donald-unsplash.jpg');*/
     background: linear-gradient(#126DA6, #88B990);
     filter: opacity(100%);
     width: 100vw;
@@ -9,11 +10,33 @@
     background-size: cover;
 }
 
-.ReversedJumbo {
+.reversedJumbo {
     padding: 50px;
     color: white;
-    /*background-Image:linear-gradient(rgba(0, 0, 255, 0.78), rgba(0, 151, 166, 0.75)), url('../Components/Images/lachlan-donald-unsplash.jpg');*/
-    background: linear-gradient(0deg, #126DA6, #88B990);
+    background: linear-gradient(180deg, #126DA6, #88B990);
+    filter: opacity(100%);
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+}
+
+
+
+.picJumbo {
+    padding: 50px;
+    color: white;
+    /*background: linear-gradient(#126DA6, #88B990);*/
+    background-Image: linear-gradient(rgba(18, 109, 166, 0.75), rgba(136, 185, 144, 0.75) ), url('../../Components/Images/lachlan-donald-unsplash.jpg');
+    filter: opacity(100%);
+    width: 100vw;
+    height: 60vh;
+    background-size: cover;
+}
+
+.picJumbo2 {
+    padding: 50px;
+    color: white;
+    background-Image: linear-gradient(#126DA6, #88B990), url('../../Components/Images/tech-tools1.jpg');
     filter: opacity(100%);
     width: 100vw;
     height: 60vh;
