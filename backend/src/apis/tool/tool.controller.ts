@@ -71,7 +71,7 @@ export async function getToolByToolIdController(request : Request, response: Res
 
 export async function postTool(request: Request, response: Response,): Promise<Response<Status>> {
     try {
-        const {toolDescription, toolCategoryId, toolLendRules, toolName} = request.body;
+        const {toolDescription, toolCategoryId, toolImage, toolLendRules, toolName} = request.body;
         const profile : Profile = request.session.profile as Profile
         const toolProfileId : string = <string>profile.profileId
 
@@ -80,7 +80,7 @@ export async function postTool(request: Request, response: Response,): Promise<R
             toolCategoryId,
             toolProfileId,
             toolDescription,
-            toolImage: null,
+            toolImage,
             toolLat: null,
             toolLendRules,
             toolLong: null,
@@ -98,10 +98,11 @@ export async function postTool(request: Request, response: Response,): Promise<R
         return response.json(status);
 
     } catch(error) {
+        console.error(error)
         return response.json({
             status: 500,
             message: 'Error creating tool, try again.',
             data: null
-        });
+        }); console.error(error)
     }
 }

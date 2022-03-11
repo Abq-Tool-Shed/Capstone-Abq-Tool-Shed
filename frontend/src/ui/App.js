@@ -10,6 +10,7 @@ import {PrePost} from "./Post/PrePost";
 import {Post} from './Post/Post';
 import {Provider} from "react-redux";
 import {Browse} from "./Components/Browse/Browse"
+import {SearchBar} from "./Components/Browse/SearchBar";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -19,11 +20,11 @@ import {
     faPencilAlt,
     faPhone,
     faSignOutAlt,
-    faStroopwafel, faUser,
+    faStroopwafel, faUser, faSearch, faWindowClose,
 } from '@fortawesome/free-solid-svg-icons'
 import {PrivateRoute} from "./Components/Shared/PrivateRoute";
 
-library.add(faStroopwafel, faEnvelope, faKey, faDove, faPhone, faPencilAlt, faSignOutAlt, faUser);
+library.add(faStroopwafel, faEnvelope, faKey, faDove, faPhone, faPencilAlt, faSignOutAlt, faUser, faSearch, faWindowClose);
 
 
 

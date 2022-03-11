@@ -26,7 +26,7 @@ BorrowRoute.route('/')
     .get( putBorrowController )
     .post(isLoggedIn, asyncValidatorController(checkSchema(borrowValidator)), postBorrow);
 
-BorrowRoute.route('/:borrowToolId').get(asyncValidatorController([
+BorrowRoute.route('/borrowToolId/:borrowToolId').get(asyncValidatorController([
     check('borrowToolId', 'please provide a valid borrowToolId').isUUID()
 ]), getBorrowByBorrowToolIdController)
 
