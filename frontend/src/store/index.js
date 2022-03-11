@@ -5,12 +5,10 @@ import auth from "./auth"
 import profile from "./profiles"
 
 
-const reducer = combineReducers({tools, auth, profile})
+const reducer = combineReducers({tools, borrows, auth, profile})
 
 import borrows from "./borrows";
-import auth from "./auth";
 
-const reducer = combineReducers({tools, borrows, auth})
->>>>>>> frontEnd_mz
+
 export const store = configureStore({reducer})
 
