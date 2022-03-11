@@ -5,6 +5,8 @@ import {Tool} from "../Post/Tool";
 import {fetchAllToolsAndBorrows} from "../../../store/tools";
 import {TitleBG} from "../Shared/Jumbo";
 import {SearchBar} from "./SearchBar";
+import "./searchBar.css";
+import headerStyles from "../../styles/shared/header.module.css";
 
 
 export function Browse() {
@@ -38,7 +40,7 @@ return true
                 test3 = "third header test"
                 test4 = "final header test"
             />
-            <SearchBar placeHolder={"Search for a tool..."}  />
+            <SearchBar placeHolder={"Search for a tool..."} data={tools} />
             <Container>
                 <h1>Recent tools available for lend</h1>
 

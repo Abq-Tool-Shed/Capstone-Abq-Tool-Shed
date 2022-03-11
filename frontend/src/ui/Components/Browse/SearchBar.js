@@ -1,7 +1,8 @@
-import React, {useState} from "react";
-// import SearchBar from "SearchBar.module.css"
+import React, {useState} from "react"
+import "./searchBar.css";
+
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faSearch} from "@fortawesome/free-solid-svg-icons";
+
 
 export function SearchBar({placeHolder, data}) {
     const [filteredData, setFilteredData] = useState([])
@@ -12,6 +13,7 @@ export function SearchBar({placeHolder, data}) {
         const newFilter = data.filter((value) => {
             return value.title.toLowerCase().includes(searchWord.toLowerCase())
         });
+
         if(searchWord === "") {
             setFilteredData([])
         }else {
@@ -22,14 +24,19 @@ export function SearchBar({placeHolder, data}) {
     const clearInput = () => {
     setFilteredData([])
     }
-}
+
 
     return (
         <div className={"search"}>
             <div className={"searchInputs"}>
-                    <input type={"text"} placeholder={placeHolder} value={wordEntered} onChange={handleFilter}/>
+                    <input
+                        type={"text"}
+                        placeholder={placeHolder}
+                        value={wordEntered}
+                        onChange={handleFilter}
+                    />
                 <div className={'searchIcon'}>
-                    {filteredData.length === 0 ? <FontAwsomeIcon icon={'search'}/> : <FontAwesomeIcon id={'clearBtn'} onClick={clearInput} icon={'close'/> }
+                    {filteredData.length === 0 ? (<FontAwesomeIcon icon={'search'}/> ) : ( <FontAwesomeIcon id={'clearBtn'} onClick={clearInput} icon={'close'}/> )}
                 </div>
             </div>
             { filteredData.length != 0 && (

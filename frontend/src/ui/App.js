@@ -20,10 +20,10 @@ import {
     faPencilAlt,
     faPhone,
     faSignOutAlt,
-    faStroopwafel, faUser,  faSearch,
+    faStroopwafel, faUser, faSearch, faWindowClose,
 } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faStroopwafel, faEnvelope, faKey, faDove, faPhone, faPencilAlt, faSignOutAlt, faUser, faSearch);
+library.add(faStroopwafel, faEnvelope, faKey, faDove, faPhone, faPencilAlt, faSignOutAlt, faUser, faSearch, faWindowClose);
 
 
 
