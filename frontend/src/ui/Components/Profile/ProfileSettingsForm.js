@@ -8,11 +8,10 @@ export const ProfileSettingsForm = (props) => {
     const {profile} = props
 
     const validationObject = Yup.object().shape({
-        profileImage: Yup.object()
-            .required("Must Provide Image"),
+        profileImage: Yup.mixed(),
         profileBio: Yup.string()
             .max(200, "Bio is to long."),
-        profileHandel: Yup.string()
+        profileHandle: Yup.string()
             .required("A Profile Handle Is Required"),
     });
 
