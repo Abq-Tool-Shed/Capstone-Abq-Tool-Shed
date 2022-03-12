@@ -3,11 +3,12 @@ import {Col, Row, Container} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {Tool} from "../Post/Tool";
 import {fetchAllToolsAndBorrows} from "../../../store/tools";
+
 import {SearchBar} from "./SearchBar";
 import "./searchBar.css";
 import headerStyles from "../../styles/shared/header.module.css";
-import {GradientJumbo} from "../Shared/GradientJumbo";
 import {ImageJumbo} from "../Shared/ImageJumbo";
+
 
 
 export function Browse() {
@@ -34,6 +35,7 @@ return true
 
     return (
         <>
+
 
             <ImageJumbo
                 test1 = "Big Test Header"
