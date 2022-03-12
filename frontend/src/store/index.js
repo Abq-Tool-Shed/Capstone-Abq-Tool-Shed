@@ -6,7 +6,10 @@ import auth from "./auth"
 import profile from "./profiles"
 
 
-const reducer = combineReducers({tools, auth, profile, borrows})
+
+const reducer = combineReducers({tools, borrows, auth, profile})
+
+
 
 export const store = configureStore({reducer})
 
