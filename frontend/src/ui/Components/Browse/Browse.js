@@ -7,7 +7,8 @@ import {fetchAllToolsAndBorrows} from "../../../store/tools";
 import {SearchBar} from "./SearchBar";
 import "./searchBar.css";
 import headerStyles from "../../styles/shared/header.module.css";
-import {GradientJumbo} from "../Shared/GradientJumbo";
+import {ImageJumbo} from "../Shared/ImageJumbo";
+
 
 
 export function Browse() {
@@ -35,7 +36,8 @@ return true
     return (
         <>
 
-            <GradientJumbo
+
+            <ImageJumbo
                 test1 = "Big Test Header"
                 test2 = "second header test"
                 test3 = "third header test"

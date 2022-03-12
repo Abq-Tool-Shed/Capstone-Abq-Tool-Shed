@@ -1,17 +1,19 @@
 import React, {useState} from "react"
 import "./searchBar.css";
 
+
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 export function SearchBar({placeHolder, data}) {
     const [filteredData, setFilteredData] = useState([])
-    const [wordEntered, setWordEntered] = useState('')
+    // const [wordEntered, setWordEntered] = useState('')
 
     const handleFilter = (event) => {
         const searchWord = event.target.value
+        console.log(searchWord)
         const newFilter = data.filter((value) => {
-            return value.title.toLowerCase().includes(searchWord.toLowerCase())
+            return value.toolName.toLowerCase().includes(searchWord.toLowerCase())
         });
 
         if(searchWord === "") {
@@ -32,7 +34,7 @@ export function SearchBar({placeHolder, data}) {
                     <input
                         type={"text"}
                         placeholder={placeHolder}
-                        value={wordEntered}
+                        // value={wordEntered}
                         onChange={handleFilter}
                     />
                 <div className={'searchIcon'}>
@@ -44,7 +46,7 @@ export function SearchBar({placeHolder, data}) {
                     {filteredData.slice(0,5).map((value, key) => {
                         return (
                             <a className={"dataItem"}>
-                                <p>{value.title}</p>
+                                <p>{value.toolName}</p>
                             </a>
                         );
                     })}

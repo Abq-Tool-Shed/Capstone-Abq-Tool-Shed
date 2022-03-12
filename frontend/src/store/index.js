@@ -9,5 +9,7 @@ import profile from "./profiles"
 
 const reducer = combineReducers({tools, borrows, auth, profile})
 
+
+
 export const store = configureStore({reducer})
 
