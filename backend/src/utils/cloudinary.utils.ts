@@ -11,7 +11,7 @@ export const uploadToCloudinary = (request : Request) : Promise<string> => {
     cloudinaryUtils.config({
         api_key: process.env.CLOUDINARY_KEY,
         api_secret: process.env.CLOUDINARY_SECRET,
-        cloud_name: "cnm-ingenuity-deep-dive-bootcamp"
+        cloud_name: "abqtoolshed"
     })
     return new Promise((resolve, reject):void => {
         let cld_upload_stream: UploadStream = cloudinaryUtils.uploader.upload_stream(
