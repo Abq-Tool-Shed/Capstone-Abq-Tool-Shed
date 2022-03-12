@@ -38,7 +38,7 @@ export const profileValidator : Schema = {
         trim: true
     },
 
-    profileProfileImage: {
+    profileImage: {
         optional: {
             options: {
                 nullable: true
