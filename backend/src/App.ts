@@ -9,14 +9,11 @@ import SignupRoute from "./apis/sign-up/signup.route";
 import {ProfileRoute} from "./apis/profile/profile.route";
 const session = require('express-session')
 const MemoryStore = require('memorystore')(session)
-
 import helmet from 'helmet'
-
-
-
 import {ImageUploaderRouter} from './apis/image-upload/image-uploader.router'
 import {Toolrouter} from "./apis/tool/tool.route";
 import {CategoryRouter} from "./apis/category/category.route";
+import MessageRoute from "./apis/messages/message.route";
 
 
 // The following class creates the app and instantiates the server
@@ -67,6 +64,7 @@ export class App {
         this.app.use('/apis/image-upload', ImageUploaderRouter)
         this.app.use('/apis/category', CategoryRouter)
         this.app.use('/apis/borrow', BorrowRoute)
+        this.app.use('/apis/message', MessageRoute)
 
     }
 

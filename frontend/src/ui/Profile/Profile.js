@@ -9,6 +9,8 @@ import {fetchAllToolsAndBorrows} from "../../store/tools";
 import {Link} from "react-router-dom";
 import {ProfileSettingsFormContent} from "../Components/Profile/ProfileSettingsFormContent";
 import {ProfileSettingsForm} from "../Components/Profile/ProfileSettingsForm";
+import {MessageModal} from "../Components/Messsage/MessageModal";
+
 
 
 export function Userprofile() {
@@ -31,36 +33,39 @@ export function Userprofile() {
 
 
             <Container >
-
-                <div>
-
-                </div>
-                <div className="me-5">
+                <Container>
+                <Row>
+                <Col>
                     <Link to="/user-settings">
                         <Button   size="lg">
                             Settings Page
                         </Button>
                     </Link>
-                </div>
+                </Col>
+                <Col>
+                    <MessageModal/>
+                </Col>
+                </Row>
+                </Container>
                 <br/>
-                <div className="row">
-                    <div className=" col">
-                        {/*    Image Place   */}
-                    </div>
-                    <div className="col">
-                        <h2 className="text-center">Austins BIO</h2>
-                        {/*<div> {profiles.map((profile, index) => <Profile key={index} profile={profile}/>)} </div>*/}
-                    </div>
-                    <div style={{border: "transparent 75", height: 150, width: 250}} className="col">
+                <Row>
+                    <Col>
+
+                    </Col>
+                    <Col>
+                        <h1 className="text-center ">Austins Tool Page</h1>
+                    </Col>
+                    <Col style={{border: "transparent 75", height: 150, width: 250}} >
                         <h2>User Status</h2>
                         <p>
                             Tools Borrowed:5 |
                             Tools Lent:5 |
                             User Rating:3/5
                         </p>
-                    </div>
-                </div>
 
+                    </Col>
+
+                </Row>
             </Container>
 
             <Container>

@@ -11,11 +11,11 @@ export function ImageDropZone({formikProps}) {
 
     const onDrop = useCallback(acceptedFiles => {
 
-       // const formData = new FormData();
-       // formData.append('image', acceptedFiles[0]);
+        const formData = new FormData();
+        formData.append('image', acceptedFiles[0]);
 
 
-       // formikProps.setFieldValue(formikProps.fieldValue, formData)
+        formikProps.setFieldValue(formikProps.fieldValue, formData)
 
     }, []);
     const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
@@ -26,8 +26,8 @@ export function ImageDropZone({formikProps}) {
             <div  className="input-group input-group-lg " >
                 <input className="form-control-file"
                     accept="image/*"
-                   // onChange={formikProps.handleChange}
-                    //onBlur={formikProps.handleBlur}
+                   onChange={formikProps.handleChange}
+                    onBlur={formikProps.handleBlur}
                     {...getInputProps()}/>
                 {
 
