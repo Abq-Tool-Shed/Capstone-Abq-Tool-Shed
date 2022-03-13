@@ -15,7 +15,7 @@ import {MessageModal} from "../Components/Messsage/MessageModal";
 
 export const Profile=({profile}) => {
 
-   const profile = useSelector(state => state.profile ? state.profile : null);
+   const Profile = useSelector(state => state.profile ? state.profile : null);
 
     const dispatch = useDispatch();
 

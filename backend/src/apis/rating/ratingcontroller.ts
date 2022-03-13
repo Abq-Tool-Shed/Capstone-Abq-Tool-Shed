@@ -1,7 +1,7 @@
 import {NextFunction, Request, Response} from 'express';
 
 
-import {Rating} from "../../../src/utils/interfaces/Rating"
+import {Rating} from "../../utils/interfaces/Rating"
 import {Status} from "../../utils/interfaces/Status"
 import {Profile} from "../../utils/interfaces/Profile"
 import {insertRating} from "../../utils/rating/insertRating";
@@ -19,7 +19,7 @@ export async function getInsertRatingController(request: Request, response: Resp
             ratingProfileId: null,
             ratingBorrowProfileId: null,
             ratingLenderProfileId: null,
-            Rating: null
+            ratingValue
         }
         const result = await insertRating(rating)
         const status: Status = {
@@ -55,7 +55,7 @@ export async function getRatingByRatingProfileIdController(request: Request, res
 export async function getRatingProfileIdByRatingBorrowProfileIdController(request: Request, response: Response, nextFunction: NextFunction) {
     try {
         const {ratingBorrowProfileId} = request.params
-        const data = await selectRatingProfileIdByRatingBorrowProfileId(ratingborrowProfileId)
+        const data = await selectRatingProfileIdByRatingBorrowProfileId(ratingBorrowProfileId)
         return response.json({status:200, message: null, data});
     } catch(error) {
         return response.json({
