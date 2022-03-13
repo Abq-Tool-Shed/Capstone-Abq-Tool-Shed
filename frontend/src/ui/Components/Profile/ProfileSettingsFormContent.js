@@ -18,7 +18,7 @@ export const ProfileSettingsFormContent = (props) => {
         handleSubmit,
         handleReset
     } = props;
-    console.log(values)
+
 
     return (
         <>
