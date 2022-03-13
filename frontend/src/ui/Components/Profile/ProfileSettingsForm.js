@@ -9,6 +9,7 @@ export const ProfileSettingsForm = (props) => {
 
     const validationObject = Yup.object().shape({
         profileImage: Yup.mixed(),
+
         profileBio: Yup.string()
             .max(200, "Bio is to long."),
         profileHandle: Yup.string()
@@ -16,7 +17,7 @@ export const ProfileSettingsForm = (props) => {
     });
 
     function submitProfileSettings (values, {resetForm, setStatus}) {
-
+        console.log("is this thing on?")
         const submitUpdatedProfileSettings = (updatedProfile) => {
             httpConfig.put(`/apis/profile/${profile.profileId}`, updatedProfile)
                 .then(reply => {

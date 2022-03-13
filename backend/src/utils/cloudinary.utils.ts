@@ -1,6 +1,7 @@
-import { Request } from 'express'
+import express, { Request } from 'express'
 import {v2 as cloudinaryUtils, UploadStream} from 'cloudinary'
-let streamifier = require('streamifier');
+import {Readable} from "stream";
+
 /**
  * helper function that handles uploading images to cloudinary
  *
@@ -9,9 +10,9 @@ let streamifier = require('streamifier');
  */
 export const uploadToCloudinary = (request : Request) : Promise<string> => {
     cloudinaryUtils.config({
-        api_key: process.env.CLOUDINARY_KEY,
-        api_secret: process.env.CLOUDINARY_SECRET,
-        cloud_name: "cnm-ingenuity-deep-dive-bootcamp"
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET,
+        cloud_name: "abqtoolshed"
     })
     return new Promise((resolve, reject):void => {
         let cld_upload_stream: UploadStream = cloudinaryUtils.uploader.upload_stream(
@@ -23,7 +24,14 @@ export const uploadToCloudinary = (request : Request) : Promise<string> => {
                 }
             }
         );
+
+        const readable: Readable = new Readable()
+        readable._read = () => {}
         // @ts-ignore
-        streamifier.createReadStream(request.file.buffer).pipe(cld_upload_stream);
+        readable.push(request.file.buffer)
+        readable.push(null)
+        readable.pipe(cld_upload_stream)
     });
 }
+
+

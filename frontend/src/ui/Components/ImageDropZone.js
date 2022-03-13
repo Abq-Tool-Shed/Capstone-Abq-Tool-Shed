@@ -11,6 +11,7 @@ export function ImageDropZone({formikProps}) {
 
     const onDrop = useCallback(acceptedFiles => {
 
+
         const formData = new FormData();
         formData.append('image', acceptedFiles[0]);
 

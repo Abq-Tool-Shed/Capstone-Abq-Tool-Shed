@@ -12,7 +12,8 @@ import austin1 from "../Components/Images/austin-pro.jpg"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
 import {Tool} from "../Components/Post/Tool";
-import {TitleBG} from "../Components/Shared/Jumbo";
+import {GradientJumbo} from "../Components/Shared/GradientJumbo";
+import {ImageJumbo} from "../Components/Shared/ImageJumbo";
 
 
 
@@ -32,12 +33,12 @@ export function Home() {
 
     return (
         <>
-            <TitleBG
-                test1 = "Big Test Header"
-                test2 = "second header test"
-                test3 = "third header test"
-                test4 = "final header test"
-            />
+            {/*<ImageJumbo*/}
+            {/*    display1 = "ABQ Tool Shed"*/}
+            {/*    heading2 = ""*/}
+            {/*    heading3 = "Welcome..."*/}
+            {/*    heading4 = ""*/}
+            {/*/>*/}
             {/*<Container>*/}
             {/*    <header >*/}
             {/*<h1 className={"text-center pb-4"} >ABQ Tool Shed</h1>*/}
