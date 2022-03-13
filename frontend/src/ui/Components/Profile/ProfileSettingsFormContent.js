@@ -18,7 +18,7 @@ export const ProfileSettingsFormContent = (props) => {
         handleSubmit,
         handleReset
     } = props;
-    console.log(values)
+
 
     return (
         <>
@@ -30,7 +30,7 @@ export const ProfileSettingsFormContent = (props) => {
                                 handleChange,
                                 handleBlur,
                                 setFieldValue,
-                                fieldValue:"profileImage"
+                                fieldValue:"profile Image"
                             }}
                         />
 
