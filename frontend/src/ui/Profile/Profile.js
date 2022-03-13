@@ -13,9 +13,9 @@ import {MessageModal} from "../Components/Messsage/MessageModal";
 
 
 
-export function Userprofile() {
+export const Profile=({profile}) => {
 
-   const profile = useSelector(state => state.profile ? state.profileName : null);
+   const profile = useSelector(state => state.profile ? state.profile : null);
 
     const dispatch = useDispatch();
 
@@ -25,6 +25,11 @@ export function Userprofile() {
 
     useEffect(sideEffects, [dispatch]);
     console.log(profile)
+
+
+
+
+
 
 
     return (
@@ -53,7 +58,7 @@ export function Userprofile() {
 
                     </Col>
                     <Col>
-                        <h1 className="text-center ">Austins Tool Page</h1>
+
                     </Col>
                     <Col style={{border: "transparent 75", height: 150, width: 250}} >
                         <h2>User Status</h2>
@@ -79,17 +84,11 @@ export function Userprofile() {
                 </div>
                 <br>
                 </br>
-                <div className="row mt-5">
-                    <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <h1>POST HERE</h1>
-                    </div>
-                    <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <h1>POST HERE</h1>
-                    </div>
-                    <div  style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <h1>POST HERE</h1>
-                    </div>
-                </div>
+            </Container>
+            <Container>
+                <Row>
+
+                </Row>
             </Container>
 
 
