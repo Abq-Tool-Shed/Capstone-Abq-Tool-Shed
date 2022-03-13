@@ -67,4 +67,5 @@ export async function signUpProfileController(request: Request, response: Respon
 
         return response.json(status)
     }
+
 }
