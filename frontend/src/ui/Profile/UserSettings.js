@@ -22,7 +22,7 @@ export function UserSettings() {
     return (
         <>
 
-            <div>
+            <div className="text-lg-center">
                 <h1>Welcome To Your Settings Page!</h1>
                 <p>Please Fill Out The Fields Bellow To Customize Your Profile</p>
             </div>
