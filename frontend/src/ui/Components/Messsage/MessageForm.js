@@ -23,10 +23,12 @@ export const MessageForm = () => {
 
 
     const submitMessage = (values, {resetForm, setStatus}) => {
+
         //TODO Gather data required to create a batched borrow and email them
         // Just hardwire a tool id in there to send this.
         //Grab a tool id, grab the message from the user.
         httpConfig.post("/apis/message/", values)
+
             .then(reply => {
                 let {message, type} = reply;
                 setStatus({message, type})
