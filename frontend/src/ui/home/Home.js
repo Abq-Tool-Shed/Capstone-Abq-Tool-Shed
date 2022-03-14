@@ -81,7 +81,7 @@ export function Home() {
                     <h1>Recent tools available for lend</h1>
 
                     <Row>
-                        {tools.map((tool, index) => <Tool key={index} tool={tool}/>)}
+                        {tools.slice(0,2).map((tool, index) => <Tool key={index} tool={tool}/>)}
                     </Row>
 
                     {/*<Row>*/}

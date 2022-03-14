@@ -17,13 +17,8 @@ export const BorrowRequestToggleForm = () => {
             .then(reply => {
                 let {message, type} = reply;
                 setStatus({message, type})
-                if(reply.status ===200 && reply.headers['authorization']) {
-                    window.localStorage.removeItem('authorization')
-                    window.localStorage.setItem('authorization', reply.headers['authorization'])
+                if(reply.status ===200 ) {
                     resetForm()
-                    let jwtToken = jwt_decode(reply.headers['authorization'])
-                    console.log(jwtToken)
-                    dispatch(getAuth(jwtToken))
                 }
                 setStatus({message, type});}
 

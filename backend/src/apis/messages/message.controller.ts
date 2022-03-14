@@ -14,21 +14,24 @@ export async function messageController(request: Request, response: Response): P
         const mailgun: Mailgun = new Mailgun(formData)
         const mailgunClient: Client = mailgun.client({username: 'api', key: <string>process.env.MAILGUN_API_KEY})
 
-        const {profileEmail, messageName, messageSubject, messageMessage} = request.body
+        const  {message} = request.body
 
+        //TODO Grab the logged in user from session (make sure it matches borrowProfileId from request
+        // insert borrow maybe in a loop of some kind (map?)
+        // send the message using data we defined and grabbed from the session
 
-        const mailgunMessage = {
-            from: ` ${messageName} <postmaster@${process.env.MAILGUN_DOMAIN}>`,
-            to: profileEmail,
-            subject: messageSubject,
-            textarea: messageMessage
-        }
-        await mailgunClient.messages.create(<string>process.env.MAILGUN_DOMAIN, mailgunMessage)
-        const status: Status = {
-            status: 200,
-            data: null,
-            message: 'Tool Request Has Been Sent'
-        };
+        // const mailgunMessage = {
+        //     from: ` ${messageName} <postmaster@${process.env.MAILGUN_DOMAIN}>`,
+        //     to: profileEmail,
+        //     subject: messageSubject,
+        //     textarea: messageMessage
+        // }
+        // await mailgunClient.messages.create(<string>process.env.MAILGUN_DOMAIN, mailgunMessage)
+        // const status: Status = {
+        //     status: 200,
+        //     data: null,
+        //     message: 'Tool Request Has Been Sent'
+        // };
 
         return response.json(status)
     } catch (error: any) {

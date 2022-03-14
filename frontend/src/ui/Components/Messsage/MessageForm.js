@@ -2,10 +2,7 @@ import React from "react";
 import {httpConfig} from "../../../utils/http-config";
 import * as Yup from "yup";
 import {Formik} from "formik";
-import jwt_decode from "jwt-decode"
-import { getAuth } from '../../../store/auth'
-import {MessageContent} from "./MessageContnent";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 
 
@@ -14,37 +11,27 @@ export const MessageForm = () => {
     const dispatch = useDispatch()
 
     const validator = Yup.object().shape({
-        profileEmail: Yup.string()
-            .email("email address must be a valid email")
-            .required("Email Is Required"),
-        messageSubject: Yup.string()
-            .required("Subject Is Required"),
-        messageName: Yup.string()
-            .required("Name Is Required"),
-        messageMessage: Yup.string()
+        message: Yup.string()
             .required("Message Is Required")
     })
 
     const Message = {
-        profileEmail: '',
-        messageName: '',
-        messageSubject: '',
-        messageMessage: ''
+        message: ''
     };
+
+    const signedInUser = useSelector(state => state ? state.auth : null)
 
 
     const submitMessage = (values, {resetForm, setStatus}) => {
+        //TODO Gather data required to create a batched borrow and email them
+        // Just hardwire a tool id in there to send this.
+        //Grab a tool id, grab the message from the user.
         httpConfig.post("/apis/message/", values)
             .then(reply => {
                 let {message, type} = reply;
                 setStatus({message, type})
-                if(reply.status ===200 && reply.headers['authorization']) {
-                    window.localStorage.removeItem('authorization')
-                    window.localStorage.setItem('authorization', reply.headers['authorization'])
+                if(reply.status ===200) {
                     resetForm()
-                    let jwtToken = jwt_decode(reply.headers['authorization'])
-                    console.log(jwtToken)
-                    dispatch(getAuth(jwtToken))
                 }
                 setStatus({message, type});}
 
@@ -64,3 +51,46 @@ export const MessageForm = () => {
     )
 
 };
+
+
+
+   function MessageContent (props) {
+    const {
+        status,
+        values,
+        errors,
+        touched,
+        dirty,
+        isSubmitting,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        handleReset
+    } = props
+    return (
+        <>
+            <form   id="contact" method="post" noValidate>
+                {/*TODO add a select to choose tools TLDR - Hit up Jon*/}
+
+                <div className="form-group">
+                    <label htmlFor="message">Message</label>
+                    <div className="input-group">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text"><i className="fa fa-comment"/></span>
+                        </div>
+                        <textarea className="form-control" id="message" maxLength="2000" name="message"
+                                  placeholder="Your Message (2000 characters max)" required rows="5"></textarea>
+                    </div>
+                </div>
+
+
+
+                <button className="btn btn-primary btn-info" type="submit">Submit</button>
+                <button className="btn btn-default btn-primary" type="reset">Reset</button>
+
+
+                <div id="output-area"/>
+            </form>
+        </>
+    )
+}
