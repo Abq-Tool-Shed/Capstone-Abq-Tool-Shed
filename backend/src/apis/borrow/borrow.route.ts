@@ -18,7 +18,7 @@ BorrowRoute.route('/:borrowId').get( asyncValidatorController([
 ]), getBorrowByBorrowIdController)
 
 BorrowRoute.route('/:borrowProfileId').get(asyncValidatorController([
-    check('borrowProfileId', 'please provide a valid borrowId').isUUID()
+    check('borrowProfileId', 'please provide a valid borrowProfileId').isUUID()
 ]), getBorrowByBorrowProfileIdController)
 
 
