@@ -1,6 +1,11 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, {useEffect} from "react";
 import {FormDebugger} from "../FormDebugger";
+import {ImageDropZone} from "../ImageDropZone";
+import {DropdownButton, Form, Dropdown} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
+import {CategoryDropdown} from "./CategoryDropdown";
+import {fetchAllCategories} from "../../../store/categories";
+
 
 export const ToolFormContent = (props) => {
     const {
@@ -15,110 +20,105 @@ export const ToolFormContent = (props) => {
         handleSubmit,
         handleReset
     } = props;
+
+    const categories = useSelector(state => state.categories ? state.categories : [])
+    const dispatch = useDispatch()
+    const effects = () => {
+        dispatch(fetchAllCategories())
+    }
+    useEffect(effects, [dispatch])
+
+    console.log(categories, "test test")
+
+
+
     return (
         <>
-            <form onSubmit={handleSubmit}>
+        <div>
+            <Form onSubmit={handleSubmit} className={"col-sm-6 centered mx-auto bg-light m-5 p-5"}>
                 {/*controlId must match what is passed to the initialValues prop*/}
+
                 {/*Tool Name*/}
-                <div className="form-group">
-                    <label htmlFor="toolName">Enter your tool name.</label>
-                    <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text"></div>
-                        </div>
-                        <input
-                            className="form-control"
-                            name="toolName"
-                            type="text"
-                            value={values.toolName}
-                            placeholder="Enter Tool Name"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                        />
-                    </div>
-                    {
-                        errors.toolName && touched.toolName && (
-                            <div className="alert alert-danger">
-                                {errors.toolName}
-                            </div>
-                        )
-                    }
-                </div>
+                <Form.Group className="mb-3" controlId="formName">
+                    <Form.Label>Tool Name</Form.Label>
+                    <Form.Control
+                        type="text"
+                        name="toolName"
+                        placeholder="Your Tool's name."
+                        value={values.toolName}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                    />
+                </Form.Group>
 
                 {/* Tool Category */}
-                <div className="form-group">
-                    <label htmlFor="toolCategoryId">Tool Category</label>
-                    <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text"></div>
+                <Form.Group className="mb-3" controlId="formCategory">
+                    <Form.Label>Tool Category</Form.Label>
+
+                    {/*<CategoryDropdown/>*/}
+                    <label htmlFor="toolCategoryId" className={"mb-3"}>Choose a Category:</label>
+
+                    <select name="toolCategoryId" id="toolCategoryId" onChange={handleChange} onBlur={handleBlur}>
+                        <option value={""}> Select a Category </option>
+                        {categories.map(category =>  <option value={category.categoryId}>{category.categoryName}</option>)}
+                    </select>
+
+
+
+                    {/*<Form.Control*/}
+                    {/*    type="text"*/}
+                    {/*    name="toolCategoryId"*/}
+                    {/*    placeholder="Your Tool's Category."*/}
+                    {/*    value={values.toolCategoryId}*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*    onBlur={handleBlur}*/}
+                    {/*/>*/}
+                </Form.Group>
+                {
+                    errors.toolCategoryId && touched.toolCategoryId && (
+                        <div className="alert alert-danger">
+                            {errors.toolCategoryId}
                         </div>
-                        <input
-                            className="form-control"
-                            name="toolCategoryId"
-                            type="text"
-                            value={values.toolCategoryId}
-                            placeholder="Enter Tool Category"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
+                    )
 
-                        />
-                    </div>
-                    {
-                        errors.toolCategoryId && touched.toolCategoryId && (
-                            <div className="alert alert-danger">
-                                {errors.toolCategoryId}
-                            </div>
-                        )
+                }
 
-                    }
-                </div>
+
 
                 {/* Tool Description */}
-                <div className="form-group">
-                    <label htmlFor="toolDescription">Tool Description</label>
-                    <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text"></div>
+                <Form.Group className="mb-3" controlId="formDescription">
+                    <Form.Label>Tool Description</Form.Label>
+                    <Form.Control
+                        type="textarea"
+                        name="toolDescription"
+                        placeholder="Your Tool's Description."
+                        value={values.toolDescription}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                    />
+                </Form.Group>
+                {
+                    errors.toolDescription && touched.toolDescription && (
+                        <div className="alert alert-danger">
+                            {errors.toolDescription}
                         </div>
-                        <input
-                            className="form-control"
-                            name="toolDescription"
-                            type="text"
-                            value={values.toolDescription}
-                            placeholder="Enter Tool Description"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
+                    )
 
-                        />
-                    </div>
-                    {
-                        errors.toolDescription && touched.toolDescription && (
-                            <div className="alert alert-danger">
-                                {errors.toolDescription}
-                            </div>
-                        )
+                }
 
-                    }
-                </div>
 
                 {/* Tool Lend Rules */}
-                <div className="form-group">
-                    <label htmlFor="toolLendRules">Tool Lend Rules</label>
-                    <div className="input-group">
-                        <div className="input-group-prepend">
-                            <div className="input-group-text"></div>
-                        </div>
-                        <input
-                            className="form-control"
-                            name="toolLendRules"
-                            type="text"
-                            value={values.toolLendRules}
-                            placeholder="Enter Tool Lend Rules"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-
-                        />
-                    </div>
+                <Form.Group className="mb-3" controlId="formLendRules">
+                    <Form.Label>Lend Rules:</Form.Label>
+                    <Form.Control
+                        type="textarea"
+                        name="toolLendRules"
+                        placeholder="Enter Tool Lend Rules"
+                        value={values.toolLendRules}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                    />
+                </Form.Group>
                     {
                         errors.toolLendRules && touched.toolLendRules && (
                             <div className="alert alert-danger">
@@ -127,13 +127,28 @@ export const ToolFormContent = (props) => {
                         )
 
                     }
+
+
+                <div className="mb-3">
+
+                    <ImageDropZone
+                        formikProps={{
+                            values,
+                            handleChange,
+                            handleBlur,
+                            fieldValue:"profile Image"
+                        }}
+                    />
+
                 </div>
 
-                {/*LAT LONG Goes Here*/}
+
+
+                {/*LAT LONG Goes Here - if we are still doing it*/}
 
 
 
-                <div className="form-group">
+                <Form.Group className="mb-3" controlId="formButton">
                     <button className="btn btn-primary mb-2" type="submit">Submit</button>
                     <button
                         className="btn btn-danger mb-2"
@@ -141,16 +156,15 @@ export const ToolFormContent = (props) => {
                         disabled={!dirty || isSubmitting}
                     >Reset
                     </button>
-                </div>
+                </Form.Group>
 
 
                 <FormDebugger {...props} />
-            </form>
+            </Form>
             {
                 status && (<div className={status.type}>{status.message}</div>)
             }
+        </div>
         </>
-
-
     )
 };

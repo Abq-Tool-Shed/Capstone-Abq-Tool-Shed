@@ -26,27 +26,19 @@ export function NavBar () {
                             <SignUpModal/>
 
 
-                            <Nav.Link href="/" className={"navbar-item"} activeClassName={"is-active"}>Home</Nav.Link>
+                            <Nav.Link href="/" className={"navbar-item"} >Home</Nav.Link>
 
 
-                            <Nav.Link href="/profile" className={"navbar-item"} activeClassName={"is-active"}>Profile</Nav.Link>
+                            <Nav.Link href="/profile" className={"navbar-item"} >Profile</Nav.Link>
 
 
+                            <Nav.Link href="/prepost" className={"navbar-item"} >Pre Post</Nav.Link>
 
 
-
-                            <Nav.Link href="/prepost" className={"navbar-item"} activeClassName={"is-active"}>Pre Post
-
-
-                            </Nav.Link>
+                            <Nav.Link href="/post" className={"navbar-item"} >Post</Nav.Link>
 
 
-                            <Nav.Link href="/post" className={"navbar-item"} activeClassName={"is-active"}>Post</Nav.Link>
-
-
-
-
-                            <Nav.Link href="/browse" className={"navbar-item"} activeClassName={"is-active"}>Browse</Nav.Link>
+                            <Nav.Link href="/browse" className={"navbar-item"} >Browse</Nav.Link>
 
 
 
