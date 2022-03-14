@@ -10,12 +10,16 @@ import {Link} from "react-router-dom";
 import {ProfileSettingsFormContent} from "../Components/Profile/ProfileSettingsFormContent";
 import {ProfileSettingsForm} from "../Components/Profile/ProfileSettingsForm";
 import {MessageModal} from "../Components/Messsage/MessageModal";
+import {object} from "yup";
+import {GradientJumbo} from "../Components/Shared/GradientJumbo";
 
 
 
-export function Userprofile() {
+export const UserProfile=() => {
 
-   const profile = useSelector(state => state.profile ? state.profileName : null);
+    const tool = useSelector(state => state.tool ? state.tool: object)
+
+   const profile = useSelector(state => state.profile ? state.profile: object);
 
     const dispatch = useDispatch();
 
@@ -27,14 +31,31 @@ export function Userprofile() {
     console.log(profile)
 
 
+    const {profileId, profileHandle, profileImage, profileEmail, profileName} = profile
+
+    const {toolName, toolDescription, toolImage, toolLendRules} = tool
+
+
+
+
+
+
     return (
         <>
 
 
 
+
+            <GradientJumbo
+                display1={profileHandle}
+                heading3={"Welcome To My Profile Page"}
+                Image={profileImage}
+                ImageAlt={"Profile Image"}
+            />
             <Container >
                 <Container>
                 <Row>
+
                 <Col>
                     <Link to="/user-settings">
                         <Button   size="lg">
@@ -53,14 +74,13 @@ export function Userprofile() {
 
                     </Col>
                     <Col>
-                        <h1 className="text-center ">Austins Tool Page</h1>
+                        {profileImage}
                     </Col>
                     <Col style={{border: "transparent 75", height: 150, width: 250}} >
                         <h2>User Status</h2>
                         <p>
                             Tools Borrowed:5 |
-                            Tools Lent:5 |
-                            User Rating:3/5
+                            Tools Lent:5
                         </p>
 
                     </Col>
@@ -79,17 +99,18 @@ export function Userprofile() {
                 </div>
                 <br>
                 </br>
-                <div className="row mt-5">
-                    <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <h1>POST HERE</h1>
-                    </div>
-                    <div style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <h1>POST HERE</h1>
-                    </div>
-                    <div  style={{margin: "auto",  width: 250}} className="col-2 border border-secondary text-center">
-                        <h1>POST HERE</h1>
-                    </div>
-                </div>
+            </Container>
+            <Container>
+                <Row>
+                    <Col>
+                        <div>
+                        {toolImage}
+                        {toolName}
+                        {toolDescription}
+                        {toolLendRules}
+                        </div>
+                    </Col>
+                </Row>
             </Container>
 
 

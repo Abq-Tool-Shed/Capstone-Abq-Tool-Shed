@@ -3,7 +3,7 @@ import { connect } from "../database.utils"
 import {RowDataPacket} from 'mysql2'
 
 
-export async function selectRatingProfileIdByRatingLenderProfileId(rating: Rating): Promise<Rating|null> {
+export async function selectRatingProfileIdByRatingLenderProfileId(rating: string): Promise<Rating | null> {
     try {
         const mySqlConnection = await connect();
         const mySqlSelectQuery = 'SELECT BIN_TO_UUID (ratingProfileId) AS ratingProfileId, BIN_TO_UUID(ratingLenderProfileId) AS ratingBorrowId, ratingProfileId = UUID_TO_BIN(:ratingProfileId), ratingLenderProfileId = UUID_TO_BIN(:ratingLenderProfileId)'

@@ -34,7 +34,7 @@ export const Tool=({tool}) => {
                         <h5>Tool location</h5>
                     </Col>
                 </Row>
-                <Image src={toolImage}/>
+                <Image fluid src={toolImage}/>
                 {/*<Image className={"p-3"} fluid  rounded src={kitten1} alt={"kitten"}/>*/}
                 <div className={'text-center'}>
 

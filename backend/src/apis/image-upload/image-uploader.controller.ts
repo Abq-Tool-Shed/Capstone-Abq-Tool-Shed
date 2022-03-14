@@ -8,6 +8,6 @@ export async function imageUploaderController(request: Request, response: Respon
         return response.json({status: 200, data: null, message: message})
     }catch (error: any) {
         console.log(error)
-        return response.json({status:500, message: error.message, data: null})
+        return response.json({status:489, message: error.message, data: null})
     }
 }

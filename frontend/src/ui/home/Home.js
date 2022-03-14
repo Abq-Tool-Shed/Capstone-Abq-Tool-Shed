@@ -33,12 +33,12 @@ export function Home() {
 
     return (
         <>
-            {/*<ImageJumbo*/}
-            {/*    display1 = "ABQ Tool Shed"*/}
-            {/*    heading2 = ""*/}
-            {/*    heading3 = "Welcome..."*/}
-            {/*    heading4 = ""*/}
-            {/*/>*/}
+            <ImageJumbo
+                display1 = " ABQ Tool Shed 🛠"
+                heading2 = "A neighborhood resource for borrowing tools"
+                heading3 = "To complete your project"
+                heading4 = "save money and build community"
+            />
             {/*<Container>*/}
             {/*    <header >*/}
             {/*<h1 className={"text-center pb-4"} >ABQ Tool Shed</h1>*/}
