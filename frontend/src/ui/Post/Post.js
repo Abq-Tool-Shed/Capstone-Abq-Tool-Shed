@@ -64,7 +64,7 @@ export function Post() {
 
                         <div className="m-3 p-3 text-center mx-auto">
                             Upload a Tool image.
-                            <ImageDropZone />
+                            {/*<ImageDropZone />*/}
                         </div>
 
                         {/*<Form.Group className="mb-3" controlId="formPosition">*/}

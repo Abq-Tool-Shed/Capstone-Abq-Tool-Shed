@@ -10,12 +10,16 @@ import {Link} from "react-router-dom";
 import {ProfileSettingsFormContent} from "../Components/Profile/ProfileSettingsFormContent";
 import {ProfileSettingsForm} from "../Components/Profile/ProfileSettingsForm";
 import {MessageModal} from "../Components/Messsage/MessageModal";
+import {object} from "yup";
+import {GradientJumbo} from "../Components/Shared/GradientJumbo";
 
 
 
-export const Profile=({profile}) => {
+export const UserProfile=() => {
 
-   const Profile = useSelector(state => state.profile ? state.profile : null);
+    const tool = useSelector(state => state.tool ? state.tool: object)
+
+   const profile = useSelector(state => state.profile ? state.profile: object);
 
     const dispatch = useDispatch();
 
@@ -27,6 +31,10 @@ export const Profile=({profile}) => {
     console.log(profile)
 
 
+    const {profileId, profileHandle, profileImage, profileEmail, profileName} = profile
+
+    const {toolName, toolDescription, toolImage, toolLendRules} = tool
+
 
 
 
@@ -37,6 +45,13 @@ export const Profile=({profile}) => {
 
 
 
+
+            <GradientJumbo
+                display1={profileHandle}
+                heading3={"Welcome To My Profile Page"}
+                Image={profileImage}
+                ImageAlt={"Profile Image"}
+            />
             <Container >
                 <Container>
                 <Row>
@@ -58,14 +73,13 @@ export const Profile=({profile}) => {
 
                     </Col>
                     <Col>
-
+                        {profileImage}
                     </Col>
                     <Col style={{border: "transparent 75", height: 150, width: 250}} >
                         <h2>User Status</h2>
                         <p>
                             Tools Borrowed:5 |
-                            Tools Lent:5 |
-                            User Rating:3/5
+                            Tools Lent:5
                         </p>
 
                     </Col>
@@ -87,7 +101,14 @@ export const Profile=({profile}) => {
             </Container>
             <Container>
                 <Row>
-
+                    <Col>
+                        <div>
+                        {toolImage}
+                        {toolName}
+                        {toolDescription}
+                        {toolLendRules}
+                        </div>
+                    </Col>
                 </Row>
             </Container>
 

@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
 import { Home } from './home/Home';
 import {UserSettings} from "./Profile/UserSettings";
-import {Userprofile} from "./Profile/Profile"
+import {UserProfile} from "./Profile/Profile"
 import { FourOhFour } from './FourOhFour';
 import React from 'react';
 import {NavBar} from "./Components/NavBar";
@@ -36,9 +36,15 @@ export const App = (store) => (
                 <NavBar/>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <Route exact path="/profile" component={Userprofile} />
-                    <Route exact path='/prepost' component={PrePost} />
-                    <Route exact path='/post' component={Post} />
+                    <PrivateRoute exact path="/profile">
+                        <UserProfile/>
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/prepost'>
+                        <PrePost/>
+                    </PrivateRoute>
+                    <PrivateRoute exact path='/post'>
+                    <post/>
+                    </PrivateRoute>
                     <PrivateRoute path="/user-settings">
                     <UserSettings/>
                     </PrivateRoute>

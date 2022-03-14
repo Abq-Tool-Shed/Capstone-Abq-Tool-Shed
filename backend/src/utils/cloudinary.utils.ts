@@ -30,7 +30,7 @@ export const uploadToCloudinary = (request : Request) : Promise<string> => {
         // @ts-ignore
         readable.push(request.file.buffer)
         readable.push(null)
-        readable.pipe(cld_upload_stream)
+         readable.pipe(cld_upload_stream)
     });
 }
 
