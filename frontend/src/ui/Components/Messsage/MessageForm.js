@@ -34,7 +34,7 @@ export const MessageForm = () => {
 
 
     const submitMessage = (values, {resetForm, setStatus}) => {
-        httpConfig.post("/apis/message/", values)
+        httpConfig.post("/apis/messages/", values)
             .then(reply => {
                 let {message, type} = reply;
                 setStatus({message, type})

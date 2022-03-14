@@ -80,6 +80,7 @@ export const MessageContent = (props) => {
 
 
                 <div id="output-area"/>
+                <FormDebugger {...props} />
             </form>
             <script src="MessageScript.js"/>
         </>

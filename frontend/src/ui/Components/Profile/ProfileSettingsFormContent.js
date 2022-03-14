@@ -30,7 +30,7 @@ export const ProfileSettingsFormContent = (props) => {
                                 handleChange,
                                 handleBlur,
                                 setFieldValue,
-                                fieldValue:"profile Image"
+                                fieldValue:"profileImage"
                             }}
                         />
 

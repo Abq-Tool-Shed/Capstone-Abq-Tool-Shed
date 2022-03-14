@@ -9,7 +9,6 @@ export const ProfileSettingsForm = (props) => {
 
     const validationObject = Yup.object().shape({
         profileImage: Yup.mixed(),
-
         profileBio: Yup.string()
             .max(200, "Bio is to long."),
         profileHandle: Yup.string()
