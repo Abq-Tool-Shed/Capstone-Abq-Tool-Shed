@@ -1,10 +1,7 @@
 import {Request, Response, NextFunction} from "express";
 import {Status} from "../../utils/interfaces/Status";
-
 import {Borrow} from '../../utils/interfaces/Borrow'
 import {Profile} from '../../utils/interfaces/Profile'
-import {Tool} from "../../utils/interfaces/Tool";
-import {Category} from '../../utils/interfaces/Category'
 import {updateBorrow} from "../../utils/borrow/updateBorrow";
 import {insertBorrow} from "../../utils/borrow/insertBorrow";
 import {selectBorrowByBorrowId} from "../../utils/borrow/selectBorrowByBorrowId";

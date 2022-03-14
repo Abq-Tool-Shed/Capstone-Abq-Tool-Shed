@@ -5,10 +5,10 @@ import {Readable} from "stream";
 /**
  * helper function that handles uploading images to cloudinary
  *
- * @param { Request} request express request object that contains a file with a buffer
+ * @param { Express.Multer.File} file express request object that contains a file with a buffer
  * @return {string} a string containing a secure_url returned from cloudinaryUtils.
  */
-export const uploadToCloudinary = (request : Request) : Promise<string> => {
+export const uploadToCloudinary = (file: Express.Multer.File) : Promise<string> => {
     cloudinaryUtils.config({
         api_key: process.env.CLOUDINARY_API_KEY,
         api_secret: process.env.CLOUDINARY_API_SECRET,
@@ -27,8 +27,8 @@ export const uploadToCloudinary = (request : Request) : Promise<string> => {
 
         const readable: Readable = new Readable()
         readable._read = () => {}
-        // @ts-ignore
-        readable.push(request.file.buffer)
+
+        readable.push(file.buffer)
         readable.push(null)
          readable.pipe(cld_upload_stream)
     });

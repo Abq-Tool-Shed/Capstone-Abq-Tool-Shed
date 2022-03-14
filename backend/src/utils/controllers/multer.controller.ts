@@ -13,7 +13,7 @@ const fileFilter  = ( request: Request, file : Express.Multer.File , callback : 
   const {originalname} = file
   return originalname.match(/\.(jpg|jpeg|png|gif)$/)
     ? callback(null, true)
-    : callback(new Error("only images are allowed to be uploaded"), false)
+    : callback(null, false)
 }
 
 export const imageUploader = multer({storage, limits, fileFilter}).single('image')
