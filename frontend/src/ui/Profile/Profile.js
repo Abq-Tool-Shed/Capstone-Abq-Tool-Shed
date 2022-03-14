@@ -55,6 +55,7 @@ export const UserProfile=() => {
             <Container >
                 <Container>
                 <Row>
+
                 <Col>
                     <Link to="/user-settings">
                         <Button   size="lg">
