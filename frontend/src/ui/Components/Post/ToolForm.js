@@ -12,6 +12,7 @@ export const ToolForm = () => {
         toolCategoryId:"",
         toolDescription:"",
         toolLendRules:"",
+        toolImage:""
         // toolPosition:"",
     };
 
@@ -29,14 +30,15 @@ export const ToolForm = () => {
             .required("Tool Description is required"),
         toolLendRules: Yup.string()
             .required("Lend Rules are required"),
+        toolImage: Yup.mixed()
         // toolPosition: Yup.string()
         //     .required("Tool Location is required"),
     });
 
     const submitTool = (values, {resetForm, setStatus}) => {
-        console.log("tool auth", auth)
+        // console.log("tool auth", auth)
         const toolProfileId = auth?.profileId ?? null
-        console.log(toolProfileId)
+        // console.log(toolProfileId)
         const tool = {toolProfileId, ...values}
         httpConfig.post("/apis/tool/", tool)
             .then(reply => {
@@ -49,7 +51,12 @@ export const ToolForm = () => {
                     setStatus({message, type});
                 }
             );
+
+
+
     };
+
+    // const submitCategory = (values, {setStatus})
 
 
     return (
