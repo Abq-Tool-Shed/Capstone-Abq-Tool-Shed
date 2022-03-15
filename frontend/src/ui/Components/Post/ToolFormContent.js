@@ -9,6 +9,7 @@ import {fetchAllCategories} from "../../../store/categories";
 
 export const ToolFormContent = (props) => {
     const {
+        setFieldValue,
         status,
         values,
         errors,
@@ -27,9 +28,6 @@ export const ToolFormContent = (props) => {
         dispatch(fetchAllCategories())
     }
     useEffect(effects, [dispatch])
-
-    console.log(categories, "test test")
-
 
 
     return (
@@ -56,7 +54,7 @@ export const ToolFormContent = (props) => {
                     <Form.Label>Tool Category</Form.Label>
 
                     {/*<CategoryDropdown/>*/}
-                    <label htmlFor="toolCategoryId" className={"mb-3"}>Choose a Category:</label>
+                    <label htmlFor="toolCategoryId" >Choose a Category:</label>
 
                     <select name="toolCategoryId" id="toolCategoryId" onChange={handleChange} onBlur={handleBlur}>
                         <option value={""}> Select a Category </option>
@@ -129,18 +127,19 @@ export const ToolFormContent = (props) => {
                     }
 
 
-                <div className="mb-3">
+                <Form.Group className="mb-3">
 
                     <ImageDropZone
                         formikProps={{
                             values,
                             handleChange,
                             handleBlur,
-                            fieldValue:"profileImage"
+                            setFieldValue,
+                            fieldValue:"toolImage"
                         }}
                     />
 
-                </div>
+                </Form.Group>
 
 
 

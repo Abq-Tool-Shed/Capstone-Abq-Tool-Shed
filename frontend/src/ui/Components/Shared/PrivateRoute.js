@@ -1,4 +1,6 @@
-//git // A wrapper for <Route> that redirects to the login
+
+// A wrapper for <Route> that redirects to the login
+>>>>>>> develop
 // screen if you're not yet authenticated.
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -14,9 +16,9 @@ import {useJwtToken} from "./useJwtToken";
  * @constructor
  */
 export function PrivateRoute ({children, ...rest}) {
-    console.log("Is this thing on?")
+
     const {authenticatedUser, isLoading } =  useJwtToken()
-    console.log(authenticatedUser)
+
     return (
         isLoading
             ? <h2>Page is loading</h2>
@@ -32,6 +34,5 @@ export function PrivateRoute ({children, ...rest}) {
                     />)
                 }
             />
-
     )
 }
