@@ -2,7 +2,7 @@ import {Container, Form, Row, Col, Nav, Button} from "react-bootstrap";
 import React, {useEffect} from 'react';
 import  {ImageDropZone} from "../Components/ImageDropZone";
 import {ProfilePostButton} from "../Components/Profile/ProfilePostButton";
-import {Tool} from "../Components/Post/Tool";
+import {ProfileTool} from "../Components/Profile/ProfileToolCard";
 import {useDispatch, useSelector} from "react-redux";
 import map, {fetchProfileByProfileId} from "../../store/profiles";
 import tools, {fetchAllTools, fetchAllToolsAndBorrows} from "../../store/tools";
@@ -42,32 +42,37 @@ export const UserProfile=({match}) => {
 
     const {toolName, toolDescription, toolImage, toolLendRules} = tool
 
-    // const tools = tool.filter(tool => {
-    //     for (let tool of tools) {
-    //         if (tool.toolProfileId === profile.profileId  === null) {
-    //             return false
-    //         }
-    //     }
-    //     // return true
-    //
-    // } )
+
+    const tools = tool.filter(tool => {
+        for (let tool of tools) {
+            if (tool.toolProfileId === profile.profileId  && null) {
+                return false
+            }
+        }
+        return true
+
+    } )
+
 
 
     return (
         <>
-            <GradientJumbo
-                display1={profileHandle}
-                heading3={"Welcome To My Profile Page"}
-                Image={profileImage}
-                ImageAlt={"Profile Image"}
+
+            <GradientJumbo className="text-center img-fluid"
+                           Image={profileImage}
+                           ImageAlt={"Profile Image Placeholder"}
+                            display1={profileHandle}
+                            heading3={"Welcome To My Profile Page"}
+
             />
+
             <Container >
                 <Container>
                 <Row>
 
-<Col className="text-center">
-                    <Link to="/user-settings">
-                        <Button   size="lg">
+                    <Col className="text-center">
+                    <Link  to="/user-settings">
+                        <Button variant="outline-danger"   size="lg">
                             Settings Page
                         </Button>
                     </Link>
@@ -106,7 +111,11 @@ export const UserProfile=({match}) => {
                 <Row>
                     <Col>
                         <div>
+<<<<<<< HEAD
                             {/*{tools.map((tool, index) => <Tool key={index} tool={tool}/>)}*/}
+=======
+                            {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
+>>>>>>> develop
                         </div>
                     </Col>
                 </Row>

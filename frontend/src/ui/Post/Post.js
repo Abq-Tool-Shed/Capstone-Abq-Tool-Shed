@@ -1,10 +1,8 @@
 import React from "react"
 import "../styles/Post.css"
-import {Button, Form} from "react-bootstrap";
-import {ImageDropZone} from "../Components/ImageDropZone";
 import {GradientJumbo} from "../Components/Shared/GradientJumbo";
-import {ToolForm} from "../Components/Post/ToolForm";
 import {Container} from "@material-ui/core";
+import {ToolForm} from "../Components/Post/ToolForm";
 
 
 
@@ -15,7 +13,7 @@ export function Post() {
 
     // Conditional Components example with Marty
     // This checks if the user is logged in and if they are it will display the div below
-    const isLoggedIn = true
+    // const isLoggedIn = true
 
     return (
         <>
@@ -29,7 +27,6 @@ export function Post() {
             {/*Post Form 1*/}
             <Container>
                 <ToolForm/>
-
             </Container>
 
         </>

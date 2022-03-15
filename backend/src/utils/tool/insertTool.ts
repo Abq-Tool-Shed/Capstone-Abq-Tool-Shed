@@ -9,6 +9,7 @@ export async function insertTool(tool: Tool) : Promise<string> {
         const mySqlQuery = "INSERT INTO tool(toolId, toolCategoryId, toolProfileId, toolDescription, toolImage, toolLendRules, toolName, toolPostDate) VALUES(UUID_TO_BIN(UUID()), UUID_TO_BIN(:toolCategoryId), UUID_TO_BIN(:toolProfileId), :toolDescription, :toolImage, :toolLendRules, :toolName, NOW())";
 
         const [result] = await mySqlConnection.execute(mySqlQuery, tool) as [ResultSetHeader, RowDataPacket]
+        await mySqlConnection.release()
         return 'Tool created successfully'
     }   catch (error) {
         throw error

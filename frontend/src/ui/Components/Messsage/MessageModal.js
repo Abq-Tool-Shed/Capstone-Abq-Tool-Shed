@@ -14,8 +14,8 @@ export const MessageModal = () => {
 
     return (
         <>
-            <Button variant={'primary'} onClick={handleShow} size="lg">
-                Send A Message
+            <Button variant="outline-danger" onClick={handleShow} size="lg">
+                Send Me A Message
             </Button>
 
             <Modal show={show} onHide={handleClose}>
@@ -27,6 +27,7 @@ export const MessageModal = () => {
                 <Modal.Body>
                     <MessageForm/>
                 </Modal.Body>
+
             </Modal>
         </>
     );
