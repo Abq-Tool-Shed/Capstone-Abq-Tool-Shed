@@ -9,6 +9,7 @@ export async function selectAllCategory() : Promise<Category[]> {
         const mySqlConnection = await connect()
         const mySqlQuery = 'SELECT BIN_TO_UUID(categoryId) AS categoryId, categoryName FROM category'
         const result = await mySqlConnection.execute(mySqlQuery) as RowDataPacket[]
+        await mySqlConnection.release()
         return result[0] as Array<Category>
     } catch (error) {
         throw error

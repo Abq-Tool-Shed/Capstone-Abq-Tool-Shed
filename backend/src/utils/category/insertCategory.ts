@@ -7,6 +7,7 @@ export async function insertCategory(category: Category) : Promise<string> {
         const mySqlConnection = await connect();
         const query : string = 'INSERT INTO category(categoryId, categoryName) values (UUID_TO_BIN(UUID()),  :categoryName)';
         await mySqlConnection.execute(query,category);
+        await mySqlConnection.release()
         return 'Category Successfully Made'
     } catch (error) {
         throw error
