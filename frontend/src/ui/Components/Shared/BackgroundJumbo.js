@@ -5,7 +5,7 @@ import React from "react";
 export function BackgroundJumbo({colorJumbo, display1, display2, heading2, heading3, heading4, Image, ImageAlt}) {
 
     return (
-        <div className={JumboStyles.colorJumbo}>
+        <div className={JumboStyles.picJumbo}>
             <Container>
                 <div>
                     <h2 className={"text-sm-center m-2 p-3 display-1"} >{display1}</h2>
