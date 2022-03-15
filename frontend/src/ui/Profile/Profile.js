@@ -11,7 +11,7 @@ import {ProfileSettingsFormContent} from "../Components/Profile/ProfileSettingsF
 import {ProfileSettingsForm} from "../Components/Profile/ProfileSettingsForm";
 import {MessageModal} from "../Components/Messsage/MessageModal";
 import {object} from "yup";
-import {GradientJumbo} from "../Components/Shared/GradientJumbo";
+import {Jumbo} from "../Components/Shared/Jumbo";
 // import {ProfileTool} from "../Components/Profile/ProfileToolCard";
 import borrows from "../../store/borrows";
 // import {filter} from "overmind";
@@ -56,11 +56,11 @@ export const UserProfile=() => {
     return (
         <>
 
-            <GradientJumbo className="text-center img-fluid"
-                           Image={profileImage}
-                           ImageAlt={"Profile Image Placeholder"}
-                            display1={profileHandle}
-                            heading3={"Welcome To My Profile Page"}
+            <Jumbo className="text-center img-fluid"
+                   Image={profileImage}
+                   ImageAlt={"Profile Image Placeholder"}
+                   display1={profileHandle}
+                   heading3={"Welcome To My Profile Page"}
 
             />
 

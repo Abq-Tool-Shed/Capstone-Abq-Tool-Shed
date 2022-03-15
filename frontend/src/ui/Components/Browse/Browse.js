@@ -7,7 +7,8 @@ import {fetchAllToolsAndBorrows} from "../../../store/tools";
 import {SearchBar} from "./SearchBar";
 import "./searchBar.css";
 import headerStyles from "../../styles/shared/header.module.css";
-import {ImageJumbo} from "../Shared/ImageJumbo";
+import {Jumbo} from "../Shared/Jumbo";
+
 
 
 
@@ -37,7 +38,7 @@ return true
         <>
 
 
-            <ImageJumbo
+            <Jumbo
                 test1 = "Big Test Header"
                 test2 = "second header test"
                 test3 = "third header test"

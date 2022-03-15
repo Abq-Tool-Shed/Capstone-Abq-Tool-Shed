@@ -1,6 +1,6 @@
 import React from "react"
 import "../styles/Post.css"
-import {GradientJumbo} from "../Components/Shared/GradientJumbo";
+import {Jumbo} from "../Components/Shared/Jumbo";
 import {Container} from "@material-ui/core";
 import {ToolForm} from "../Components/Post/ToolForm";
 
@@ -19,7 +19,7 @@ export function Post() {
         <>
 
             {/*Tool Post Header*/}
-            <GradientJumbo
+            <Jumbo
                 display1={"Post A Tool"}
                 heading3={"V"}
             />

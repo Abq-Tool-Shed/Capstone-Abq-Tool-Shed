@@ -10,7 +10,6 @@ import {PrePost} from "./Post/PrePost";
 import {Post} from './Post/Post';
 import {Provider} from "react-redux";
 import {Browse} from "./Components/Browse/Browse"
-import {SearchBar} from "./Components/Browse/SearchBar";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
@@ -30,7 +29,6 @@ library.add(faStroopwafel, faEnvelope, faKey, faDove, faPhone, faPencilAlt, faSi
 
 export const App = (store) => (
     <>
-
         <Provider store={store}>
             <BrowserRouter>
                 <NavBar/>
@@ -53,6 +51,5 @@ export const App = (store) => (
                 </Switch>
             </BrowserRouter>
         </Provider>
-
     </>
 )

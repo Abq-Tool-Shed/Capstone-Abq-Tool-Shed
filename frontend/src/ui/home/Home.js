@@ -12,8 +12,9 @@ import austin1 from "../Components/Images/austin-pro.jpg"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllToolsAndBorrows} from "../../store/tools";
 import {Tool} from "../Components/Post/Tool";
-import {GradientJumbo} from "../Components/Shared/GradientJumbo";
-import {ImageJumbo} from "../Components/Shared/ImageJumbo";
+import {Jumbo} from "../Components/Shared/Jumbo";
+import {ProfileJumbo} from "../Components/Shared/ProfileJumbo";
+import {BackgroundJumbo} from "../Components/Shared/BackgroundJumbo";
 
 
 
@@ -33,7 +34,7 @@ export function Home() {
 
     return (
         <>
-            <ImageJumbo
+            <BackgroundJumbo
                 display1 = " ABQ Tool Shed 🛠"
                 heading2 = "A neighborhood resource for borrowing tools"
                 heading3 = "To complete your project"
