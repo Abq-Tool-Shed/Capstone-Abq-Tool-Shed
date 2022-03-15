@@ -9,6 +9,7 @@ import {fetchAllCategories} from "../../../store/categories";
 
 export const ToolFormContent = (props) => {
     const {
+        setFieldValue,
         status,
         values,
         errors,
@@ -27,9 +28,6 @@ export const ToolFormContent = (props) => {
         dispatch(fetchAllCategories())
     }
     useEffect(effects, [dispatch])
-
-    console.log(categories, "test test")
-
 
 
     return (
@@ -136,6 +134,7 @@ export const ToolFormContent = (props) => {
                             values,
                             handleChange,
                             handleBlur,
+                            setFieldValue,
                             fieldValue:"toolImage"
                         }}
                     />

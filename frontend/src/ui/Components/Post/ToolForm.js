@@ -36,25 +36,44 @@ export const ToolForm = () => {
     });
 
     const submitTool = (values, {resetForm, setStatus}) => {
-        // console.log("tool auth", auth)
+        console.log("is this thing on")
         const toolProfileId = auth?.profileId ?? null
         // console.log(toolProfileId)
         const tool = {toolProfileId, ...values}
-        httpConfig.post("/apis/tool/", tool)
-            .then(reply => {
-                    let {message, type} = reply;
 
-                    if(reply.status === 200) {
-                        resetForm();
-                        dispatch(fetchAllTools())
+        const submitToolImage = (toolSubmit) => {
+            httpConfig.post("/apis/tool/", toolSubmit)
+                .then(reply => {
+                        let {message, type} = reply;
+
+                        if (reply.status === 200) {
+                            resetForm();
+                            // dispatch(fetchAllTools())
+                        }
+                        setStatus({message, type});
+                        return (reply)
                     }
-                    setStatus({message, type});
-                }
-            );
+                );
+        }
 
+            if (values.toolImage !== "") {
+                httpConfig.post(`/apis/image-upload/`, values.toolImage)
+                    .then(reply => {
+                            let {message, type} = reply;
 
+                            if (reply.status === 200) {
+                                submitToolImage({...tool, toolImage: message})
+                            } else {
+                                setStatus({message, type});
+                            }
+                        }
+                    );
+        } else {
+            submitToolImage(tool);
+        }
 
-    };
+    }
+
 
     // const submitCategory = (values, {setStatus})
 

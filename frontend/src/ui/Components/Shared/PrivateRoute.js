@@ -14,9 +14,9 @@ import {useJwtToken} from "./useJwtToken";
  * @constructor
  */
 export function PrivateRoute ({children, ...rest}) {
-    console.log("Is this thing on?")
+
     const {authenticatedUser, isLoading } =  useJwtToken()
-    console.log(authenticatedUser)
+
     return (
         isLoading
             ? <h2>Page is loading</h2>
@@ -32,6 +32,5 @@ export function PrivateRoute ({children, ...rest}) {
                     />)
                 }
             />
-
     )
 }
