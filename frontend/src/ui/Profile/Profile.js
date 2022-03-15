@@ -16,6 +16,7 @@ import {Jumbo} from "../Components/Shared/Jumbo";
 import borrows from "../../store/borrows";
 // import {filter} from "overmind";
 import * as availableTools from "react-bootstrap/ElementChildren";
+import {ProfileJumbo} from "../Components/Shared/ProfileJumbo";
 
 
 export const UserProfile=() => {
@@ -56,7 +57,7 @@ export const UserProfile=() => {
     return (
         <>
 
-            <Jumbo className="text-center img-fluid"
+            <ProfileJumbo className="text-center img-fluid"
                    Image={profileImage}
                    ImageAlt={"Profile Image Placeholder"}
                    display1={profileHandle}
