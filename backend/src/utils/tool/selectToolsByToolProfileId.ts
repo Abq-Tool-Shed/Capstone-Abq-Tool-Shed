@@ -8,6 +8,7 @@ export async function selectToolsByToolProfileId(toolProfileId: string) : Promis
         const mySqlConnection = await connect();
         const mySqlQuery = 'SELECT BIN_TO_UUID(toolId) AS toolId, BIN_TO_UUID(toolProfileId) AS toolProfileId, BIN_TO_UUID(toolCategoryId) as toolCategoryId, tool.toolDescription, tool.toolPostDate, tool.toolImage AS userTools FROM tool INNER JOIN profile ON BIN_TO_UUID(toolProfileId) = BIN_TO_UUID(profileId)'
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {toolProfileId})
+        await mySqlConnection.release()
         return result[0] as Tool
     } catch (error) {
         throw error

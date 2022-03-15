@@ -10,6 +10,7 @@ export async function insertBorrow(borrow: Borrow) : Promise<string> {
 
 
         const [result] = await mySqlConnection.execute(mySqlQuery, borrow) as [ResultSetHeader, RowDataPacket]
+        await mySqlConnection.release()
         return 'Borrow created successfully'
     }   catch (error) {
         throw error

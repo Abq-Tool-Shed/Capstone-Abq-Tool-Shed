@@ -6,6 +6,7 @@ export async function updateBorrow(borrow: Borrow) {
         const mySqlConnection = await connect()
         const mySqlQuery = 'UPDATE borrow SET borrowCompleted = :borrowCompleted AND borrowReturnedDateTime = NOW() WHERE borrowId = uuid_to_bin(:borrowId)'
         const [result] = await mySqlConnection.execute(mySqlQuery, borrow)
+        await mySqlConnection.release()
         return "borrow successfully deleted"
     } catch(error) {
         throw error
