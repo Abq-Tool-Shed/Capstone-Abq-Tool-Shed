@@ -43,8 +43,8 @@ export const UserProfile=() => {
 
     const {toolName, toolDescription, toolImage, toolLendRules} = tool
 
-    const tools = tool.filter(tool => {
-        for (let tool of tools) {
+    const tools = tool.filter( tools => {
+        for (let tools of tool) {
             if (tool.toolProfileId === profile.profileId  && null) {
                 return false
             }
@@ -96,10 +96,10 @@ export const UserProfile=() => {
 
             <Container>
                 <div className='row mt-5'>
-                    <div style={{margin: "auto",width: 250}} className="col-2 bg-secondary text-light border border-secondary text-center">
+                    <div style={{margin: "auto",width: 250, backgroundColor: "cadetblue" }} className="col-2 bg-secondary text-light border border-secondary text-center">
                         <p>Welcome to your content section! <br/> On the right you will find a place to start your posting journey. </p>
                     </div>
-                    <div style={{margin: "auto",width: 250, height: 150, padding:25}} className="col-2 bg-secondary  border border-secondary text-center">
+                    <div style={{margin: "auto",width: 250, height: 150, padding:25, backgroundColor:"cadetblue"}} className="col-2  border border-secondary text-center">
                         <ProfilePostButton/>
                     </div>
                 </div>
@@ -107,13 +107,11 @@ export const UserProfile=() => {
                 </br>
             </Container>
             <Container>
-                <Row>
-                    <Col>
-                        <div>
-                            {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
-                        </div>
+
+                    <Col className=" p-5 m-5 text-center">
+                    {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
                     </Col>
-                </Row>
+
             </Container>
         </>
     )
