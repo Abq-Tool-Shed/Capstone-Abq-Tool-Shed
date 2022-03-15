@@ -21,6 +21,11 @@ export const fetchAllTools = () => async dispatch => {
     dispatch(setAllTools(data))
 }
 
+export const fetchToolsByProfileId = (profileId) => async dispatch => {
+    const {data} = await httpConfig(`/apis/tool/toolProfileId/${profileId}`);
+    dispatch(setAllTools(data))
+}
+
 export const fetchAllToolsAndBorrows = () => async (dispatch, getState) => {
     await dispatch(fetchAllTools())
     const toolIds = getState().tools.map(tool => tool.toolId)

@@ -11,4 +11,16 @@ export const messageValidator: Schema = {
         escape: true
     },
 
+    borrowProfileId : {
+        isUUID: {
+            errorMessage: 'Please provide a valid borrowProfileId'
+        }
+    },
+
+    toolId : {
+        isUUID: {
+            errorMessage: 'Please provide a valid toolId'
+        }
+    },
+
 }

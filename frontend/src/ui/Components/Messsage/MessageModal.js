@@ -27,13 +27,6 @@ export const MessageModal = () => {
                 <Modal.Body>
                     <MessageForm/>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant={"primary"} onClick={handleClose}> Send
-                    </Button>
-                    <Button variant={"secondary"} onClick={handleClose}>
-                        Close
-                    </Button>
-                </Modal.Footer>
             </Modal>
         </>
     );

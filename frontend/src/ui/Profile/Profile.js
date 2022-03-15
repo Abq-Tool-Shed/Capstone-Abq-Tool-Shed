@@ -14,11 +14,11 @@ import {object} from "yup";
 import {GradientJumbo} from "../Components/Shared/GradientJumbo";
 // import {ProfileTool} from "../Components/Profile/ProfileToolCard";
 import borrows from "../../store/borrows";
-import {filter} from "overmind";
+// import {filter} from "overmind";
 import * as availableTools from "react-bootstrap/ElementChildren";
 
 
-export const UserProfile=() => {
+export const UserProfile=({match}) => {
 
     const borrow = useSelector(state => state.borrows ? state.tool: object)
 
@@ -29,11 +29,11 @@ export const UserProfile=() => {
     const dispatch = useDispatch();
 
     function sideEffects() {
-        dispatch(fetchProfileByProfileId())
-        dispatch(fetchAllTools())
+        dispatch(fetchProfileByProfileId(match.params.profileId))
+        dispatch(fetchAllTools(match.params.profileId))
     }
 
-    useEffect(sideEffects, [dispatch]);
+    useEffect(sideEffects,  [match.params.profileId, dispatch]);
     console.log(profile)
 
     const {borrowId, borrowProfileId, borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = borrows
@@ -42,15 +42,15 @@ export const UserProfile=() => {
 
     const {toolName, toolDescription, toolImage, toolLendRules} = tool
 
-    const tools = tool.filter(tool => {
-        for (let tool of tools) {
-            if (tool.toolProfileId === profile.profileId  === null) {
-                return false
-            }
-        }
-        return true
-
-    } )
+    // const tools = tool.filter(tool => {
+    //     for (let tool of tools) {
+    //         if (tool.toolProfileId === profile.profileId  === null) {
+    //             return false
+    //         }
+    //     }
+    //     // return true
+    //
+    // } )
 
 
     return (
@@ -106,7 +106,7 @@ export const UserProfile=() => {
                 <Row>
                     <Col>
                         <div>
-                            {tools.map((tool, index) => <Tool key={index} tool={tool}/>)}
+                            {/*{tools.map((tool, index) => <Tool key={index} tool={tool}/>)}*/}
                         </div>
                     </Col>
                 </Row>

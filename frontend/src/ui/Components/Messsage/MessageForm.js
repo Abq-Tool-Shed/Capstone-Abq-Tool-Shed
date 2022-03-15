@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {httpConfig} from "../../../utils/http-config";
 import * as Yup from "yup";
 import {Formik} from "formik";
 import {useDispatch, useSelector} from "react-redux";
+import {Form} from "react-bootstrap";
+import tools, {fetchAllTools, fetchToolsByProfileId} from "../../../store/tools";
+import auth from "../../../store/auth";
 
 
 
@@ -10,24 +13,37 @@ import {useDispatch, useSelector} from "react-redux";
 export const MessageForm = () => {
     const dispatch = useDispatch()
 
+    const effects = () => {
+        dispatch(fetchToolsByProfileId)
+    }
+    useEffect(effects, [dispatch])
+
+
     const validator = Yup.object().shape({
         message: Yup.string()
             .required("Message Is Required")
     })
 
     const Message = {
+        toolId: '',
         message: ''
+
     };
 
     const signedInUser = useSelector(state => state ? state.auth : null)
 
+//TODO Gather data required to create a batched borrow and email them
+    // Just hardwire a tool id in there to send this.
+    //Grab a tool id, grab the message from the user.
 
     const submitMessage = (values, {resetForm, setStatus}) => {
 
-        //TODO Gather data required to create a batched borrow and email them
-        // Just hardwire a tool id in there to send this.
-        //Grab a tool id, grab the message from the user.
-        httpConfig.post("/apis/message/", values)
+        const borrowProfileId = signedInUser?.profileId ?? null
+
+        const tool = {borrowProfileId, ...values}
+        console.log(tools)
+
+        httpConfig.post("/apis/message/", tool)
 
             .then(reply => {
                 let {message, type} = reply;
@@ -69,11 +85,33 @@ export const MessageForm = () => {
         handleSubmit,
         handleReset
     } = props
+
+       const tools = useSelector(state => state.tools ? state.tools : [])
+
     return (
         <>
-            <form   id="contact" method="post" noValidate>
-                {/*TODO add a select to choose tools TLDR - Hit up Jon*/}
 
+            <Form.Group className="mb-3" controlId="formCategory">
+                <Form.Label>Tool Name</Form.Label>
+
+                {/*<ToolDropdown/>*/}
+                <label htmlFor="toolId" className={"mb-3"}>Choose a Category:</label>
+
+                <select name="toolId" id="toolId" onChange={handleChange} onBlur={handleBlur}>
+                    <option value={""}> Select a Tool to Borrow </option>
+                    {tools.map(tools =>  <option value={tools.toolId}>{tools.toolName}</option>)}
+                </select>
+
+            </Form.Group>
+            {
+                errors.toolId && touched.toolId && (
+                    <div className="alert alert-danger">
+                        {errors.toolId}
+                    </div>
+                )
+
+            }
+            <form   id="contact" method="post" noValidate>
                 <div className="form-group">
                     <label htmlFor="message">Message</label>
                     <div className="input-group">

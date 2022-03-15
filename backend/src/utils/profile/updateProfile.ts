@@ -5,7 +5,7 @@ import {ResultSetHeader, RowDataPacket} from "mysql2";
 export async function updateProfile(profile: Profile): Promise<string> {
     try {
         const mysqlConnection = await connect()
-        const sqlQuery: string = 'UPDATE profile SET profileActivationToken = :profileActivationToken, profileHandle = :profileHandle, profileName = :profileName WHERE profileId = UUID_TO_BIN(:profileId)'
+        const sqlQuery: string = 'UPDATE profile SET profileActivationToken = :profileActivationToken, profileHandle = :profileHandle, profileImage = :profileImage, profileName = :profileName WHERE profileId = UUID_TO_BIN(:profileId)'
         await mysqlConnection.execute(sqlQuery, profile)
         return 'Profile successfully updated'
     }catch (error) {
