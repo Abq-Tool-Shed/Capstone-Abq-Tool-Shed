@@ -8,7 +8,7 @@ export function ProfileJumbo({display1, display2, heading2, heading3, heading4, 
         <div className={JumboStyles.colorJumbo}>
             <Container>
                 <div>
-                    <img className="align-content-center me-5 ms-5" height='250' width='250'  src={Image} alt={ImageAlt}/>
+                    <img className="align-content-center me-5 ms-5" style={{aspectRatio: "1/1", maxWidth: "250"}}  src={Image} alt={ImageAlt}/>
                     <h2 className={"text-sm-center m-2 p-3 display-1"} >{display1}</h2>
                     <h2 className={"text-sm-center m-2 p-3 display-2"} >{display2}</h2>
                     <h2 className={"text-sm-start m-2 p-3 "} >{heading2}</h2>
