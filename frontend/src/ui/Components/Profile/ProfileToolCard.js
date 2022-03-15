@@ -14,12 +14,11 @@ export const ProfileTool=({tool, profile}) => {
     return (
         <>
             <Col md={6} className={"border border-2 rounded border-secondary bg-light py-2"}>
-
-                <Image src={toolImage}/>
                 <div className={'text-center'}>
                     <p>{toolName}</p>
                     <p>{toolDescription}</p>
                     <p>{toolLendRules}</p>
+                    <Image fluid src={toolImage}/>
                 </div>
             </Col>
 

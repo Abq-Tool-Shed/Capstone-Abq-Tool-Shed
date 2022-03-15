@@ -24,8 +24,7 @@ export const ToolForm = () => {
     const validator = Yup.object().shape({
         toolName: Yup.string()
             .required("Tool Name is required"),
-        toolCategoryId: Yup.string()
-            .required("Valid Tool Category is required"),
+        toolCategoryId: Yup.string(),
         toolDescription: Yup.string()
             .required("Tool Description is required"),
         toolLendRules: Yup.string()

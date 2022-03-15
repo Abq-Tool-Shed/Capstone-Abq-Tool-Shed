@@ -29,7 +29,6 @@ export function Post() {
             {/*Post Form 1*/}
             <Container>
                 <ToolForm/>
-
             </Container>
 
         </>

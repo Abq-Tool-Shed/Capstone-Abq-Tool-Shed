@@ -68,7 +68,7 @@ export const ProfileSettingsFormContent = (props) => {
                     >Reset
                     </button>
                 </div>
-                <FormDebugger {...props} />
+                {/*<FormDebugger {...props} />*/}
             </Form>
 
             {

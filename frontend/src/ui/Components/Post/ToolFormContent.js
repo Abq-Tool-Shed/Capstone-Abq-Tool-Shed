@@ -136,7 +136,7 @@ export const ToolFormContent = (props) => {
                             values,
                             handleChange,
                             handleBlur,
-                            fieldValue:"profile Image"
+                            fieldValue:"profileImage"
                         }}
                     />
 

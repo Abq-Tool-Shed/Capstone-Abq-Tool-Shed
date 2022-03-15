@@ -4,6 +4,7 @@ import {ImageDropZone} from "../Components/ImageDropZone";
 import { useDispatch, useSelector } from 'react-redux';
 import {ProfileSettingsForm} from "../Components/Profile/ProfileSettingsForm"
 import {fetchProfileByProfileId} from "../../store/profiles";
+import {Link} from "react-router-dom";
 
 
 
@@ -25,6 +26,14 @@ export function UserSettings() {
             <div className="text-lg-center">
                 <h1>Welcome To Your Settings Page!</h1>
                 <p>Please Fill Out The Fields Bellow To Customize Your Profile</p>
+            </div>
+
+            <div className="text-center">
+                <Link to="/profile">
+                    <Button variant="outline-danger" size="lg">
+                        Back To Your Profile
+                    </Button>
+                </Link>
             </div>
 
             <Container>
