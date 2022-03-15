@@ -1,4 +1,4 @@
-git // A wrapper for <Route> that redirects to the login
+// A wrapper for <Route> that redirects to the login
 // screen if you're not yet authenticated.
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'

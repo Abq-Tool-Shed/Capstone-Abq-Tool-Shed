@@ -43,7 +43,7 @@ export const App = (store) => (
                         <PrePost/>
                     </PrivateRoute>
                     <PrivateRoute exact path='/post'>
-                    <post/>
+                    <Post/>
                     </PrivateRoute>
                     <PrivateRoute path="/user-settings">
                     <UserSettings/>
