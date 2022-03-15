@@ -106,9 +106,11 @@ export const UserProfile=() => {
                 </br>
             </Container>
             <Container>
-                <Row>
+
+                    <Col className=" p-5 m-5 text-center">
                     {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
-                </Row>
+                    </Col>
+
             </Container>
         </>
     )
