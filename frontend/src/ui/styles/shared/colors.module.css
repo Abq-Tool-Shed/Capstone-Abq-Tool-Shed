@@ -2,6 +2,10 @@
     background-color: #0097A6;
 }
 
+.blue150 {
+    background-color: rgba(0, 151, 166, 0.5)
+}
+
 .blue2 {
     background-color: #126DA6;
 }
@@ -25,6 +29,10 @@
 
 .green4 {
     background-color: #8BD990;
+}
+
+.green450 {
+    background-color: rgba(139, 217, 144, 0.7);
 }
 
 .brown1 {
