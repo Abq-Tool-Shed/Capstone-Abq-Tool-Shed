@@ -7,7 +7,7 @@ export const ProfilePostButton = () =>  {
     return (
         <>
         <div>
-            <Link to="/post">
+            <Link to="/prepost">
                 <Button variant="outline-light" size="lg">
                     Create A Post
                 </Button>

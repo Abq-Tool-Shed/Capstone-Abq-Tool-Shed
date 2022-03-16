@@ -101,10 +101,10 @@ export const UserProfile=() => {
                 <br>
                 </br>
             </Container>
-            <Container>
+            <Container className="container-fluid">
 
 
-                    <Col className=" p-5 m-5 text-center">
+                    <Col className=" col-fluid p-5 m-5 text-center">
                     {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
                     </Col>
 
