@@ -104,7 +104,7 @@ export const UserProfile=() => {
             <Container className="container-fluid">
 
 
-                    <Col className=" col-fluid p-5 m-5 text-center">
+                    <Col className="text-center">
                     {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
                     </Col>
 
