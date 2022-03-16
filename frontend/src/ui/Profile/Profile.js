@@ -11,12 +11,16 @@ import {ProfileSettingsFormContent} from "../Components/Profile/ProfileSettingsF
 import {ProfileSettingsForm} from "../Components/Profile/ProfileSettingsForm";
 import {MessageModal} from "../Components/Messsage/MessageModal";
 import {object} from "yup";
-import {GradientJumbo} from "../Components/Shared/GradientJumbo";
+import {Jumbo} from "../Components/Shared/Jumbo";
 // import {ProfileTool} from "../Components/Profile/ProfileToolCard";
 import borrows from "../../store/borrows";
 // import {filter} from "overmind";
 import * as availableTools from "react-bootstrap/ElementChildren";
+
 import {useParams} from "react-router";
+
+import {ProfileJumbo} from "../Components/Shared/ProfileJumbo";
+
 
 
 export const UserProfile=() => {
@@ -45,15 +49,14 @@ export const UserProfile=() => {
 
 
 
-
     return (
         <>
 
-            <GradientJumbo className="text-center img-fluid"
-                           Image={profileImage}
-                           ImageAlt={"Profile Image Placeholder"}
-                            display1={profileHandle}
-                            heading3={"Welcome To My Profile Page"}
+            <ProfileJumbo className="text-center img-fluid"
+                   Image={profileImage}
+                   ImageAlt={"Profile Image Placeholder"}
+                   display1={profileHandle}
+                   heading3={"Welcome To My Profile Page"}
 
             />
 
@@ -88,10 +91,10 @@ export const UserProfile=() => {
 
             <Container>
                 <div className='row mt-5'>
-                    <div style={{margin: "auto",width: 250}} className="col-2 bg-secondary text-light border border-secondary text-center">
+                    <div style={{margin: "auto",width: 250, backgroundColor: "cadetblue" }} className="col-2 bg-secondary text-light border border-secondary text-center">
                         <p>Welcome to your content section! <br/> On the right you will find a place to start your posting journey. </p>
                     </div>
-                    <div style={{margin: "auto",width: 250, height: 150, padding:25}} className="col-2 bg-secondary  border border-secondary text-center">
+                    <div style={{margin: "auto",width: 250, height: 150, padding:25, backgroundColor:"cadetblue"}} className="col-2  border border-secondary text-center">
                         <ProfilePostButton/>
                     </div>
                 </div>
@@ -99,15 +102,12 @@ export const UserProfile=() => {
                 </br>
             </Container>
             <Container>
-                <Row>
-                    <Col>
-                        <div>
 
-                            {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
 
-                        </div>
+                    <Col className=" p-5 m-5 text-center">
+                    {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
                     </Col>
-                </Row>
+
             </Container>
         </>
     )

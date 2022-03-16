@@ -5,9 +5,10 @@ import {Tool} from "../Post/Tool";
 import {fetchAllToolsAndBorrows} from "../../../store/tools";
 
 import {SearchBar} from "./SearchBar";
-import "./searchBar.css";
+import SearchCSS from "./searchBar.css";
 import headerStyles from "../../styles/shared/header.module.css";
-import {ImageJumbo} from "../Shared/ImageJumbo";
+import {BrowseJumbo} from "../Shared/BrowseJumbo";
+
 
 
 
@@ -37,13 +38,13 @@ return true
         <>
 
 
-            <ImageJumbo
-                test1 = "Big Test Header"
-                test2 = "second header test"
-                test3 = "third header test"
-                test4 = "final header test"
+            <BrowseJumbo
+                display1 = " ABQ Tool Shed 🛠"
+                heading3 = "Browse Available Tools"
             />
-            <SearchBar placeHolder={"Search for a tool..."} data={tools} />
+
+
+            {/*<SearchBar placeHolder={"Search for a tool..."} data={tools} />*/}
             <Container>
                 <h1>Recent tools available for lend</h1>
 

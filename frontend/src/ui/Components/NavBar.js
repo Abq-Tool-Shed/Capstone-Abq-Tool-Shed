@@ -3,14 +3,14 @@ import {Navbar, Container, Nav, NavDropdown, Button,  } from "react-bootstrap";
 import {Form} from "formik";
 import {SignUpModal} from "./Sign-up/signUpModal";
 import {SignInModal} from "./Log-In/SignInModal";
-
+import Colors from "../styles/shared/colors.module.css"
 
 export function NavBar () {
 
 
     return(
         <>
-            <Navbar bg="light" expand="lg">
+            <Navbar className={Colors.blue2} expand="lg">
                 <Container fluid>
                     <Navbar.Brand href="#">ABQ Tool Shed 🛠</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />

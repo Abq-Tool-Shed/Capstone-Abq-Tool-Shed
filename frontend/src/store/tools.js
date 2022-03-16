@@ -1,6 +1,6 @@
 import {httpConfig} from "../utils/http-config";
 import {createSlice} from "@reduxjs/toolkit";
-import {fetchBorrowByBorrowToolId} from "./borrows";
+import  {fetchBorrowByBorrowToolId} from "./borrows";
 
 
 const slice = createSlice({

@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 
 export const ProfileTool=({tool}) => {
 
-
     const {toolName, toolDescription, toolImage, toolLendRules} = tool
 
     const borrows = useSelector(state => state.borrows ? state.borrows : [])
@@ -12,15 +11,16 @@ export const ProfileTool=({tool}) => {
 
     return (
         <>
-            <Col md={6} className={"border border-2 rounded border-secondary bg-light py-2"}>
+            <Row  className= "row-cols-auto">
+                <Col md={6} style={{border: "solid black 250px"}} className= "  ms-5 border border-2 rounded border-secondary bg-light py-2">
                 <div className={'text-center'}>
                     <p>{toolName}</p>
                     <p>{toolDescription}</p>
                     <p>{toolLendRules}</p>
                     <Image fluid src={toolImage}/>
                 </div>
-            </Col>
-
+                </Col>
+            </Row>
         </>
     )
 }

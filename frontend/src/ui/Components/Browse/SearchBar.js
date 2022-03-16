@@ -29,7 +29,7 @@ export function SearchBar({placeHolder, data}) {
 
 
     return (
-        <div className={"search"}>
+        <div className={"search bg-light"}>
             <div className={"searchInputs"}>
                     <input
                         type={"text"}
