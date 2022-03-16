@@ -36,12 +36,12 @@ export function NavBar () {
     return(
         <>
             <Navbar className={Colors.blue2} expand="lg">
-                <Container fluid>
-                    <Navbar.Brand href="#">ABQ Tool Shed 🛠</Navbar.Brand>
+                <Container fluid className="d-flex me-auto my-sm-0 justify-content-center align-items-center">
+                    <Navbar.Brand href="/">ABQ Tool Shed 🛠</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
-                            className="me-auto my-2 my-lg-0"
+                            className="d-flex me-auto my-sm-0 justify-content-center align-items-center"
                             style={{ maxHeight: '100px' }}
                             navbarScroll>
 
