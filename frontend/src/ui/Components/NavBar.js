@@ -69,7 +69,7 @@ export function NavBar () {
                             )}
 
 
-                            <Nav.Link href="/prepost" className={"navbar-item"} >Pre Post</Nav.Link>
+                            <Nav.Link href="/prepost" className={"navbar-item"} >Instructions</Nav.Link>
 
 
                             <Nav.Link href="/post" className={"navbar-item"} >Post</Nav.Link>

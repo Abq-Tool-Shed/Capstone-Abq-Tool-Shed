@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux'
 import { httpConfig } from '../../utils/http-config'
 import {fetchAuth} from "../../store/auth";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {Nav} from 'react-bootstrap'
 
 export const SignOutComponent = () => {
     const dispatch = useDispatch()
@@ -19,11 +20,10 @@ export const SignOutComponent = () => {
 
     return(
         <>
-        <div className={"dropdown-item sign-out-dropdown"}>
-            <button className="btn" onClick={signOut}>
+
+            <Nav.Link className="btn" onClick={signOut}>
                 Sign Out&nbsp;&nbsp;<FontAwesomeIcon icon="sign-out-alt" />
-            </button>
-        </div>
+            </Nav.Link>
         </>
 
 
