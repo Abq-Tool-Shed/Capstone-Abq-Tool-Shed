@@ -63,22 +63,17 @@ export function Browse() {
             </div>
 
 
-<<<<<<< HEAD
-=======
+
         <div className={"d-sm-flex"} style={{backgroundColor: "rgba(18, 109, 166, 1)"}}>
->>>>>>> 09e947935040d3d191093b3997c2e6e13812452e
+
             {/*<SearchBar placeHolder={"Search for a tool..."} data={tools} />*/}
             <Container style={{backgroundColor: "rgba(18, 109, 166, 1)"}}>
                 <h1 className={"text-white text-center p-3"}>Available Tools</h1>
 
-<<<<<<< HEAD
-                <Row>
-                    {(filteredData.length ? filteredData : availableTools).map((tool, index) => <Tool key={index}
-                                                                                                      tool={tool}/>)}
-=======
+
                 <Row className={"justify-content-center"}>
                     {(filteredData.length ? filteredData : availableTools).map((tool, index) => <Tool key={index} tool={tool}/>)}
->>>>>>> 09e947935040d3d191093b3997c2e6e13812452e
+
                 </Row>
             </Container>
         </div>
