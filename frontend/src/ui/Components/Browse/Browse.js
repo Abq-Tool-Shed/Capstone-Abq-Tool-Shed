@@ -71,7 +71,7 @@ return true
                 <h1>Recent tools available for lend</h1>
 
                 <Row>
-                    {filteredData.map((tool, index) => <Tool key={index} tool={tool}/>)}
+                    {(filteredData.length ? filteredData : availableTools).map((tool, index) => <Tool key={index} tool={tool}/>)}
                 </Row>
             </Container>
         </>
