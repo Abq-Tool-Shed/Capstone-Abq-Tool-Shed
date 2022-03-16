@@ -2,9 +2,8 @@ import React from "react"
 import {Col, Row, Image} from "react-bootstrap";
 import {useSelector} from "react-redux";
 
-export const ProfileTool=({tool, profile}) => {
+export const ProfileTool=({tool}) => {
 
-    const {profileId, profileHandle, profileImage, profileEmail, profileName} = profile
 
     const {toolName, toolDescription, toolImage, toolLendRules} = tool
 

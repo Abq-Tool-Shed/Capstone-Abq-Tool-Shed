@@ -48,10 +48,10 @@ export async function messageController(request: Request, response: Response): P
         // send the message using data we defined and grabbed from the session
 
         const mailgunMessage = {
-            from: `ABQ tool shed <postmaster@${process.env.MAILGUN_DOMAIN}`,
+            from: `ABQ tool shed <postmaster@${process.env.MAILGUN_DOMAIN}>`,
             to: toolOwner?.profileEmail,
             subject: ` ${profileNameFromSession} would like to borrow a tool`,
-            message: ` ${message}  <p> You can reply to ${profileNameFromSession} directly with an email, or find out more about this user here - <a href="${request.protocol}://${request.hostname}/approve/
+            html : ` ${message}  <p> You can reply to ${profileNameFromSession} directly with an email, or find out more about this user here - <a href="${request.protocol}://${request.hostname}/approve/
             "></a> </p>`
         }
 
@@ -65,7 +65,7 @@ export async function messageController(request: Request, response: Response): P
 
         return response.json(status)
     } catch (error: any) {
-
+console.error(error)
         const status: Status = {
             status: 500,
             message: error.message,

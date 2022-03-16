@@ -36,7 +36,7 @@ export const App = (store) => (
                 <NavBar/>
                 <Switch>
                     <Route exact path='/' component={Home}/>
-                    <PrivateRoute exact path="/profile">
+                    <PrivateRoute exact path="/profile/:profileId" profileId={": profileId"}>
                         <UserProfile/>
                     </PrivateRoute>
                     <PrivateRoute exact path='/prepost'>

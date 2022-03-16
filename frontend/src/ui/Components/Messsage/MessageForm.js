@@ -6,17 +6,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {Form} from "react-bootstrap";
 import tools, {fetchAllTools, fetchToolsByProfileId} from "../../../store/tools";
 import auth from "../../../store/auth";
+import {FormDebugger} from "../FormDebugger";
 
 
 
 
 export const MessageForm = () => {
-    const dispatch = useDispatch()
 
-    const effects = () => {
-        dispatch(fetchToolsByProfileId)
-    }
-    useEffect(effects, [dispatch])
 
 
     const validator = Yup.object().shape({
@@ -37,7 +33,7 @@ export const MessageForm = () => {
     //Grab a tool id, grab the message from the user.
 
     const submitMessage = (values, {resetForm, setStatus}) => {
-
+        console.log("Is this thing on?")
         const borrowProfileId = signedInUser?.profileId ?? null
 
         const tool = {borrowProfileId, ...values}
@@ -87,10 +83,10 @@ export const MessageForm = () => {
     } = props
 
        const tools = useSelector(state => state.tools ? state.tools : [])
-
+console.log(tools)
     return (
         <>
-
+            <Form  onSubmit={handleSubmit}  noValidate>
             <Form.Group className="mb-3" controlId="formCategory">
                 <Form.Label>Tool Name</Form.Label>
 
@@ -99,7 +95,7 @@ export const MessageForm = () => {
 
                 <select name="toolId" id="toolId" onChange={handleChange} onBlur={handleBlur}>
                     <option value={""}> Select a Tool to Borrow </option>
-                    {tools.map(tools =>  <option value={tools.toolId}>{tools.toolName}</option>)}
+                    {tools.map(tools =>  <option key={tools.toolId} value={tools.toolId}>{tools.toolName}</option>)}
                 </select>
 
             </Form.Group>
@@ -111,26 +107,28 @@ export const MessageForm = () => {
                 )
 
             }
-            <form   id="contact" method="post" noValidate>
+
                 <div className="form-group">
                     <label htmlFor="message">Message</label>
                     <div className="input-group">
                         <div className="input-group-prepend">
                             <span className="input-group-text"><i className="fa fa-comment"/></span>
                         </div>
-                        <textarea className="form-control" id="message" maxLength="2000" name="message"
-                                  placeholder="Your Message (2000 characters max)" required rows="5"></textarea>
+                        <textarea className="form-control" maxLength="2000" name="message"
+                                  placeholder="Your Message (2000 characters max)" value={values.message} required rows="5" onChange={handleChange} onBlur={handleBlur}/>
                     </div>
                 </div>
 
 
 
-                <button className="btn btn-primary btn-info" type="submit">Submit</button>
-                <button className="btn btn-default btn-primary" type="reset">Reset</button>
+                <button className="btn btn-primary btn-info" onClick={handleSubmit} type="submit">Submit</button>
+                <button className="btn btn-default btn-primary" onClick={handleReset} type="reset">Reset</button>
 
-
-                <div id="output-area"/>
-            </form>
+                <FormDebugger {...props} />
+            </Form>
+            {
+                status && (<div className={status.type}>{status.message}</div>)
+            }
         </>
     )
-}
+   }

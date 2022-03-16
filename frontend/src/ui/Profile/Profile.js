@@ -5,7 +5,7 @@ import {ProfilePostButton} from "../Components/Profile/ProfilePostButton";
 import {ProfileTool} from "../Components/Profile/ProfileToolCard";
 import {useDispatch, useSelector} from "react-redux";
 import map, {fetchProfileByProfileId} from "../../store/profiles";
-import tools, {fetchAllTools, fetchAllToolsAndBorrows} from "../../store/tools";
+import tools, {fetchAllTools, fetchAllToolsAndBorrows, fetchToolsByProfileId} from "../../store/tools";
 import {Link} from "react-router-dom";
 import {ProfileSettingsFormContent} from "../Components/Profile/ProfileSettingsFormContent";
 import {ProfileSettingsForm} from "../Components/Profile/ProfileSettingsForm";
@@ -16,42 +16,33 @@ import {GradientJumbo} from "../Components/Shared/GradientJumbo";
 import borrows from "../../store/borrows";
 // import {filter} from "overmind";
 import * as availableTools from "react-bootstrap/ElementChildren";
+import {useParams} from "react-router";
 
 
-export const UserProfile=({match}) => {
+export const UserProfile=() => {
+    const {profileId} = useParams()
+    console.log(profileId)
 
     const borrow = useSelector(state => state.borrows ? state.tool: object)
 
-    const tool = useSelector(state => state.tools ? state.tools: [])
+    const tools = useSelector(state => state.tools ? state.tools: [])
 
    const profile = useSelector(state => state.profile ? state.profile: object);
 
     const dispatch = useDispatch();
 
     function sideEffects() {
-        dispatch(fetchProfileByProfileId(match.params.profileId))
-        dispatch(fetchAllTools(match.params.profileId))
+        dispatch(fetchProfileByProfileId(profileId))
+        dispatch(fetchToolsByProfileId(profileId))
     }
 
-    useEffect(sideEffects,  [match.params.profileId, dispatch]);
+    useEffect(sideEffects,  [profileId, dispatch]);
     console.log(profile)
 
     const {borrowId, borrowProfileId, borrowToolId, borrowCompleted, borrowDateTime, borrowReturnedDateTime} = borrows
 
-    const {profileId, profileHandle, profileImage, profileEmail, profileName} = profile
+    const {profileHandle, profileImage, profileEmail, profileName} = profile
 
-    const {toolName, toolDescription, toolImage, toolLendRules} = tool
-
-
-    const tools = tool.filter(tool => {
-        for (let tool of tools) {
-            if (tool.toolProfileId === profile.profileId  && null) {
-                return false
-            }
-        }
-        return true
-
-    } )
 
 
 
@@ -111,11 +102,9 @@ export const UserProfile=({match}) => {
                 <Row>
                     <Col>
                         <div>
-<<<<<<< HEAD
-                            {/*{tools.map((tool, index) => <Tool key={index} tool={tool}/>)}*/}
-=======
+
                             {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
->>>>>>> develop
+
                         </div>
                     </Col>
                 </Row>
