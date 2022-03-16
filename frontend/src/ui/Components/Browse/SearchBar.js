@@ -5,53 +5,53 @@ import "./searchBar.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
-export function SearchBar({placeHolder, data}) {
-    const [filteredData, setFilteredData] = useState([])
+export function SearchBar({placeHolder, filteredData, handleFilter}) {
+    // const [filteredData, setFilteredData] = useState([])
     // const [wordEntered, setWordEntered] = useState('')
 
-    const handleFilter = (event) => {
-        const searchWord = event.target.value
-        console.log(searchWord)
-        const newFilter = data.filter((value) => {
-            return value.toolName.toLowerCase().includes(searchWord.toLowerCase())
-        });
+    // const handleFilter = (event) => {
+    //     const searchWord = event.target.value
+    //     console.log(searchWord)
+    //     const newFilter = data.filter((value) => {
+    //         return value.toolName.toLowerCase().includes(searchWord.toLowerCase())
+    //     });
+    //
+    //     if(searchWord === "") {
+    //         setFilteredData([])
+    //     }else {
+    //         setFilteredData(newFilter)
+    //     }
+    // };
 
-        if(searchWord === "") {
-            setFilteredData([])
-        }else {
-            setFilteredData(newFilter)
-        }
-    };
-
-    const clearInput = () => {
-    setFilteredData([])
-    }
+    // const clearInput = () => {
+    // setFilteredData([])
+    // }
 
 
     return (
-        <div className={"search bg-light"}>
+        <div className={"search"}>
             <div className={"searchInputs"}>
                     <input
                         type={"text"}
                         placeholder={placeHolder}
-                        // value={wordEntered}
                         onChange={handleFilter}
                     />
                 <div className={'searchIcon'}>
-                    {filteredData.length === 0 ? (<FontAwesomeIcon icon={'search'}/> ) : ( <FontAwesomeIcon id={'clearBtn'} onClick={clearInput} icon={'close'}/> )}
+                    <FontAwesomeIcon icon={'search'}/>
+
                 </div>
             </div>
-            { filteredData.length != 0 && (
-                <div className={"dataResult"}>
-                    {filteredData.slice(0,5).map((value, key) => {
-                        return (
-                            <a className={"dataItem"}>
-                                <p>{value.toolName}</p>
-                            </a>
-                        );
-                    })}
-                </div>
-            )}
+            {/*{ filteredData.length !== 0 && (*/}
+            {/*    <div className={"dataResult"}>*/}
+            {/*        {filteredData.slice(0,5).map((value, key) => {*/}
+            {/*            return (*/}
+            {/*                <a className={"dataItem"}>*/}
+            {/*                    <p>{value.toolName}</p>*/}
+            {/*                </a>*/}
+            {/*            );*/}
+            {/*        })}*/}
+            {/*    </div>*/}
+            {/*)}*/}
         </div>
     );
 }
