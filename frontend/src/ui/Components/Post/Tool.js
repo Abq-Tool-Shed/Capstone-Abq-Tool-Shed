@@ -1,10 +1,13 @@
-import React from "react"
-import {Col, Row, Image} from "react-bootstrap";
-import {useSelector} from "react-redux";
+import React, {useEffect} from "react"
+import {Col, Row, Image, Nav} from "react-bootstrap";
+import {useSelector, useDispatch} from "react-redux";
+import profiles from "../../../store/profiles";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {fetchAllToolsAndBorrows} from "../../../store/tools";
 
 export const Tool=({tool}) => {
 
-
+    console.log(profiles)
     // toolCategoryId: "cecbc787-94f8-11ec-bfae-0242c0a82002"
     // toolDescription: "random text ahhhhh"
     // toolId: "76e2cc76-94ff-11ec-ae94-0242c0a83002"
@@ -17,10 +20,25 @@ export const Tool=({tool}) => {
 
     // const {borrowStatus} = available
 
-    const {toolName, toolDescription, toolImage, toolLendRules} = tool
-
+    const {toolProfileId, toolName, toolDescription, toolImage, toolLendRules} = tool
+    // const profiles = useSelector(state => state.profiles ? state.profiles : [])
     const borrows = useSelector(state => state.borrows ? state.borrows : [])
-    console.log(borrows)
+    // const dispatch = useDispatch();
+    //
+    // function sideEffects() {
+    //     dispatch(fetchAllToolsAndBorrows())
+    // }
+    // useEffect(sideEffects, [dispatch]);
+    // console.log(profiles)
+    // const toolProfileId = profiles.filter(tool => {
+    //     for (let profile of profiles()) {
+    //         if (borrow.borrowToolId === tool.toolId && borrow.borrowReturnedDateTime === null) {
+    //             return false
+    //         }
+    //     }
+    //     return true
+    //
+    // } )
 
     return (
         <>
@@ -31,7 +49,12 @@ export const Tool=({tool}) => {
                         <h5>Available</h5>
                     </Col>
                     <Col className={'text-center'} md={4}>
-                        <h5>Tool location</h5>
+                        <>
+                            <Nav.Link href={`/profile/${toolProfileId}`} className="btn ">
+                                <FontAwesomeIcon icon="user" />&nbsp;&nbsp; Visit User's Profile
+                            </Nav.Link>
+                        </>
+
                     </Col>
                 </Row>
                 <Image fluid src={toolImage}/>

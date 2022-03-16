@@ -13,8 +13,6 @@ import {FormDebugger} from "../FormDebugger";
 
 export const MessageForm = () => {
 
-
-
     const validator = Yup.object().shape({
         message: Yup.string()
             .required("Message Is Required")
@@ -28,9 +26,6 @@ export const MessageForm = () => {
 
     const signedInUser = useSelector(state => state ? state.auth : null)
 
-//TODO Gather data required to create a batched borrow and email them
-    // Just hardwire a tool id in there to send this.
-    //Grab a tool id, grab the message from the user.
 
     const submitMessage = (values, {resetForm, setStatus}) => {
         console.log("Is this thing on?")
@@ -40,7 +35,6 @@ export const MessageForm = () => {
         console.log(tools)
 
         httpConfig.post("/apis/message/", tool)
-
             .then(reply => {
                 let {message, type} = reply;
                 setStatus({message, type})
@@ -124,7 +118,7 @@ console.log(tools)
                 <button className="btn btn-primary btn-info" onClick={handleSubmit} type="submit">Submit</button>
                 <button className="btn btn-default btn-primary" onClick={handleReset} type="reset">Reset</button>
 
-                <FormDebugger {...props} />
+                {/*<FormDebugger {...props} />*/}
             </Form>
             {
                 status && (<div className={status.type}>{status.message}</div>)

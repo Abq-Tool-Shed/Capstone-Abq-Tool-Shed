@@ -87,7 +87,7 @@ export const SignInContent = (props) => {
                 </div>
 
 
-                <FormDebugger {...props} />
+                {/*<FormDebugger {...props} />*/}
             </Form>
             {
                 status && (<div className={status.type}>{status.message}</div>)

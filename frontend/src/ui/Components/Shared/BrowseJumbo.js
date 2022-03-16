@@ -11,13 +11,7 @@ export function BrowseJumbo({display1, display2, heading2, heading3, heading4}) 
 
     const tools = useSelector(state => state.tools ? state.tools : []);
     const borrows = useSelector(state => state.borrows ? state.borrows : []);
-    const dispatch = useDispatch();
 
-    function sideEffects() {
-        dispatch(fetchAllToolsAndBorrows())
-    }
-
-    useEffect(sideEffects, [dispatch]);
     console.log(tools)
     const availableTools = tools.filter(tool => {
         for (let borrow of borrows) {
@@ -37,7 +31,7 @@ export function BrowseJumbo({display1, display2, heading2, heading3, heading4}) 
                     <h2 className={"text-sm-center m-2 p-3 display-2"}>{display2}</h2>
                     <h2 className={"text-sm-start m-2 p-3 "}>{heading2}</h2>
                     <h2 className={"text-sm-center m-2 p-3 "}>{heading3}</h2>
-                    <SearchBar className={SearchCSS} placeHolder={"Search for a tool..."} data={tools}/>
+                    <SearchBar className={SearchCSS} placeHolder={"Search for a tool..."} data={availableTools}/>
                     <h2 className={"text-sm-end m-2 p-3 "}>{heading4}</h2>
                 </Container>
             </div>

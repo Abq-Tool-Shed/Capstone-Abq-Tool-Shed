@@ -29,8 +29,6 @@ export const SignInModal = () => {
                     <SignInForm/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant={"primary"} onClick={handleClose}> Log In
-                    </Button>
                     <Button variant={"secondary"} onClick={handleClose}>
                         Close
                     </Button>
