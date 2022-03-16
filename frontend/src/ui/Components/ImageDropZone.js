@@ -33,8 +33,8 @@ export function ImageDropZone({formikProps}) {
                 {
 
                     isDragActive ?
-                        <p>+</p> :
-                        <p>Upload An Image Here <br></br> +</p>
+                        <p className={"text-center"}>+  <br/></p>  :
+                        <p className={"text-center"}>Upload An Image Here <br></br> +</p>
                 }
             </div>
         </div>

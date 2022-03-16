@@ -22,6 +22,15 @@
     text-shadow: black 0.0rem 0.1rem;
 }
 
+.reversedJumbo2 {
+    background: linear-gradient(0deg, #126DA6, #88B990);
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+
+
+}
+
 
 
 .picJumbo {

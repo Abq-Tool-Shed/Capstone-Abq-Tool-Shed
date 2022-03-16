@@ -35,12 +35,22 @@
     background-color: rgba(139, 217, 144, 0.7);
 }
 
+.green420 {
+    background-color: rgba(139, 217, 144, 0.7);
+    border-width: 5px;
+    border-color: rgba(18, 109, 166, 1);
+    margin: 10px;
+    padding: 10px;
+}
+
 .brown1 {
     background-color: #A68A08;
 }
 
 .brown2 {
-    background-color: #F2D57E;
+    background-color: rgba(242, 213, 126, 0.5);
+    padding: 5px;
+    margin: 5px;
 }
 
 .red1 {
@@ -53,4 +63,8 @@
 
 .gray {
     background-color: gray;
+}
+
+.toolCard {
+    max-width: 35ch;
 }

@@ -50,7 +50,8 @@ export const UserProfile=() => {
 
 
     return (
-        <>
+        < >
+
 
             <ProfileJumbo className="text-center img-fluid"
                    Image={profileImage}
@@ -59,8 +60,8 @@ export const UserProfile=() => {
                    heading3={"Welcome To My Profile Page"}
 
             />
-
-            <Container >
+<div style={{backgroundColor: 'burlywood'}}>
+            <Container  >
                 <Container>
                 <Row>
 
@@ -79,9 +80,9 @@ export const UserProfile=() => {
                 <br/>
                 <Row>
                     <Col style={{border: "transparent 75", height: 150, width: 250}} className="text-center" >
-                        <h2>User Status</h2>
+                        <h2 >User Status</h2>
                         <p>
-                            Tools Borrowed:{borrowCompleted} |
+                            Tools Borrowed: 15 |
                             Tools Lent:5
                         </p>
                     </Col>
@@ -89,26 +90,27 @@ export const UserProfile=() => {
                 </Row>
             </Container>
 
-            <Container>
+            <Container >
                 <div className='row mt-5'>
                     <div style={{margin: "auto",width: 250, backgroundColor: "cadetblue" }} className="col-2 bg-secondary text-light border border-secondary text-center">
                         <p>Welcome to your content section! <br/> On the right you will find a place to start your posting journey. </p>
                     </div>
-                    <div style={{margin: "auto",width: 250, height: 150, padding:25, backgroundColor:"cadetblue"}} className="col-2  border border-secondary text-center">
+                    <div style={{margin: "auto",width: 250, height: 150, padding:25, backgroundColor:"grey"}} className="col-2  border border-secondary text-center">
                         <ProfilePostButton/>
                     </div>
                 </div>
                 <br>
                 </br>
             </Container>
-            <Container>
+            <Container className="container-fluid" >
 
 
-                    <Col className=" p-5 m-5 text-center">
-                    {tools.map((tool, index) => <ProfileTool key={index} tool={tool}/>)}
-                    </Col>
+                    <Row className='d-flex flex-wrap bg-light '>
+                    {tools.map((tool, index) => <ProfileTool className='mw-30' key={index} tool={tool}/>)}
+                    </Row>
 
             </Container>
+</div>
         </>
     )
 }

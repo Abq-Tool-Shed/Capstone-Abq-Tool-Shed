@@ -3,7 +3,7 @@ import "../styles/Post.css"
 import {Jumbo} from "../Components/Shared/Jumbo";
 import {Container} from "@material-ui/core";
 import {ToolForm} from "../Components/Post/ToolForm";
-
+import Jumbobg from "../styles/shared/jumbo.module.css"
 
 
 
@@ -21,13 +21,15 @@ export function Post() {
             {/*Tool Post Header*/}
             <Jumbo
                 display1={"Post A Tool"}
-                heading3={"V"}
+                display2={"⇩"}
             />
 
             {/*Post Form 1*/}
-            <Container>
-                <ToolForm/>
-            </Container>
+            <div className={Jumbobg.reversedJumbo2}>
+
+                    <ToolForm/>
+
+            </div>
 
         </>
 
