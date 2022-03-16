@@ -84,8 +84,8 @@ export function PrePost() {
                 Answer="You are able to change your profile information through the settings button on your profile."
             />
             <PostFAQ
-                Question= "Q3:  Where can I view the tools that have been posted?"
-                Answer="Answer test"
+                Question= "Q3:  How do I reach out to a Lender?"
+                Answer="Once you've found a tool you want to borrow, click the Profile link to access the lenders profile page. After you land on the profile page, click the 'Send A Message' button and fill out the form."
             />
 
         </div>

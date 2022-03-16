@@ -65,15 +65,16 @@ return true
             </div>
 
 
-
+        <div className={"d-sm-flex"} style={{backgroundColor: "rgba(18, 109, 166, 1)"}}>
             {/*<SearchBar placeHolder={"Search for a tool..."} data={tools} />*/}
-            <Container>
-                <h1>Recent tools available for lend</h1>
+            <Container style={{backgroundColor: "rgba(18, 109, 166, 1)"}}>
+                <h1 className={"text-white text-center p-3"}>Available Tools</h1>
 
-                <Row>
+                <Row className={"justify-content-center"}>
                     {(filteredData.length ? filteredData : availableTools).map((tool, index) => <Tool key={index} tool={tool}/>)}
                 </Row>
             </Container>
+        </div>
         </>
     )
 }

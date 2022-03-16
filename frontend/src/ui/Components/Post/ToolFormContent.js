@@ -33,12 +33,12 @@ export const ToolFormContent = (props) => {
     return (
         <>
         <div>
-            <Form onSubmit={handleSubmit} className={"col-sm-6 centered mx-auto bg-light m-5 p-5"}>
+            <Form onSubmit={handleSubmit} className={"col-sm-6 centered mx-auto p-3 text-white"}>
                 {/*controlId must match what is passed to the initialValues prop*/}
 
                 {/*Tool Name*/}
                 <Form.Group className="mb-3" controlId="formName">
-                    <Form.Label>Tool Name</Form.Label>
+                    <Form.Label>Tool Name:</Form.Label>
                     <Form.Control
                         type="text"
                         name="toolName"
@@ -51,26 +51,14 @@ export const ToolFormContent = (props) => {
 
                 {/* Tool Category */}
                 <Form.Group className="mb-3" controlId="formCategory">
-                    <Form.Label>Tool Category</Form.Label>
-
-                    {/*<CategoryDropdown/>*/}
-                    <label htmlFor="toolCategoryId" >Choose a Category:</label>
+                    <Form.Label>Tool Category: <br/>    </Form.Label>
+                <br/>
 
                     <select name="toolCategoryId" id="toolCategoryId" onChange={handleChange} onBlur={handleBlur}>
                         <option value={""}> Select a Category </option>
                         {categories.map(category =>  <option value={category.categoryId}>{category.categoryName}</option>)}
                     </select>
 
-
-
-                    {/*<Form.Control*/}
-                    {/*    type="text"*/}
-                    {/*    name="toolCategoryId"*/}
-                    {/*    placeholder="Your Tool's Category."*/}
-                    {/*    value={values.toolCategoryId}*/}
-                    {/*    onChange={handleChange}*/}
-                    {/*    onBlur={handleBlur}*/}
-                    {/*/>*/}
                 </Form.Group>
                 {
                     errors.toolCategoryId && touched.toolCategoryId && (
@@ -82,10 +70,9 @@ export const ToolFormContent = (props) => {
                 }
 
 
-
                 {/* Tool Description */}
                 <Form.Group className="mb-3" controlId="formDescription">
-                    <Form.Label>Tool Description</Form.Label>
+                    <Form.Label>Tool Description:</Form.Label>
                     <Form.Control
                         type="textarea"
                         name="toolDescription"
@@ -128,7 +115,7 @@ export const ToolFormContent = (props) => {
 
 
                 <Form.Group className="mb-3">
-
+                    <Form.Label>Tool Image:</Form.Label>
                     <ImageDropZone
                         formikProps={{
                             values,
@@ -148,17 +135,16 @@ export const ToolFormContent = (props) => {
 
 
                 <Form.Group className="mb-3" controlId="formButton">
-                    <button className="btn btn-primary mb-2" type="submit">Submit</button>
+                    <button className="btn btn-outline-light m-2 p-2" type="submit">Submit</button>
+
                     <button
-                        className="btn btn-danger mb-2"
+                        className="btn btn-outline-light m-2 p-2"
                         onClick={handleReset}
                         disabled={!dirty || isSubmitting}
                     >Reset
                     </button>
                 </Form.Group>
 
-
-                <FormDebugger {...props} />
             </Form>
             {
                 status && (<div className={status.type}>{status.message}</div>)

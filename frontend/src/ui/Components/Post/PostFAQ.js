@@ -9,7 +9,7 @@ export function PostFAQ({Question, Answer}) {
             <Container className={ColorStyles.brown2}>
                 <div>
                     <strong><p className={"text-sm-left"}>{Question}</p></strong>
-                    <u><p className={"text-sm-right"}>{Answer}</p></u>
+                    <p className={"text-sm-right"}>{Answer}</p>
                 </div>
             </Container>
         </div>
