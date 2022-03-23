@@ -18,7 +18,7 @@ export function Post() {
     return (
         <>
 
-            {/*Tool Post Header*/}
+            {/* Tool Post Header */}
             <Jumbo
                 display1={"Post A Tool"}
                 display2={"⇩"}
