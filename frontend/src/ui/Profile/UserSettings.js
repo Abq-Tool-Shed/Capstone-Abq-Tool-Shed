@@ -12,6 +12,7 @@ import {Link} from "react-router-dom";
 
 export function UserSettings() {
 
+    const auth = useSelector(state => state.auth);
     const dispatch = useDispatch()
     const profile = useSelector(state => {return state.profile ? state.profile : null})
 
@@ -29,7 +30,7 @@ export function UserSettings() {
             </div>
 
             <div className="text-center">
-                <Link to="/profile">
+                <Link to={`/profile/${auth?.profileId}`}>
                     <Button variant="outline-danger" size="lg">
                         Back To Your Profile
                     </Button>

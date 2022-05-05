@@ -3,7 +3,7 @@ import React from "react"
 export const FourOhFour = () => {
     return (
         <>
-            <h1>Y U NO FIND</h1>
+            <h1>404 error, page not found</h1>
         </>
     )
 };
